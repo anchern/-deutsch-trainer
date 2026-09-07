@@ -7,16 +7,333 @@
 <meta name="theme-color" content="#0f766e">
 <title>Mit Bus und Bahn — тренажер слів</title>
 <style>
-:root{--bg:#f4f7f8;--card:#fff;--text:#162126;--muted:#64748b;--accent:#0f766e;--accent2:#14b8a6;--ok:#15803d;--bad:#b91c1c;--line:#dbe4e8;--der:#2b78c5;--die:#e35d3f;--das:#3a9b77}
-*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--text)}.wrap{max-width:760px;margin:auto;padding:18px 16px 40px}h1{font-size:24px;margin:4px 0}.sub{color:var(--muted);margin-bottom:16px}.toolbar,.stats{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 14px}button,select,input{font:inherit}button{border:0;border-radius:14px;padding:13px 16px;background:#e7eef0;color:var(--text);font-weight:650;touch-action:manipulation}button.primary{background:var(--accent);color:#fff}button:active{transform:scale(.985)}select{border:1px solid var(--line);border-radius:12px;padding:11px 12px;background:#fff}.pill{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 11px;font-size:14px}.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 5px 20px rgba(30,50,60,.05)}.label{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}.word{font-size:36px;font-weight:780;margin:12px 0 6px;line-height:1.1}.article{display:inline-block;border-radius:9px;padding:4px 9px;color:#fff;margin-right:6px;font-size:.75em;vertical-align:.1em}.der{background:var(--der)}.die{background:var(--die)}.das{background:var(--das)}.answers{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}.answer{min-height:62px;background:#f8fafc;border:1px solid var(--line);text-align:left}.answer.correct{outline:3px solid #86efac;background:#f0fdf4}.answer.wrong{outline:3px solid #fca5a5;background:#fef2f2}.feedback{min-height:52px;margin-top:15px;font-size:17px;font-weight:650}.feedback.ok{color:var(--ok)}.feedback.bad{color:var(--bad)}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.spell{width:100%;font-size:20px;padding:15px;border-radius:14px;border:1px solid var(--line);margin:14px 0 10px}.footer{color:var(--muted);font-size:13px;margin-top:16px;line-height:1.45}.hidden{display:none!important}.progress{height:8px;background:#e2e8f0;border-radius:999px;overflow:hidden;margin:12px 0 0}.progress>div{height:100%;background:var(--accent2);width:0}.list{margin-top:18px}.list details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 13px;margin:8px 0}.list table{width:100%;border-collapse:collapse}.list td{padding:7px 4px;border-bottom:1px solid #eef2f4}@media(max-width:540px){.answers{grid-template-columns:1fr}.word{font-size:31px}.card{padding:18px}}
+:root{
+  --bg:#f4f7f8; --card:#fff; --text:#162126; --muted:#64748b;
+  --accent:#0f766e; --accent2:#14b8a6; --ok:#15803d; --bad:#b91c1c;
+  --line:#dbe4e8; --der:#2b78c5; --die:#e35d3f; --das:#3a9b77;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--text)}
+.wrap{max-width:760px;margin:auto;padding:18px 16px 40px}
+h1{font-size:24px;margin:4px 0 4px}
+.sub{color:var(--muted);margin-bottom:16px}
+.toolbar,.stats{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 14px}
+button,select,input{font:inherit}
+button{border:0;border-radius:14px;padding:13px 16px;background:#e7eef0;color:var(--text);font-weight:650;touch-action:manipulation}
+button.primary{background:var(--accent);color:white}
+button:active{transform:scale(.985)}
+select{border:1px solid var(--line);border-radius:12px;padding:11px 12px;background:white}
+.pill{background:white;border:1px solid var(--line);border-radius:999px;padding:8px 11px;font-size:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 5px 20px rgba(30,50,60,.05)}
+.label{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.word{font-size:36px;font-weight:780;margin:12px 0 6px;line-height:1.1}
+.translation{font-size:22px;color:#334155;margin:4px 0 18px}
+.article{display:inline-block;border-radius:9px;padding:4px 9px;color:#fff;margin-right:6px;font-size:.75em;vertical-align:.1em}
+.der{background:var(--der)} .die{background:var(--die)} .das{background:var(--das)}
+.answers{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.answer{min-height:62px;background:#f8fafc;border:1px solid var(--line);text-align:left}
+.answer.correct{outline:3px solid #86efac;background:#f0fdf4}
+.answer.wrong{outline:3px solid #fca5a5;background:#fef2f2}
+.feedback{min-height:52px;margin-top:15px;font-size:17px;font-weight:650}.reason{margin-top:10px;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:#f8fafc;color:#334155;font-size:15px;line-height:1.4}.reason b{color:var(--text)}
+.feedback.ok{color:var(--ok)} .feedback.bad{color:var(--bad)}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.spell{width:100%;font-size:20px;padding:15px;border-radius:14px;border:1px solid var(--line);margin:14px 0 10px}
+.footer{color:var(--muted);font-size:13px;margin-top:16px;line-height:1.45}.small{font-size:13px;color:var(--muted);line-height:1.35}
+.hidden{display:none!important}
+.progress{height:8px;background:#e2e8f0;border-radius:999px;overflow:hidden;margin:12px 0 0}
+.progress>div{height:100%;background:var(--accent2);width:0%}
+.list{margin-top:18px}
+.list details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 13px;margin:8px 0}
+.list table{width:100%;border-collapse:collapse}
+.list td{padding:7px 4px;border-bottom:1px solid #eef2f4}
+.small{font-size:14px;color:var(--muted)}
+@media(max-width:540px){.answers{grid-template-columns:1fr}.word{font-size:31px}.card{padding:18px}}
 </style>
-</head><body><div class="wrap"><h1>Mit Bus und Bahn</h1><div class="sub">Тренажер слів зі сторінки 76</div><div class="toolbar"><select id="mode"><option value="de-ua">Німецька → українська</option><option value="ua-de">Українська → німецька</option><option value="article">Артиклі der / die / das</option><option value="spell">Написати німецькою</option></select><select id="section"><option value="all">Усі слова</option><option value="bahnhof">Am Bahnhof</option><option value="unterwegs">Unterwegs</option><option value="andere">Andere Wörter</option><option value="verben">Verben</option></select><button id="sound">🔊 Вимова</button><button id="reset">↺ Скинути прогрес</button></div><div class="stats"><div class="pill">✅ <span id="right">0</span></div><div class="pill">❌ <span id="wrong">0</span></div><div class="pill">🔥 серія: <span id="streak">0</span></div><div class="pill">📚 вивчено: <span id="mastered">0</span>/<span id="total">0</span></div></div><div class="card"><div class="label" id="sectionLabel"></div><div class="word" id="prompt"></div><div id="mc" class="answers"></div><div id="spellBox" class="hidden"><input id="spellInput" class="spell" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="Введи німецьке слово…"><div class="row"><button class="primary" id="checkSpell">Перевірити</button><button id="showAnswer">Показати відповідь</button></div></div><div id="feedback" class="feedback"></div><div class="row"><button class="primary hidden" id="next">Наступне →</button></div><div class="progress"><div id="bar"></div></div></div><div class="list"><details><summary><b>Показати весь словник</b></summary><div id="wordList"></div></details></div><div class="footer">Прогрес зберігається локально в браузері. У Safari можна додати сайт на початковий екран.</div></div>
+</head>
+<body>
+<div class="wrap">
+  <h1>Mit Bus und Bahn</h1>
+  <div class="sub">Тренажер слів зі сторінки 76 • працює офлайн</div>
+
+  <div class="toolbar">
+    <select id="mode">
+      <option value="de-ua">Німецька → українська</option>
+      <option value="ua-de">Українська → німецька</option>
+      <option value="article">Артиклі der / die / das</option>
+      <option value="spell">Написати німецькою</option>
+    </select>
+    <select id="section">
+      <option value="all">Усі слова</option>
+      <option value="bahnhof">Am Bahnhof</option>
+      <option value="unterwegs">Unterwegs</option>
+      <option value="andere">Andere Wörter</option>
+      <option value="verben">Verben</option>
+    </select>
+    <button id="sound">🔊 Вимова</button>
+    <button id="reset">↺ Скинути прогрес</button>
+  </div>
+
+  <div class="stats">
+    <div class="pill">✅ <span id="right">0</span></div>
+    <div class="pill">❌ <span id="wrong">0</span></div>
+    <div class="pill">🔥 серія: <span id="streak">0</span></div>
+    <div class="pill">📚 вивчено: <span id="mastered">0</span>/<span id="total">0</span></div>
+  </div>
+
+  <div class="card">
+    <div class="label" id="sectionLabel"></div>
+    <div class="word" id="prompt"></div>
+    <div class="translation hidden" id="hint"></div>
+
+    <div id="mc" class="answers"></div>
+
+    <div id="spellBox" class="hidden">
+      <input id="spellInput" class="spell" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="Введи німецьке слово…">
+      <div class="row">
+        <button class="primary" id="checkSpell">Перевірити</button>
+        <button id="showAnswer">Показати відповідь</button>
+      </div>
+    </div>
+
+    <div id="feedback" class="feedback"></div>
+    <div id="reason" class="reason hidden"></div>
+
+    <div class="row">
+      <button class="primary hidden" id="next">Наступне →</button>
+    </div>
+    <div class="progress"><div id="bar"></div></div>
+  </div>
+
+  <div class="list">
+    <details>
+      <summary><b>Показати весь словник</b></summary>
+      <div id="wordList"></div>
+    </details>
+  </div>
+
+  <div class="footer">
+    Порада: в Safari можна додати цю сторінку на головний екран через <b>Поділитися → На початковий екран</b>.
+    Прогрес зберігається локально на iPad.
+  </div>
+</div>
+
 <script>
-const words=[
-{s:"bahnhof",a:"die",de:"Abfahrt",ua:"відправлення / від'їзд"},{s:"bahnhof",a:"die",de:"Ankunft",ua:"прибуття"},{s:"bahnhof",a:"der",de:"Bahnhof",ua:"вокзал"},{s:"bahnhof",a:"der",de:"Bahnsteig",ua:"платформа / перон"},{s:"bahnhof",a:"die",de:"Durchsage",ua:"оголошення"},{s:"bahnhof",a:"die",de:"Fahrkarte",ua:"квиток"},{s:"bahnhof",a:"der",de:"Fahrkartenautomat",ua:"квитковий автомат"},{s:"bahnhof",a:"der",de:"Fahrplan",ua:"розклад руху"},{s:"bahnhof",a:"die",de:"Fahrt",ua:"поїздка"},{s:"bahnhof",a:"das",de:"Gleis",ua:"колія / платформа"},{s:"bahnhof",a:"die",de:"Hin- und Rückfahrt",ua:"поїздка туди й назад"},{s:"bahnhof",a:"der/die",de:"Mitarbeiter / Mitarbeiterin",ua:"працівник / працівниця"},{s:"bahnhof",a:"der/die",de:"Schaffner / Schaffnerin",ua:"кондуктор / кондукторка"},{s:"bahnhof",a:"der",de:"Schalter",ua:"каса / віконце обслуговування"},{s:"bahnhof",a:"die",de:"Störung",ua:"несправність / збій"},{s:"bahnhof",a:"die",de:"Strecke",ua:"маршрут / ділянка шляху"},{s:"bahnhof",a:"der",de:"Zug",ua:"поїзд"},{s:"bahnhof",a:null,de:"pünktlich",ua:"вчасно / пунктуально"},{s:"bahnhof",a:null,de:"verspätet",ua:"із запізненням"},
-{s:"unterwegs",a:"der",de:"Flughafen",ua:"аеропорт"},{s:"unterwegs",a:"das",de:"Flugzeug",ua:"літак"},{s:"unterwegs",a:"die",de:"Haltestelle",ua:"зупинка"},{s:"unterwegs",a:"die",de:"Linie",ua:"лінія / маршрут"},{s:"unterwegs",a:"die",de:"Monatskarte",ua:"місячний проїзний"},{s:"unterwegs",a:"die",de:"Richtung",ua:"напрямок"},{s:"unterwegs",a:"die",de:"S-Bahn",ua:"міська електричка"},{s:"unterwegs",a:"das",de:"Schiff",ua:"корабель / судно"},{s:"unterwegs",a:"das",de:"Schild",ua:"знак / табличка"},{s:"unterwegs",a:"das",de:"Stadtzentrum",ua:"центр міста"},{s:"unterwegs",a:"die",de:"Station",ua:"станція"},{s:"unterwegs",a:"die",de:"U-Bahn",ua:"метро"},{s:"unterwegs",a:"die",de:"U-Bahn-Station",ua:"станція метро"},
-{s:"andere",a:null,de:"als",ua:"ніж (у порівняннях)"},{s:"andere",a:null,de:"genauso … wie …",ua:"так само … як …"},{s:"andere",a:null,de:"deshalb",ua:"тому / через це"},
-{s:"verben",a:null,de:"abfahren",ua:"відправлятися / від'їжджати"},{s:"verben",a:null,de:"ankommen",ua:"прибувати"},{s:"verben",a:null,de:"ausfallen",ua:"скасовуватися / не відбутися"},{s:"verben",a:null,de:"dauern",ua:"тривати"},{s:"verben",a:null,de:"einsteigen",ua:"сідати в транспорт"},{s:"verben",a:null,de:"umsteigen",ua:"робити пересадку"},{s:"verben",a:null,de:"aussteigen",ua:"виходити з транспорту"},{s:"verben",a:null,de:"reservieren",ua:"резервувати / бронювати"},{s:"verben",a:null,de:"verpassen",ua:"пропустити / не встигнути"},{s:"verben",a:null,de:"warten",ua:"чекати"}];
-const sectionNames={bahnhof:"Am Bahnhof",unterwegs:"Unterwegs",andere:"Andere Wörter",verben:"Verben"};let current=null,answered=false;let state;try{state=JSON.parse(localStorage.getItem("busbahn-progress")||'{"right":0,"wrong":0,"streak":0,"scores":{}}')}catch(e){state={right:0,wrong:0,streak:0,scores:{}}}const $=id=>document.getElementById(id);function pool(){const sec=$("section").value;return words.filter(w=>sec==="all"||w.s===sec)}function key(w){return w.s+"|"+w.de}function shuffle(a){return[...a].sort(()=>Math.random()-.5)}function fullDe(w){if(!w.a)return w.de;if(w.a==="der/die")return w.de;return w.a+" "+w.de}function pick(){const p=pool(),weighted=[];p.forEach(w=>{const sc=state.scores[key(w)]||0,n=Math.max(1,4-sc);for(let i=0;i<n;i++)weighted.push(w)});current=weighted[Math.floor(Math.random()*weighted.length)];answered=false;render()}function optionsFor(correct,field){const p=pool().filter(w=>key(w)!==key(correct));const distract=shuffle(p).slice(0,3).map(w=>field==="ua"?w.ua:fullDe(w));return shuffle([field==="ua"?correct.ua:fullDe(correct),...distract])}function esc(s){return s.replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}function articleHtml(w){if(!["der","die","das"].includes(w.a))return"";return `<span class="article ${w.a}">${w.a}</span>`}function render(){$("feedback").textContent="";$("feedback").className="feedback";$("next").classList.add("hidden");$("mc").innerHTML="";$("spellBox").classList.add("hidden");$("sectionLabel").textContent=sectionNames[current.s];const mode=$("mode").value;if(mode==="de-ua"){$("prompt").innerHTML=articleHtml(current)+esc(current.de);makeMC(optionsFor(current,"ua"),current.ua)}else if(mode==="ua-de"){$("prompt").textContent=current.ua;makeMC(optionsFor(current,"de"),fullDe(current))}else if(mode==="article"){const candidates=pool().filter(w=>["der","die","das"].includes(w.a));if(!candidates.length){$("prompt").textContent="У цьому розділі немає іменників з артиклями";updateStats();return}if(!["der","die","das"].includes(current.a))current=candidates[Math.floor(Math.random()*candidates.length)];$("prompt").textContent=current.de;makeMC(["der","die","das"],current.a,true)}else{$("prompt").textContent=current.ua;$("spellBox").classList.remove("hidden");$("spellInput").value=""}updateStats()}function makeMC(opts,correct,isArticle=false){opts.forEach(text=>{const b=document.createElement("button");b.className="answer";b.innerHTML=isArticle?`<span class="article ${text}">${text}</span>`:esc(text);b.onclick=()=>judge(text===correct,b,correct);$("mc").appendChild(b)})}function judge(ok,btn,correct){if(answered)return;answered=true;[...$("mc").children].forEach(b=>{if(b.textContent.trim()===correct)b.classList.add("correct")});if(!ok)btn.classList.add("wrong");finish(ok,correct)}function normalize(s){return s.trim().toLowerCase().replace(/[„“”"]/g,"").replace(/\s+/g," ")}function checkSpell(show=false){if(answered)return;const typed=normalize($("spellInput").value),accepted=[normalize(current.de),normalize(fullDe(current))],ok=!show&&accepted.includes(typed);answered=true;finish(ok,fullDe(current))}function finish(ok,correct){if(ok){state.right++;state.streak++;state.scores[key(current)]=Math.min(4,(state.scores[key(current)]||0)+1);$("feedback").textContent="✅ Правильно!";$("feedback").className="feedback ok"}else{state.wrong++;state.streak=0;state.scores[key(current)]=Math.max(0,(state.scores[key(current)]||0)-1);$("feedback").innerHTML=`❌ Правильно: <b>${esc(correct)}</b>`;$("feedback").className="feedback bad"}localStorage.setItem("busbahn-progress",JSON.stringify(state));$("next").classList.remove("hidden");updateStats()}function updateStats(){$("right").textContent=state.right;$("wrong").textContent=state.wrong;$("streak").textContent=state.streak;const p=pool(),mastered=p.filter(w=>(state.scores[key(w)]||0)>=3).length;$("mastered").textContent=mastered;$("total").textContent=p.length;$("bar").style.width=(p.length?mastered/p.length*100:0)+"%"}function speak(){if(!current||!("speechSynthesis"in window))return;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(fullDe(current));u.lang="de-DE";u.rate=.82;speechSynthesis.speak(u)}function buildList(){let out="";["bahnhof","unterwegs","andere","verben"].forEach(g=>{out+=`<h3>${sectionNames[g]}</h3><table>`;words.filter(w=>w.s===g).forEach(w=>{const left=["der","die","das"].includes(w.a)?`<span class="article ${w.a}">${w.a}</span>${esc(w.de)}`:esc(fullDe(w));out+=`<tr><td>${left}</td><td>${esc(w.ua)}</td></tr>`});out+="</table>"});$("wordList").innerHTML=out}
-$("next").onclick=pick;$("sound").onclick=speak;$("mode").onchange=pick;$("section").onchange=pick;$("checkSpell").onclick=()=>checkSpell(false);$("showAnswer").onclick=()=>checkSpell(true);$("spellInput").addEventListener("keydown",e=>{if(e.key==="Enter")answered?pick():checkSpell(false)});$("reset").onclick=()=>{if(confirm("Скинути весь прогрес?")){state={right:0,wrong:0,streak:0,scores:{}};localStorage.setItem("busbahn-progress",JSON.stringify(state));pick()}};buildList();pick();
-</script></body></html>
+const words = [
+  // Am Bahnhof
+  {s:"bahnhof", a:"die", de:"Abfahrt", ua:"відправлення / від'їзд", r:"<b>die</b>, бо основа <i>Fahrt</i> — жіночого роду: <i>die Fahrt</i>."},
+  {s:"bahnhof", a:"die", de:"Ankunft", ua:"прибуття", r:"<b>die</b>: для слів на <i>-kunft</i> надійного загального правила немає — <i>die Ankunft</i> краще запам’ятати разом з артиклем."},
+  {s:"bahnhof", a:"der", de:"Bahnhof", ua:"вокзал", r:"Складне слово: <i>der Hof</i> визначає рід → <b>der Bahnhof</b>."},
+  {s:"bahnhof", a:"der", de:"Bahnsteig", ua:"платформа / перон", r:"Складне слово: остання частина <i>der Steig</i> визначає рід → <b>der Bahnsteig</b>."},
+  {s:"bahnhof", a:"die", de:"Durchsage", ua:"оголошення", r:"Слова на <i>-sage</i> тут жіночого роду: <i>die Ansage, die Aussage, die Durchsage</i>."},
+  {s:"bahnhof", a:"die", de:"Fahrkarte", ua:"квиток", r:"Складне слово: <i>die Karte</i> визначає рід → <b>die Fahrkarte</b>."},
+  {s:"bahnhof", a:"der", de:"Fahrkartenautomat", ua:"квитковий автомат", r:"Складне слово: <i>der Automat</i> визначає рід → <b>der Fahrkartenautomat</b>."},
+  {s:"bahnhof", a:"der", de:"Fahrplan", ua:"розклад руху", r:"Складне слово: <i>der Plan</i> визначає рід → <b>der Fahrplan</b>."},
+  {s:"bahnhof", a:"die", de:"Fahrt", ua:"поїздка", r:"<i>Fahrt</i> — жіночого роду; тут немає простого продуктивного закінчення, тож вчи як <b>die Fahrt</b>."},
+  {s:"bahnhof", a:"das", de:"Gleis", ua:"колія / платформа", r:"Для <i>Gleis</i> немає надійного правила за формою — вчи разом: <b>das Gleis</b>."},
+  {s:"bahnhof", a:"die", de:"Hin- und Rückfahrt", ua:"поїздка туди й назад", r:"Головне слово — <i>die Fahrt</i>, тому <b>die Hin- und Rückfahrt</b>."},
+  {s:"bahnhof", a:"der/die", de:"Mitarbeiter / Mitarbeiterin", ua:"працівник / працівниця"},
+  {s:"bahnhof", a:"der/die", de:"Schaffner / Schaffnerin", ua:"кондуктор / кондукторка"},
+  {s:"bahnhof", a:"der", de:"Schalter", ua:"каса / віконце обслуговування", r:"Для цього значення немає простого правила за закінченням — вчи як <b>der Schalter</b>."},
+  {s:"bahnhof", a:"die", de:"Störung", ua:"несправність / збій", r:"Закінчення <i>-ung</i> майже завжди → <b>die</b>: <i>die Störung</i>."},
+  {s:"bahnhof", a:"die", de:"Strecke", ua:"маршрут / ділянка шляху", r:"Для <i>Strecke</i> немає надійного правила за формою — вчи як <b>die Strecke</b>."},
+  {s:"bahnhof", a:"der", de:"Zug", ua:"поїзд", r:"Для <i>Zug</i> немає простого правила за закінченням — вчи разом: <b>der Zug</b>."},
+  {s:"bahnhof", a:null, de:"pünktlich", ua:"вчасно / пунктуально"},
+  {s:"bahnhof", a:null, de:"verspätet", ua:"із запізненням"},
+
+  // Unterwegs
+  {s:"unterwegs", a:"der", de:"Flughafen", ua:"аеропорт", r:"Складне слово: <i>der Hafen</i> визначає рід → <b>der Flughafen</b>."},
+  {s:"unterwegs", a:"das", de:"Flugzeug", ua:"літак", r:"Складне слово: <i>das Zeug</i> визначає рід → <b>das Flugzeug</b>."},
+  {s:"unterwegs", a:"die", de:"Haltestelle", ua:"зупинка", r:"Складне слово: <i>die Stelle</i> визначає рід → <b>die Haltestelle</b>."},
+  {s:"unterwegs", a:"die", de:"Linie", ua:"лінія / маршрут", r:"Багато іменників на <i>-ie</i> жіночого роду → <b>die Linie</b>."},
+  {s:"unterwegs", a:"die", de:"Monatskarte", ua:"місячний проїзний", r:"Складне слово: <i>die Karte</i> визначає рід → <b>die Monatskarte</b>."},
+  {s:"unterwegs", a:"die", de:"Richtung", ua:"напрямок", r:"Закінчення <i>-ung</i> майже завжди → <b>die</b>: <i>die Richtung</i>."},
+  {s:"unterwegs", a:"die", de:"S-Bahn", ua:"міська електричка", r:"Головне слово — <i>die Bahn</i>, тому <b>die S-Bahn</b>."},
+  {s:"unterwegs", a:"das", de:"Schiff", ua:"корабель / судно", r:"Для <i>Schiff</i> немає надійного правила за формою — вчи разом: <b>das Schiff</b>."},
+  {s:"unterwegs", a:"das", de:"Schild", ua:"знак / табличка", r:"У значенні «знак/табличка» — <b>das Schild</b>. Увага: <i>der Schild</i> означає «щит»."},
+  {s:"unterwegs", a:"das", de:"Stadtzentrum", ua:"центр міста", r:"Складне слово: <i>das Zentrum</i> визначає рід → <b>das Stadtzentrum</b>."},
+  {s:"unterwegs", a:"die", de:"Station", ua:"станція", r:"Іменники на <i>-ion</i> майже завжди жіночого роду → <b>die Station</b>."},
+  {s:"unterwegs", a:"die", de:"U-Bahn", ua:"метро", r:"Головне слово — <i>die Bahn</i>, тому <b>die U-Bahn</b>."},
+  {s:"unterwegs", a:"die", de:"U-Bahn-Station", ua:"станція метро", r:"Остання частина — <i>die Station</i>; вона визначає рід → <b>die U-Bahn-Station</b>."},
+
+  // Andere Wörter
+  {s:"andere", a:null, de:"als", ua:"ніж (у порівняннях)"},
+  {s:"andere", a:null, de:"genauso … wie …", ua:"так само … як …"},
+  {s:"andere", a:null, de:"deshalb", ua:"тому / через це"},
+
+  // Verben
+  {s:"verben", a:null, de:"abfahren", ua:"відправлятися / від'їжджати"},
+  {s:"verben", a:null, de:"ankommen", ua:"прибувати"},
+  {s:"verben", a:null, de:"ausfallen", ua:"скасовуватися / не відбутися"},
+  {s:"verben", a:null, de:"dauern", ua:"тривати"},
+  {s:"verben", a:null, de:"einsteigen", ua:"сідати в транспорт"},
+  {s:"verben", a:null, de:"umsteigen", ua:"робити пересадку"},
+  {s:"verben", a:null, de:"aussteigen", ua:"виходити з транспорту"},
+  {s:"verben", a:null, de:"reservieren", ua:"резервувати / бронювати"},
+  {s:"verben", a:null, de:"verpassen", ua:"пропустити / не встигнути"},
+  {s:"verben", a:null, de:"warten", ua:"чекати"}
+];
+
+const sectionNames={bahnhof:"Am Bahnhof",unterwegs:"Unterwegs",andere:"Andere Wörter",verben:"Verben"};
+let current=null, answered=false;
+let state=JSON.parse(localStorage.getItem("busbahn-progress")||'{"right":0,"wrong":0,"streak":0,"scores":{}}');
+
+const $=id=>document.getElementById(id);
+function pool(){
+  const sec=$("section").value;
+  return words.filter(w => sec==="all" || w.s===sec);
+}
+function key(w){return w.s+"|"+w.de}
+function shuffle(a){return [...a].sort(()=>Math.random()-.5)}
+function fullDe(w){
+  if(!w.a) return w.de;
+  if(w.a==="der/die") return w.de;
+  return w.a+" "+w.de;
+}
+function pick(){
+  const p=pool();
+  const weighted=[];
+  p.forEach(w=>{
+    const sc=state.scores[key(w)]||0;
+    const n=Math.max(1,4-sc);
+    for(let i=0;i<n;i++) weighted.push(w);
+  });
+  current=weighted[Math.floor(Math.random()*weighted.length)];
+  answered=false;
+  render();
+}
+function optionsFor(correct, field){
+  const p=pool().filter(w=>key(w)!==key(correct));
+  const distract=shuffle(p).slice(0,3).map(w=>field==="ua"?w.ua:fullDe(w));
+  return shuffle([field==="ua"?correct.ua:fullDe(correct),...distract]);
+}
+function render(){
+  $("feedback").textContent=""; $("feedback").className="feedback"; $("reason").classList.add("hidden"); $("reason").innerHTML="";
+  $("next").classList.add("hidden");
+  $("mc").innerHTML="";
+  $("spellBox").classList.add("hidden");
+  $("hint").classList.add("hidden");
+  $("sectionLabel").textContent=sectionNames[current.s];
+  const mode=$("mode").value;
+
+  if(mode==="de-ua"){
+    $("prompt").innerHTML = articleHtml(current) + escapeHtml(current.de);
+    makeMC(optionsFor(current,"ua"), current.ua);
+  } else if(mode==="ua-de"){
+    $("prompt").textContent=current.ua;
+    makeMC(optionsFor(current,"de"), fullDe(current));
+  } else if(mode==="article"){
+    const candidates=pool().filter(w=>["der","die","das"].includes(w.a));
+    if(!["der","die","das"].includes(current.a)){
+      current=candidates[Math.floor(Math.random()*candidates.length)];
+    }
+    $("prompt").textContent=current.de;
+    makeMC(["der","die","das"], current.a, true);
+  } else {
+    $("prompt").textContent=current.ua;
+    $("spellBox").classList.remove("hidden");
+    $("spellInput").value="";
+    setTimeout(()=>$("spellInput").focus(),100);
+  }
+  updateStats();
+}
+function articleHtml(w){
+  if(!["der","die","das"].includes(w.a)) return "";
+  return `<span class="article ${w.a}">${w.a}</span>`;
+}
+function escapeHtml(s){return s.replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
+function makeMC(opts, correct, isArticle=false){
+  opts.forEach(text=>{
+    const b=document.createElement("button");
+    b.className="answer";
+    b.innerHTML=isArticle?`<span class="article ${text}">${text}</span>`:escapeHtml(text);
+    b.onclick=()=>judge(text===correct,b,correct);
+    $("mc").appendChild(b);
+  });
+}
+function judge(ok,btn,correct){
+  if(answered)return; answered=true;
+  [...$("mc").children].forEach(b=>{
+    const plain=b.textContent.trim();
+    if(plain===correct) b.classList.add("correct");
+  });
+  if(!ok) btn.classList.add("wrong");
+  finish(ok, correct);
+}
+function normalize(s){
+  return s.trim().toLowerCase()
+    .replace(/[„“”"]/g,"")
+    .replace(/\s+/g," ");
+}
+function checkSpell(show=false){
+  if(answered)return;
+  const typed=normalize($("spellInput").value);
+  const accepted=[normalize(current.de), normalize(fullDe(current))];
+  const ok=!show && accepted.includes(typed);
+  answered=true;
+  finish(ok, fullDe(current), show);
+}
+function finish(ok,correct,shown=false){
+  if(ok){
+    state.right++; state.streak++;
+    state.scores[key(current)]=Math.min(4,(state.scores[key(current)]||0)+1);
+    $("feedback").textContent="✅ Правильно!";
+    $("feedback").className="feedback ok";
+  } else {
+    state.wrong++; state.streak=0;
+    state.scores[key(current)]=Math.max(0,(state.scores[key(current)]||0)-1);
+    $("feedback").innerHTML=`❌ Правильно: <b>${escapeHtml(correct)}</b>`;
+    $("feedback").className="feedback bad";
+  }
+  localStorage.setItem("busbahn-progress",JSON.stringify(state));
+  if(current.r && ["der","die","das"].includes(current.a)){ $("reason").innerHTML="💡 "+current.r; $("reason").classList.remove("hidden"); }
+  $("next").classList.remove("hidden");
+  updateStats();
+}
+function updateStats(){
+  $("right").textContent=state.right;
+  $("wrong").textContent=state.wrong;
+  $("streak").textContent=state.streak;
+  const p=pool();
+  const mastered=p.filter(w=>(state.scores[key(w)]||0)>=3).length;
+  $("mastered").textContent=mastered;
+  $("total").textContent=p.length;
+  $("bar").style.width=(p.length?mastered/p.length*100:0)+"%";
+}
+function speak(){
+  if(!current || !("speechSynthesis" in window)) return;
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(fullDe(current));
+  u.lang="de-DE"; u.rate=.82;
+  speechSynthesis.speak(u);
+}
+function buildList(){
+  const groups=["bahnhof","unterwegs","andere","verben"];
+  let out="";
+  groups.forEach(g=>{
+    out+=`<h3>${sectionNames[g]}</h3><table>`;
+    words.filter(w=>w.s===g).forEach(w=>{
+      const left = ["der","die","das"].includes(w.a) ? `<span class="article ${w.a}">${w.a}</span>${escapeHtml(w.de)}` : escapeHtml(fullDe(w));
+      out+=`<tr><td>${left}</td><td>${escapeHtml(w.ua)}${w.r?`<div class="small" style="margin-top:4px">${w.r}</div>`:""}</td></tr>`;
+    });
+    out+="</table>";
+  });
+  $("wordList").innerHTML=out;
+}
+$("next").onclick=pick;
+$("sound").onclick=speak;
+$("mode").onchange=pick;
+$("section").onchange=pick;
+$("checkSpell").onclick=()=>checkSpell(false);
+$("showAnswer").onclick=()=>checkSpell(true);
+$("spellInput").addEventListener("keydown",e=>{if(e.key==="Enter") answered?pick():checkSpell(false)});
+$("reset").onclick=()=>{
+  if(confirm("Скинути весь прогрес?")){
+    state={right:0,wrong:0,streak:0,scores:{}};
+    localStorage.setItem("busbahn-progress",JSON.stringify(state));
+    pick();
+  }
+};
+buildList(); pick();
+</script>
+</body>
+</html>
