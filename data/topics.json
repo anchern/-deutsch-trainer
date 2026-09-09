@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "topics": [
+    "topics/transport.json",
+    "topics/wohnung.json"
+  ]
+}

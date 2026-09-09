@@ -1,0 +1,444 @@
+{
+  "id": "wohnung",
+  "title": "Unsere neue Wohnung",
+  "uk": "Наша нова квартира",
+  "description": "Пошук житла, переїзд і новосілля",
+  "icon": "home",
+  "page": 84,
+  "sections": [
+    {
+      "id": "search",
+      "title": "Wohnungssuche",
+      "uk": "Пошук житла"
+    },
+    {
+      "id": "home",
+      "title": "Die neue Wohnung",
+      "uk": "Нова квартира"
+    },
+    {
+      "id": "verbs",
+      "title": "Verben",
+      "uk": "Дієслова"
+    }
+  ],
+  "words": [
+    {
+      "id": "altbau",
+      "section": "search",
+      "article": "der",
+      "de": "Altbau",
+      "uk": "старий будинок; будинок старої забудови"
+    },
+    {
+      "id": "anzeige",
+      "section": "search",
+      "article": "die",
+      "de": "Anzeige",
+      "uk": "оголошення"
+    },
+    {
+      "id": "balkon",
+      "section": "search",
+      "article": "der",
+      "de": "Balkon",
+      "uk": "балкон"
+    },
+    {
+      "id": "besichtigungstermin",
+      "section": "search",
+      "article": "der",
+      "de": "Besichtigungstermin",
+      "uk": "домовлений час огляду житла"
+    },
+    {
+      "id": "einbaukueche",
+      "section": "search",
+      "article": "die",
+      "de": "Einbauküche",
+      "uk": "вбудована кухня"
+    },
+    {
+      "id": "erdgeschoss",
+      "section": "search",
+      "article": "das",
+      "de": "Erdgeschoss",
+      "uk": "перший поверх (на рівні землі)",
+      "note": "У Німеччині Erdgeschoss — поверх на рівні землі. 1. Obergeschoss — наступний поверх, зазвичай другий за українським відліком."
+    },
+    {
+      "id": "dachgeschoss",
+      "section": "search",
+      "article": "das",
+      "de": "Dachgeschoss",
+      "uk": "мансардний поверх; поверх під дахом"
+    },
+    {
+      "id": "kaution",
+      "section": "search",
+      "article": "die",
+      "de": "Kaution",
+      "uk": "застава (за оренду житла)"
+    },
+    {
+      "id": "miete",
+      "section": "search",
+      "article": "die",
+      "de": "Miete",
+      "uk": "орендна плата; оренда"
+    },
+    {
+      "id": "monatsmiete",
+      "section": "search",
+      "article": "die",
+      "de": "Monatsmiete",
+      "uk": "місячна орендна плата"
+    },
+    {
+      "id": "moebliert",
+      "section": "search",
+      "article": null,
+      "de": "möbliert",
+      "uk": "мебльований"
+    },
+    {
+      "id": "nebenkosten",
+      "section": "search",
+      "article": "die",
+      "de": "Nebenkosten",
+      "uk": "додаткові витрати до орендної плати",
+      "note": "Уживається в множині. Це додаткові платежі за утримання житла; точний склад залежить від договору.",
+      "plural": true
+    },
+    {
+      "id": "neubau",
+      "section": "search",
+      "article": "der",
+      "de": "Neubau",
+      "uk": "новобудова"
+    },
+    {
+      "id": "obergeschoss",
+      "section": "search",
+      "article": "das",
+      "de": "Obergeschoss",
+      "uk": "поверх вище рівня землі",
+      "note": "1. OG розташований над Erdgeschoss. Скорочення: OG."
+    },
+    {
+      "id": "quadratmeter",
+      "section": "search",
+      "article": "der",
+      "de": "Quadratmeter",
+      "uk": "квадратний метр (м²)",
+      "note": "Скорочення: m² або qm."
+    },
+    {
+      "id": "stadtrand",
+      "section": "search",
+      "article": "der",
+      "de": "Stadtrand",
+      "uk": "околиця міста"
+    },
+    {
+      "id": "stadtzentrum",
+      "section": "search",
+      "article": "das",
+      "de": "Stadtzentrum",
+      "uk": "центр міста"
+    },
+    {
+      "id": "stock",
+      "section": "search",
+      "article": "der",
+      "de": "Stock",
+      "uk": "поверх",
+      "note": "У цій темі — «поверх». Також слово має інші значення.",
+      "accepted": [
+        "Stockwerk",
+        "das Stockwerk"
+      ]
+    },
+    {
+      "id": "stockwerk",
+      "section": "search",
+      "article": "das",
+      "de": "Stockwerk",
+      "uk": "поверх",
+      "accepted": [
+        "Stock",
+        "der Stock"
+      ]
+    },
+    {
+      "id": "eine-wohnung-besichtigen",
+      "section": "search",
+      "article": null,
+      "de": "eine Wohnung besichtigen",
+      "uk": "оглядати квартиру"
+    },
+    {
+      "id": "wohnungsanzeige",
+      "section": "search",
+      "article": "die",
+      "de": "Wohnungsanzeige",
+      "uk": "оголошення про житло"
+    },
+    {
+      "id": "zentral",
+      "section": "search",
+      "article": null,
+      "de": "zentral",
+      "uk": "центральний; у центрі"
+    },
+    {
+      "id": "einweihungsparty",
+      "section": "home",
+      "article": "die",
+      "de": "Einweihungsparty",
+      "uk": "вечірка з нагоди новосілля"
+    },
+    {
+      "id": "einzug",
+      "section": "home",
+      "article": "der",
+      "de": "Einzug",
+      "uk": "вселення; в’їзд у житло"
+    },
+    {
+      "id": "hausmeister",
+      "section": "home",
+      "article": "der",
+      "de": "Hausmeister",
+      "uk": "доглядач будинку"
+    },
+    {
+      "id": "hausordnung",
+      "section": "home",
+      "article": "die",
+      "de": "Hausordnung",
+      "uk": "правила проживання в будинку"
+    },
+    {
+      "id": "hausverwaltung",
+      "section": "home",
+      "article": "die",
+      "de": "Hausverwaltung",
+      "uk": "управління будинком; керуюча компанія"
+    },
+    {
+      "id": "mieter",
+      "section": "home",
+      "article": "der",
+      "de": "Mieter",
+      "uk": "орендар; наймач житла"
+    },
+    {
+      "id": "muell",
+      "section": "home",
+      "article": "der",
+      "de": "Müll",
+      "uk": "сміття"
+    },
+    {
+      "id": "den-muell-trennen",
+      "section": "home",
+      "article": null,
+      "de": "den Müll trennen",
+      "uk": "сортувати сміття"
+    },
+    {
+      "id": "muelltonne",
+      "section": "home",
+      "article": "die",
+      "de": "Mülltonne",
+      "uk": "сміттєвий бак"
+    },
+    {
+      "id": "nachbar",
+      "section": "home",
+      "article": "der",
+      "de": "Nachbar",
+      "uk": "сусід"
+    },
+    {
+      "id": "umzug",
+      "section": "home",
+      "article": "der",
+      "de": "Umzug",
+      "uk": "переїзд"
+    },
+    {
+      "id": "vermieter",
+      "section": "home",
+      "article": "der",
+      "de": "Vermieter",
+      "uk": "орендодавець"
+    },
+    {
+      "id": "wohngemeinschaft",
+      "section": "home",
+      "article": "die",
+      "de": "WG, Wohngemeinschaft",
+      "uk": "спільне проживання в одній квартирі (WG)",
+      "note": "WG читається «ве-ґе». Скорочення від die Wohngemeinschaft.",
+      "accepted": [
+        "WG",
+        "Wohngemeinschaft",
+        "die WG",
+        "die Wohngemeinschaft"
+      ]
+    },
+    {
+      "id": "mitteilung",
+      "section": "home",
+      "article": "die",
+      "de": "Mitteilung",
+      "uk": "повідомлення; сповіщення"
+    },
+    {
+      "id": "nachricht",
+      "section": "home",
+      "article": "die",
+      "de": "Nachricht",
+      "uk": "повідомлення; звістка"
+    },
+    {
+      "id": "ausziehen",
+      "section": "verbs",
+      "article": null,
+      "de": "ausziehen",
+      "uk": "виїжджати з житла",
+      "note": "У темі житла — виїжджати. В іншому контексті також означає знімати одяг.",
+      "example": {
+        "de": "Ich ziehe im Juni aus der alten Wohnung aus.",
+        "uk": "Я виїжджаю зі старої квартири в червні."
+      }
+    },
+    {
+      "id": "einziehen",
+      "section": "verbs",
+      "article": null,
+      "de": "einziehen",
+      "uk": "вселятися; в’їжджати в житло",
+      "example": {
+        "de": "Wir ziehen morgen in die neue Wohnung ein.",
+        "uk": "Ми завтра вселяємося в нову квартиру."
+      }
+    },
+    {
+      "id": "gefallen",
+      "section": "verbs",
+      "article": null,
+      "de": "gefallen",
+      "uk": "подобатися",
+      "example": {
+        "de": "Die Wohnung gefällt mir.",
+        "uk": "Мені подобається квартира."
+      }
+    },
+    {
+      "id": "haengen",
+      "section": "verbs",
+      "article": null,
+      "de": "hängen",
+      "uk": "висіти; вішати",
+      "note": "Може означати стан («висіти») або дію («вішати»).",
+      "example": {
+        "de": "Das Bild hängt an der Wand.",
+        "uk": "Картина висить на стіні."
+      }
+    },
+    {
+      "id": "kuendigen",
+      "section": "verbs",
+      "article": null,
+      "de": "kündigen",
+      "uk": "розривати договір (оренди)",
+      "example": {
+        "de": "Ich kündige den Mietvertrag.",
+        "uk": "Я розриваю договір оренди."
+      }
+    },
+    {
+      "id": "legen",
+      "section": "verbs",
+      "article": null,
+      "de": "legen",
+      "uk": "класти (горизонтально)",
+      "note": "Дія: щось кудись класти. Стан: liegen — лежати.",
+      "example": {
+        "de": "Ich lege das Buch auf den Tisch.",
+        "uk": "Я кладу книжку на стіл."
+      }
+    },
+    {
+      "id": "liegen",
+      "section": "verbs",
+      "article": null,
+      "de": "liegen",
+      "uk": "лежати",
+      "example": {
+        "de": "Das Buch liegt auf dem Tisch.",
+        "uk": "Книжка лежить на столі."
+      }
+    },
+    {
+      "id": "mieten",
+      "section": "verbs",
+      "article": null,
+      "de": "mieten",
+      "uk": "орендувати; наймати житло",
+      "example": {
+        "de": "Wir mieten eine Wohnung.",
+        "uk": "Ми орендуємо квартиру."
+      }
+    },
+    {
+      "id": "stehen",
+      "section": "verbs",
+      "article": null,
+      "de": "stehen",
+      "uk": "стояти",
+      "example": {
+        "de": "Der Schrank steht im Flur.",
+        "uk": "Шафа стоїть у коридорі."
+      }
+    },
+    {
+      "id": "stellen",
+      "section": "verbs",
+      "article": null,
+      "de": "stellen",
+      "uk": "ставити (вертикально)",
+      "note": "Дія: щось кудись ставити. Стан: stehen — стояти.",
+      "example": {
+        "de": "Ich stelle die Lampe auf den Tisch.",
+        "uk": "Я ставлю лампу на стіл."
+      }
+    },
+    {
+      "id": "umziehen",
+      "section": "verbs",
+      "article": null,
+      "de": "umziehen",
+      "uk": "переїжджати",
+      "note": "У темі житла — переїжджати. Sich umziehen — переодягатися.",
+      "example": {
+        "de": "Wir ziehen nach Berlin um.",
+        "uk": "Ми переїжджаємо до Берліна."
+      }
+    },
+    {
+      "id": "vermieten",
+      "section": "verbs",
+      "article": null,
+      "de": "vermieten",
+      "uk": "здавати в оренду",
+      "example": {
+        "de": "Sie vermietet ihre Wohnung.",
+        "uk": "Вона здає свою квартиру в оренду."
+      }
+    }
+  ]
+}

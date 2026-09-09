@@ -1,0 +1,420 @@
+{
+  "id": "transport",
+  "title": "Mit Bus und Bahn",
+  "uk": "Автобусом і потягом",
+  "description": "Квитки, вокзал і подорожі містом",
+  "icon": "train",
+  "page": 76,
+  "sections": [
+    {
+      "id": "bahnhof",
+      "title": "Am Bahnhof",
+      "uk": "На вокзалі"
+    },
+    {
+      "id": "unterwegs",
+      "title": "Unterwegs",
+      "uk": "У дорозі"
+    },
+    {
+      "id": "andere",
+      "title": "Andere Wörter",
+      "uk": "Інші слова"
+    },
+    {
+      "id": "verben",
+      "title": "Verben",
+      "uk": "Дієслова"
+    }
+  ],
+  "words": [
+    {
+      "id": "abfahrt",
+      "section": "bahnhof",
+      "article": "die",
+      "de": "Abfahrt",
+      "uk": "відправлення / від'їзд",
+      "note": "die, бо основа Fahrt — жіночого роду: die Fahrt.",
+      "legacyKey": "bahnhof|Abfahrt"
+    },
+    {
+      "id": "ankunft",
+      "section": "bahnhof",
+      "article": "die",
+      "de": "Ankunft",
+      "uk": "прибуття",
+      "note": "die: для слів на -kunft надійного загального правила немає — die Ankunft краще запам’ятати разом з артиклем.",
+      "legacyKey": "bahnhof|Ankunft"
+    },
+    {
+      "id": "bahnhof",
+      "section": "bahnhof",
+      "article": "der",
+      "de": "Bahnhof",
+      "uk": "вокзал",
+      "note": "Складне слово: der Hof визначає рід → der Bahnhof.",
+      "legacyKey": "bahnhof|Bahnhof"
+    },
+    {
+      "id": "bahnsteig",
+      "section": "bahnhof",
+      "article": "der",
+      "de": "Bahnsteig",
+      "uk": "платформа / перон",
+      "note": "Складне слово: остання частина der Steig визначає рід → der Bahnsteig.",
+      "legacyKey": "bahnhof|Bahnsteig"
+    },
+    {
+      "id": "durchsage",
+      "section": "bahnhof",
+      "article": "die",
+      "de": "Durchsage",
+      "uk": "оголошення",
+      "note": "Слова на -sage тут жіночого роду: die Ansage, die Aussage, die Durchsage.",
+      "legacyKey": "bahnhof|Durchsage"
+    },
+    {
+      "id": "fahrkarte",
+      "section": "bahnhof",
+      "article": "die",
+      "de": "Fahrkarte",
+      "uk": "квиток",
+      "note": "Складне слово: die Karte визначає рід → die Fahrkarte.",
+      "legacyKey": "bahnhof|Fahrkarte"
+    },
+    {
+      "id": "fahrkartenautomat",
+      "section": "bahnhof",
+      "article": "der",
+      "de": "Fahrkartenautomat",
+      "uk": "квитковий автомат",
+      "note": "Складне слово: der Automat визначає рід → der Fahrkartenautomat.",
+      "legacyKey": "bahnhof|Fahrkartenautomat"
+    },
+    {
+      "id": "fahrplan",
+      "section": "bahnhof",
+      "article": "der",
+      "de": "Fahrplan",
+      "uk": "розклад руху",
+      "note": "Складне слово: der Plan визначає рід → der Fahrplan.",
+      "legacyKey": "bahnhof|Fahrplan"
+    },
+    {
+      "id": "fahrt",
+      "section": "bahnhof",
+      "article": "die",
+      "de": "Fahrt",
+      "uk": "поїздка",
+      "note": "Fahrt — жіночого роду; тут немає простого продуктивного закінчення, тож вчи як die Fahrt.",
+      "legacyKey": "bahnhof|Fahrt"
+    },
+    {
+      "id": "gleis",
+      "section": "bahnhof",
+      "article": "das",
+      "de": "Gleis",
+      "uk": "колія / платформа",
+      "note": "Для Gleis немає надійного правила за формою — вчи разом: das Gleis.",
+      "legacyKey": "bahnhof|Gleis"
+    },
+    {
+      "id": "hin-und-rueckfahrt",
+      "section": "bahnhof",
+      "article": "die",
+      "de": "Hin- und Rückfahrt",
+      "uk": "поїздка туди й назад",
+      "note": "Головне слово — die Fahrt, тому die Hin- und Rückfahrt.",
+      "legacyKey": "bahnhof|Hin- und Rückfahrt"
+    },
+    {
+      "id": "mitarbeiter-mitarbeiterin",
+      "section": "bahnhof",
+      "article": "der/die",
+      "de": "Mitarbeiter / Mitarbeiterin",
+      "uk": "працівник / працівниця",
+      "legacyKey": "bahnhof|Mitarbeiter / Mitarbeiterin"
+    },
+    {
+      "id": "schaffner-schaffnerin",
+      "section": "bahnhof",
+      "article": "der/die",
+      "de": "Schaffner / Schaffnerin",
+      "uk": "кондуктор / кондукторка",
+      "legacyKey": "bahnhof|Schaffner / Schaffnerin"
+    },
+    {
+      "id": "schalter",
+      "section": "bahnhof",
+      "article": "der",
+      "de": "Schalter",
+      "uk": "каса / віконце обслуговування",
+      "note": "Для цього значення немає простого правила за закінченням — вчи як der Schalter.",
+      "legacyKey": "bahnhof|Schalter"
+    },
+    {
+      "id": "stoerung",
+      "section": "bahnhof",
+      "article": "die",
+      "de": "Störung",
+      "uk": "несправність / збій",
+      "note": "Закінчення -ung майже завжди → die: die Störung.",
+      "legacyKey": "bahnhof|Störung"
+    },
+    {
+      "id": "strecke",
+      "section": "bahnhof",
+      "article": "die",
+      "de": "Strecke",
+      "uk": "маршрут / ділянка шляху",
+      "note": "Для Strecke немає надійного правила за формою — вчи як die Strecke.",
+      "legacyKey": "bahnhof|Strecke"
+    },
+    {
+      "id": "zug",
+      "section": "bahnhof",
+      "article": "der",
+      "de": "Zug",
+      "uk": "поїзд",
+      "note": "Для Zug немає простого правила за закінченням — вчи разом: der Zug.",
+      "legacyKey": "bahnhof|Zug"
+    },
+    {
+      "id": "puenktlich",
+      "section": "bahnhof",
+      "article": null,
+      "de": "pünktlich",
+      "uk": "вчасно / пунктуально",
+      "legacyKey": "bahnhof|pünktlich"
+    },
+    {
+      "id": "verspaetet",
+      "section": "bahnhof",
+      "article": null,
+      "de": "verspätet",
+      "uk": "із запізненням",
+      "legacyKey": "bahnhof|verspätet"
+    },
+    {
+      "id": "flughafen",
+      "section": "unterwegs",
+      "article": "der",
+      "de": "Flughafen",
+      "uk": "аеропорт",
+      "note": "Складне слово: der Hafen визначає рід → der Flughafen.",
+      "legacyKey": "unterwegs|Flughafen"
+    },
+    {
+      "id": "flugzeug",
+      "section": "unterwegs",
+      "article": "das",
+      "de": "Flugzeug",
+      "uk": "літак",
+      "note": "Складне слово: das Zeug визначає рід → das Flugzeug.",
+      "legacyKey": "unterwegs|Flugzeug"
+    },
+    {
+      "id": "haltestelle",
+      "section": "unterwegs",
+      "article": "die",
+      "de": "Haltestelle",
+      "uk": "зупинка",
+      "note": "Складне слово: die Stelle визначає рід → die Haltestelle.",
+      "legacyKey": "unterwegs|Haltestelle"
+    },
+    {
+      "id": "linie",
+      "section": "unterwegs",
+      "article": "die",
+      "de": "Linie",
+      "uk": "лінія / маршрут",
+      "note": "Багато іменників на -ie жіночого роду → die Linie.",
+      "legacyKey": "unterwegs|Linie"
+    },
+    {
+      "id": "monatskarte",
+      "section": "unterwegs",
+      "article": "die",
+      "de": "Monatskarte",
+      "uk": "місячний проїзний",
+      "note": "Складне слово: die Karte визначає рід → die Monatskarte.",
+      "legacyKey": "unterwegs|Monatskarte"
+    },
+    {
+      "id": "richtung",
+      "section": "unterwegs",
+      "article": "die",
+      "de": "Richtung",
+      "uk": "напрямок",
+      "note": "Закінчення -ung майже завжди → die: die Richtung.",
+      "legacyKey": "unterwegs|Richtung"
+    },
+    {
+      "id": "s-bahn",
+      "section": "unterwegs",
+      "article": "die",
+      "de": "S-Bahn",
+      "uk": "міська електричка",
+      "note": "Головне слово — die Bahn, тому die S-Bahn.",
+      "legacyKey": "unterwegs|S-Bahn"
+    },
+    {
+      "id": "schiff",
+      "section": "unterwegs",
+      "article": "das",
+      "de": "Schiff",
+      "uk": "корабель / судно",
+      "note": "Для Schiff немає надійного правила за формою — вчи разом: das Schiff.",
+      "legacyKey": "unterwegs|Schiff"
+    },
+    {
+      "id": "schild",
+      "section": "unterwegs",
+      "article": "das",
+      "de": "Schild",
+      "uk": "знак / табличка",
+      "note": "У значенні «знак/табличка» — das Schild. Увага: der Schild означає «щит».",
+      "legacyKey": "unterwegs|Schild"
+    },
+    {
+      "id": "stadtzentrum",
+      "section": "unterwegs",
+      "article": "das",
+      "de": "Stadtzentrum",
+      "uk": "центр міста",
+      "note": "Складне слово: das Zentrum визначає рід → das Stadtzentrum.",
+      "legacyKey": "unterwegs|Stadtzentrum"
+    },
+    {
+      "id": "station",
+      "section": "unterwegs",
+      "article": "die",
+      "de": "Station",
+      "uk": "станція",
+      "note": "Іменники на -ion майже завжди жіночого роду → die Station.",
+      "legacyKey": "unterwegs|Station"
+    },
+    {
+      "id": "u-bahn",
+      "section": "unterwegs",
+      "article": "die",
+      "de": "U-Bahn",
+      "uk": "метро",
+      "note": "Головне слово — die Bahn, тому die U-Bahn.",
+      "legacyKey": "unterwegs|U-Bahn"
+    },
+    {
+      "id": "u-bahn-station",
+      "section": "unterwegs",
+      "article": "die",
+      "de": "U-Bahn-Station",
+      "uk": "станція метро",
+      "note": "Остання частина — die Station; вона визначає рід → die U-Bahn-Station.",
+      "legacyKey": "unterwegs|U-Bahn-Station"
+    },
+    {
+      "id": "als",
+      "section": "andere",
+      "article": null,
+      "de": "als",
+      "uk": "ніж (у порівняннях)",
+      "legacyKey": "andere|als"
+    },
+    {
+      "id": "genauso-wie",
+      "section": "andere",
+      "article": null,
+      "de": "genauso … wie …",
+      "uk": "так само … як …",
+      "legacyKey": "andere|genauso … wie …"
+    },
+    {
+      "id": "deshalb",
+      "section": "andere",
+      "article": null,
+      "de": "deshalb",
+      "uk": "тому / через це",
+      "legacyKey": "andere|deshalb"
+    },
+    {
+      "id": "abfahren",
+      "section": "verben",
+      "article": null,
+      "de": "abfahren",
+      "uk": "відправлятися / від'їжджати",
+      "legacyKey": "verben|abfahren"
+    },
+    {
+      "id": "ankommen",
+      "section": "verben",
+      "article": null,
+      "de": "ankommen",
+      "uk": "прибувати",
+      "legacyKey": "verben|ankommen"
+    },
+    {
+      "id": "ausfallen",
+      "section": "verben",
+      "article": null,
+      "de": "ausfallen",
+      "uk": "скасовуватися / не відбутися",
+      "legacyKey": "verben|ausfallen"
+    },
+    {
+      "id": "dauern",
+      "section": "verben",
+      "article": null,
+      "de": "dauern",
+      "uk": "тривати",
+      "legacyKey": "verben|dauern"
+    },
+    {
+      "id": "einsteigen",
+      "section": "verben",
+      "article": null,
+      "de": "einsteigen",
+      "uk": "сідати в транспорт",
+      "legacyKey": "verben|einsteigen"
+    },
+    {
+      "id": "umsteigen",
+      "section": "verben",
+      "article": null,
+      "de": "umsteigen",
+      "uk": "робити пересадку",
+      "legacyKey": "verben|umsteigen"
+    },
+    {
+      "id": "aussteigen",
+      "section": "verben",
+      "article": null,
+      "de": "aussteigen",
+      "uk": "виходити з транспорту",
+      "legacyKey": "verben|aussteigen"
+    },
+    {
+      "id": "reservieren",
+      "section": "verben",
+      "article": null,
+      "de": "reservieren",
+      "uk": "резервувати / бронювати",
+      "legacyKey": "verben|reservieren"
+    },
+    {
+      "id": "verpassen",
+      "section": "verben",
+      "article": null,
+      "de": "verpassen",
+      "uk": "пропустити / не встигнути",
+      "legacyKey": "verben|verpassen"
+    },
+    {
+      "id": "warten",
+      "section": "verben",
+      "article": null,
+      "de": "warten",
+      "uk": "чекати",
+      "legacyKey": "verben|warten"
+    }
+  ]
+}
