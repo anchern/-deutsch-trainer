@@ -12,6 +12,11 @@ export function validateTopics(topics) {
       const shared = canonical.get(w.id);
       if (shared && (shared.de !== w.de || shared.uk !== w.uk || shared.article !== w.article || !!shared.plural !== !!w.plural)) throw new Error(`Конфлікт спільного слова: ${w.id}`);
       if (w.accepted && (!Array.isArray(w.accepted) || w.accepted.some(a => typeof a !== 'string' || !a.trim()))) throw new Error(`Некоректні варіанти: ${w.id}`);
+      if (w.definitionDe !== undefined && (typeof w.definitionDe !== 'string' || !w.definitionDe.trim())) throw new Error(`Некоректне пояснення: ${w.id}`);
+      for (const field of ['synonyms', 'antonyms']) {
+        if (w[field] !== undefined && (!Array.isArray(w[field]) || w[field].some(v => !v || typeof v.de !== 'string' || !v.de.trim() || (v.note !== undefined && typeof v.note !== 'string')))) throw new Error(`Некоректні ${field}: ${w.id}`);
+      }
+      if (shared && ['definitionDe', 'synonyms', 'antonyms'].some(field => JSON.stringify(shared[field]) !== JSON.stringify(w[field]))) throw new Error(`Конфлікт пояснень спільного слова: ${w.id}`);
       canonical.set(w.id, shared || w);
     }
   }

@@ -27,3 +27,21 @@ test('reverse quiz does not mark equivalent translations as wrong distractors',(
   for(let i=0;i<20;i++)assert.ok(!optionsFor(stock,all,'de').includes('das Stockwerk'));
   assert.ok(checkSpelling(stock,'das Stockwerk'));
 });
+test('every published word has a short German definition and explicit relation lists',()=>{
+  for(const w of wordsIn(topics)){
+    assert.ok(w.definitionDe?.trim(),w.id);assert.ok(w.definitionDe.split(/\s+/).length<=45,w.id);
+    for(const variant of w.de.split(/\s*[/,]\s*/)){
+      const escaped=variant.toLocaleLowerCase('de').replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+      assert.ok(!new RegExp(`(?<![\\p{L}])${escaped}(?![\\p{L}])`,'u').test(w.definitionDe.toLocaleLowerCase('de')),`Definition repeats ${variant}`);
+    }
+    for(const field of ['synonyms','antonyms']){
+      assert.ok(Array.isArray(w[field]),`${w.id}: ${field}`);
+      for(const term of w[field])assert.ok(!/[\u0400-\u04FF]/.test(term.de),`Non-German term: ${w.id} / ${term.de}`);
+    }
+  }
+});
+test('invalid lexical metadata and inconsistent shared-word details are rejected',()=>{
+  const malformed=structuredClone(topics);malformed[0].words[0].synonyms=['departure'];assert.throws(()=>validateTopics(malformed),/synonyms/);
+  const shared=structuredClone(topics);shared[1].words.find(w=>w.id==='stadtzentrum').definitionDe='Andere Erklärung.';assert.throws(()=>validateTopics(shared),/Конфлікт/);
+  const optional=structuredClone(topics);for(const t of optional)for(const w of t.words){delete w.definitionDe;delete w.synonyms;delete w.antonyms;}assert.doesNotThrow(()=>validateTopics(optional));
+});
