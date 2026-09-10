@@ -43,3 +43,30 @@ test('again cards become due after the actual learning delay',()=>{
   assert.deepEqual(buildQueue([words[0]],s,mode,now+MINUTE-1),[]);
   assert.deepEqual(buildQueue([words[0]],s,mode,now+MINUTE),['word-0']);
 });
+
+test('overview includes article/spelling reviews even when default flashcards have none',async()=>{
+  const {overviewCounts}=await import('../src/scheduler.js');
+  const s=emptyState();
+  for(const id of ['word-1','word-3','word-5','word-7'])s.cards[cardKey(id,'article')]=schedule(null,'again',now-2*MINUTE);
+  s.cards[cardKey('word-1','spell')]=schedule(null,'again',now-2*MINUTE);
+  const c=overviewCounts(words,s,now);
+  assert.equal(c.byMode['cards-de-ua'].due,0);assert.equal(c.byMode.article.due,4);
+  assert.equal(c.due,5);assert.equal(c.dueWords,4);assert.equal(c.recommendedMode,'article');
+  s.suspended['word-1']=true;assert.equal(overviewCounts(words,s,now).due,3);
+});
+test('mode badges respect section eligibility, mode budgets and both card directions',async()=>{
+  const {modeCounts}=await import('../src/scheduler.js');
+  const s=emptyState();s.settings.newPerDay=5;
+  words.slice(0,5).forEach(w=>{s.cards[cardKey(w.id,'cards-de-ua')]=schedule(null,'good',now);});
+  const c=modeCounts(words,s,now);
+  assert.equal(c['cards-de-ua'].newToday,0);assert.equal(c['cards-ua-de'].newToday,5);
+  assert.equal(c.article.new,30);assert.equal(c.article.newToday,5);
+  const verbs=words.filter(w=>!w.article);assert.equal(modeCounts(verbs,s,now).article.newToday,0);
+});
+test('overview updates when the review becomes due and does not count future cards early',async()=>{
+  const {overviewCounts}=await import('../src/scheduler.js');
+  const s=emptyState();s.cards[cardKey('word-1','article')]=schedule(null,'again',now);
+  assert.equal(overviewCounts(words,s,now+MINUTE-1).due,0);
+  assert.equal(overviewCounts(words,s,now+MINUTE).due,1);
+  assert.equal(overviewCounts(words,s,now+MINUTE).recommendedMode,'article');
+});

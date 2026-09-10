@@ -28,35 +28,64 @@
       "section": "search",
       "article": "der",
       "de": "Altbau",
-      "uk": "старий будинок; будинок старої забудови"
+      "uk": "старий будинок; будинок старої забудови",
+      "definitionDe": "Dieses Haus wurde vor langer Zeit gebaut.",
+      "synonyms": [
+        {
+          "de": "das alte Gebäude",
+          "note": "Описовий відповідник."
+        }
+      ],
+      "antonyms": [
+        {
+          "de": "der Neubau"
+        }
+      ]
     },
     {
       "id": "anzeige",
       "section": "search",
       "article": "die",
       "de": "Anzeige",
-      "uk": "оголошення"
+      "uk": "оголошення",
+      "definitionDe": "Ein kurzer Text in der Zeitung oder im Internet gibt Informationen, zum Beispiel über eine freie Wohnung.",
+      "synonyms": [
+        {
+          "de": "das Inserat",
+          "note": "У значенні оголошення."
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "balkon",
       "section": "search",
       "article": "der",
       "de": "Balkon",
-      "uk": "балкон"
+      "uk": "балкон",
+      "definitionDe": "Dieser Platz ist außen an einem Haus, vor einem Fenster oder einer Tür. Man kann dort sitzen.",
+      "synonyms": [],
+      "antonyms": []
     },
     {
       "id": "besichtigungstermin",
       "section": "search",
       "article": "der",
       "de": "Besichtigungstermin",
-      "uk": "домовлений час огляду житла"
+      "uk": "домовлений час огляду житла",
+      "definitionDe": "Das ist eine feste Zeit, zu der man sich ein Haus oder eine Wohnung ansehen kann.",
+      "synonyms": [],
+      "antonyms": []
     },
     {
       "id": "einbaukueche",
       "section": "search",
       "article": "die",
       "de": "Einbauküche",
-      "uk": "вбудована кухня"
+      "uk": "вбудована кухня",
+      "definitionDe": "Hier stehen Schränke, Herd und andere Geräte fest an ihrem Platz. Alles passt genau in den Raum.",
+      "synonyms": [],
+      "antonyms": []
     },
     {
       "id": "erdgeschoss",
@@ -64,42 +93,92 @@
       "article": "das",
       "de": "Erdgeschoss",
       "uk": "перший поверх (на рівні землі)",
-      "note": "У Німеччині Erdgeschoss — поверх на рівні землі. 1. Obergeschoss — наступний поверх, зазвичай другий за українським відліком."
+      "note": "У Німеччині Erdgeschoss — поверх на рівні землі. 1. Obergeschoss — наступний поверх, зазвичай другий за українським відліком.",
+      "definitionDe": "Diese Etage ist direkt auf der Höhe der Straße. Man muss meistens keine Treppe hinaufgehen.",
+      "synonyms": [
+        {
+          "de": "das Parterre"
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "dachgeschoss",
       "section": "search",
       "article": "das",
       "de": "Dachgeschoss",
-      "uk": "мансардний поверх; поверх під дахом"
+      "uk": "мансардний поверх; поверх під дахом",
+      "definitionDe": "Diese Etage liegt ganz oben im Haus, direkt unter dem Dach.",
+      "synonyms": [],
+      "antonyms": []
     },
     {
       "id": "kaution",
       "section": "search",
       "article": "die",
       "de": "Kaution",
-      "uk": "застава (за оренду житла)"
+      "uk": "застава (за оренду житла)",
+      "definitionDe": "Dieses Geld gibt man am Anfang als Sicherheit. Oft bekommt man es am Ende wieder zurück.",
+      "synonyms": [
+        {
+          "de": "die Mietkaution",
+          "note": "У контексті оренди житла."
+        },
+        {
+          "de": "die Sicherheitsleistung",
+          "note": "Формальне слово."
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "miete",
       "section": "search",
       "article": "die",
       "de": "Miete",
-      "uk": "орендна плата; оренда"
+      "uk": "орендна плата; оренда",
+      "definitionDe": "Dieses Geld bezahlt man regelmäßig, um eine Wohnung oder ein Haus benutzen zu dürfen.",
+      "synonyms": [
+        {
+          "de": "der Mietpreis",
+          "note": "Коли йдеться про суму платежу."
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "monatsmiete",
       "section": "search",
       "article": "die",
       "de": "Monatsmiete",
-      "uk": "місячна орендна плата"
+      "uk": "місячна орендна плата",
+      "definitionDe": "So viel Geld zahlt man jeden Monat für die Nutzung einer Wohnung oder eines Hauses.",
+      "synonyms": [
+        {
+          "de": "die monatliche Miete",
+          "note": "Описовий відповідник."
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "moebliert",
       "section": "search",
       "article": null,
       "de": "möbliert",
-      "uk": "мебльований"
+      "uk": "мебльований",
+      "definitionDe": "In der Wohnung stehen schon ein Bett, ein Tisch und andere Möbel.",
+      "synonyms": [
+        {
+          "de": "eingerichtet",
+          "note": "Близьке: облаштований."
+        }
+      ],
+      "antonyms": [
+        {
+          "de": "unmöbliert"
+        }
+      ]
     },
     {
       "id": "nebenkosten",
@@ -108,14 +187,34 @@
       "de": "Nebenkosten",
       "uk": "додаткові витрати до орендної плати",
       "note": "Уживається в множині. Це додаткові платежі за утримання житла; точний склад залежить від договору.",
-      "plural": true
+      "plural": true,
+      "definitionDe": "Dieses Geld zahlt man zusätzlich für die Wohnung, zum Beispiel für Wasser, Heizung oder die Müllabfuhr.",
+      "synonyms": [
+        {
+          "de": "die Betriebskosten",
+          "note": "Близьке у контексті оренди, точний склад платежів залежить від договору."
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "neubau",
       "section": "search",
       "article": "der",
       "de": "Neubau",
-      "uk": "новобудова"
+      "uk": "новобудова",
+      "definitionDe": "Dieses Haus wurde erst vor kurzer Zeit gebaut.",
+      "synonyms": [
+        {
+          "de": "das neue Gebäude",
+          "note": "Описовий відповідник."
+        }
+      ],
+      "antonyms": [
+        {
+          "de": "der Altbau"
+        }
+      ]
     },
     {
       "id": "obergeschoss",
@@ -123,7 +222,15 @@
       "article": "das",
       "de": "Obergeschoss",
       "uk": "поверх вище рівня землі",
-      "note": "1. OG розташований над Erdgeschoss. Скорочення: OG."
+      "note": "1. OG розташований над Erdgeschoss. Скорочення: OG.",
+      "definitionDe": "Diese Etage liegt über der Etage auf Straßenhöhe. Zum Beispiel ist sie über dem Erdgeschoss.",
+      "synonyms": [],
+      "antonyms": [
+        {
+          "de": "das Untergeschoss",
+          "note": "Просторовий контраст: поверх унизу, часто під рівнем землі."
+        }
+      ]
     },
     {
       "id": "quadratmeter",
@@ -131,21 +238,54 @@
       "article": "der",
       "de": "Quadratmeter",
       "uk": "квадратний метр (м²)",
-      "note": "Скорочення: m² або qm."
+      "note": "Скорочення: m² або qm.",
+      "definitionDe": "Mit dieser Einheit misst man die Größe einer Fläche. Ein Feld ist einen Meter lang und einen Meter breit.",
+      "synonyms": [],
+      "antonyms": []
     },
     {
       "id": "stadtrand",
       "section": "search",
       "article": "der",
       "de": "Stadtrand",
-      "uk": "околиця міста"
+      "uk": "околиця міста",
+      "definitionDe": "Dieser Teil liegt außen an einer Stadt. Dahinter beginnt oft das Land.",
+      "synonyms": [
+        {
+          "de": "der äußere Teil der Stadt",
+          "note": "Описовий відповідник."
+        }
+      ],
+      "antonyms": [
+        {
+          "de": "das Stadtzentrum"
+        },
+        {
+          "de": "die Innenstadt"
+        }
+      ]
     },
     {
       "id": "stadtzentrum",
       "section": "search",
       "article": "das",
       "de": "Stadtzentrum",
-      "uk": "центр міста"
+      "uk": "центр міста",
+      "definitionDe": "Das ist die Mitte einer Stadt. Hier gibt es oft viele Geschäfte und Cafés.",
+      "synonyms": [
+        {
+          "de": "die Innenstadt"
+        },
+        {
+          "de": "die Stadtmitte"
+        }
+      ],
+      "antonyms": [
+        {
+          "de": "der Stadtrand",
+          "note": "Просторовий контраст."
+        }
+      ]
     },
     {
       "id": "stock",
@@ -157,7 +297,20 @@
       "accepted": [
         "Stockwerk",
         "das Stockwerk"
-      ]
+      ],
+      "definitionDe": "Das ist eine Ebene in einem Haus. Ein hohes Haus hat viele davon.",
+      "synonyms": [
+        {
+          "de": "das Stockwerk"
+        },
+        {
+          "de": "die Etage"
+        },
+        {
+          "de": "das Geschoss"
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "stockwerk",
@@ -168,112 +321,245 @@
       "accepted": [
         "Stock",
         "der Stock"
-      ]
+      ],
+      "definitionDe": "Das ist eine Ebene in einem Haus. Eine Treppe führt zur nächsten Ebene.",
+      "synonyms": [
+        {
+          "de": "der Stock"
+        },
+        {
+          "de": "die Etage"
+        },
+        {
+          "de": "das Geschoss"
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "eine-wohnung-besichtigen",
       "section": "search",
       "article": null,
       "de": "eine Wohnung besichtigen",
-      "uk": "оглядати квартиру"
+      "uk": "оглядати квартиру",
+      "definitionDe": "Man schaut sich die Räume an, bevor man entscheidet, ob man dort leben möchte.",
+      "synonyms": [
+        {
+          "de": "sich eine Wohnung ansehen"
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "wohnungsanzeige",
       "section": "search",
       "article": "die",
       "de": "Wohnungsanzeige",
-      "uk": "оголошення про житло"
+      "uk": "оголошення про житло",
+      "definitionDe": "In diesem kurzen Text findet man Informationen über freie Räume zum Wohnen, zum Beispiel Preis, Größe und Adresse.",
+      "synonyms": [
+        {
+          "de": "das Wohnungsinserat"
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "zentral",
       "section": "search",
       "article": null,
       "de": "zentral",
-      "uk": "центральний; у центрі"
+      "uk": "центральний; у центрі",
+      "definitionDe": "Etwas liegt in der Mitte oder nahe am Zentrum. Von dort kann man viele Orte gut erreichen.",
+      "synonyms": [
+        {
+          "de": "zentrumsnah",
+          "note": "Близьке: недалеко від центру."
+        }
+      ],
+      "antonyms": [
+        {
+          "de": "abgelegen",
+          "note": "У контексті розташування житла."
+        }
+      ]
     },
     {
       "id": "einweihungsparty",
       "section": "home",
       "article": "die",
       "de": "Einweihungsparty",
-      "uk": "вечірка з нагоди новосілля"
+      "uk": "вечірка з нагоди новосілля",
+      "definitionDe": "Man lädt Freunde in sein neues Zuhause ein. Zusammen feiert man, dass man jetzt dort wohnt.",
+      "synonyms": [
+        {
+          "de": "die Einweihungsfeier"
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "einzug",
       "section": "home",
       "article": "der",
       "de": "Einzug",
-      "uk": "вселення; в’їзд у житло"
+      "uk": "вселення; в’їзд у житло",
+      "definitionDe": "Man bringt seine Sachen in ein neues Zuhause und beginnt dort zu wohnen.",
+      "synonyms": [],
+      "antonyms": [
+        {
+          "de": "der Auszug"
+        }
+      ]
     },
     {
       "id": "hausmeister",
       "section": "home",
       "article": "der",
       "de": "Hausmeister",
-      "uk": "доглядач будинку"
+      "uk": "доглядач будинку",
+      "definitionDe": "Diese Person kümmert sich um ein Gebäude. Sie repariert kleine Dinge und hilft bei Problemen.",
+      "synonyms": [
+        {
+          "de": "der Hauswart",
+          "note": "Поширено, зокрема, у Швейцарії."
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "hausordnung",
       "section": "home",
       "article": "die",
       "de": "Hausordnung",
-      "uk": "правила проживання в будинку"
+      "uk": "правила проживання в будинку",
+      "definitionDe": "Diese Regeln sagen, was alle Bewohner in einem Gebäude tun dürfen und wann sie leise sein müssen.",
+      "synonyms": [
+        {
+          "de": "die Regeln im Haus",
+          "note": "Описовий відповідник."
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "hausverwaltung",
       "section": "home",
       "article": "die",
       "de": "Hausverwaltung",
-      "uk": "управління будинком; керуюча компанія"
+      "uk": "управління будинком; керуюча компанія",
+      "definitionDe": "Diese Firma oder Gruppe kümmert sich um ein Gebäude, organisiert Reparaturen und schreibt den Bewohnern.",
+      "synonyms": [],
+      "antonyms": []
     },
     {
       "id": "mieter",
       "section": "home",
       "article": "der",
       "de": "Mieter",
-      "uk": "орендар; наймач житла"
+      "uk": "орендар; наймач житла",
+      "definitionDe": "Diese Person bezahlt regelmäßig Geld, damit sie in einer Wohnung leben darf.",
+      "synonyms": [
+        {
+          "de": "der Wohnungsmieter",
+          "note": "У контексті житла."
+        }
+      ],
+      "antonyms": [
+        {
+          "de": "der Vermieter",
+          "note": "Протилежна роль у відносинах оренди."
+        }
+      ]
     },
     {
       "id": "muell",
       "section": "home",
       "article": "der",
       "de": "Müll",
-      "uk": "сміття"
+      "uk": "сміття",
+      "definitionDe": "Das sind Dinge, die man nicht mehr braucht und wegwirft.",
+      "synonyms": [
+        {
+          "de": "der Abfall"
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "den-muell-trennen",
       "section": "home",
       "article": null,
       "de": "den Müll trennen",
-      "uk": "сортувати сміття"
+      "uk": "сортувати сміття",
+      "definitionDe": "Man legt Papier, Glas und Plastik in verschiedene Behälter. So kann man vieles wieder benutzen.",
+      "synonyms": [
+        {
+          "de": "den Abfall sortieren"
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "muelltonne",
       "section": "home",
       "article": "die",
       "de": "Mülltonne",
-      "uk": "сміттєвий бак"
+      "uk": "сміттєвий бак",
+      "definitionDe": "In diesen großen Behälter wirft man Dinge, die man nicht mehr braucht.",
+      "synonyms": [
+        {
+          "de": "die Abfalltonne"
+        },
+        {
+          "de": "der Müllbehälter",
+          "note": "Загальніше слово."
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "nachbar",
       "section": "home",
       "article": "der",
       "de": "Nachbar",
-      "uk": "сусід"
+      "uk": "сусід",
+      "definitionDe": "Diese Person wohnt direkt neben dir oder ganz in deiner Nähe.",
+      "synonyms": [],
+      "antonyms": []
     },
     {
       "id": "umzug",
       "section": "home",
       "article": "der",
       "de": "Umzug",
-      "uk": "переїзд"
+      "uk": "переїзд",
+      "definitionDe": "Man bringt seine Sachen von der alten Adresse zur neuen und wohnt dann dort.",
+      "synonyms": [
+        {
+          "de": "der Wohnungswechsel"
+        },
+        {
+          "de": "der Wohnortwechsel",
+          "note": "Якщо змінюється місце проживання."
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "vermieter",
       "section": "home",
       "article": "der",
       "de": "Vermieter",
-      "uk": "орендодавець"
+      "uk": "орендодавець",
+      "definitionDe": "Diese Person lässt andere in ihrer Wohnung wohnen und bekommt dafür Geld.",
+      "synonyms": [],
+      "antonyms": [
+        {
+          "de": "der Mieter",
+          "note": "Протилежна роль у відносинах оренди."
+        }
+      ]
     },
     {
       "id": "wohngemeinschaft",
@@ -287,21 +573,46 @@
         "Wohngemeinschaft",
         "die WG",
         "die Wohngemeinschaft"
-      ]
+      ],
+      "definitionDe": "Mehrere Personen leben zusammen in einer Wohnung. Oft hat jede ein eigenes Zimmer.",
+      "synonyms": [],
+      "antonyms": []
     },
     {
       "id": "mitteilung",
       "section": "home",
       "article": "die",
       "de": "Mitteilung",
-      "uk": "повідомлення; сповіщення"
+      "uk": "повідомлення; сповіщення",
+      "definitionDe": "Jemand gibt einer anderen Person eine Information, mündlich oder schriftlich.",
+      "synonyms": [
+        {
+          "de": "die Nachricht"
+        },
+        {
+          "de": "die Information",
+          "note": "Загальніше слово."
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "nachricht",
       "section": "home",
       "article": "die",
       "de": "Nachricht",
-      "uk": "повідомлення; звістка"
+      "uk": "повідомлення; звістка",
+      "definitionDe": "Jemand schreibt oder sagt einer anderen Person etwas Neues, zum Beispiel am Handy.",
+      "synonyms": [
+        {
+          "de": "die Mitteilung"
+        },
+        {
+          "de": "die Botschaft",
+          "note": "Залежить від контексту."
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "ausziehen",
@@ -313,7 +624,19 @@
       "example": {
         "de": "Ich ziehe im Juni aus der alten Wohnung aus.",
         "uk": "Я виїжджаю зі старої квартири в червні."
-      }
+      },
+      "definitionDe": "Man verlässt sein altes Zuhause und lebt danach nicht mehr dort.",
+      "synonyms": [
+        {
+          "de": "die Wohnung verlassen",
+          "note": "Описовий відповідник, сам по собі також може означати просто вийти."
+        }
+      ],
+      "antonyms": [
+        {
+          "de": "einziehen"
+        }
+      ]
     },
     {
       "id": "einziehen",
@@ -324,7 +647,19 @@
       "example": {
         "de": "Wir ziehen morgen in die neue Wohnung ein.",
         "uk": "Ми завтра вселяємося в нову квартиру."
-      }
+      },
+      "definitionDe": "Man bringt seine Sachen in ein neues Zuhause und beginnt dort zu leben.",
+      "synonyms": [
+        {
+          "de": "eine Wohnung beziehen",
+          "note": "Більш формальний відповідник."
+        }
+      ],
+      "antonyms": [
+        {
+          "de": "ausziehen"
+        }
+      ]
     },
     {
       "id": "gefallen",
@@ -335,7 +670,24 @@
       "example": {
         "de": "Die Wohnung gefällt mir.",
         "uk": "Мені подобається квартира."
-      }
+      },
+      "definitionDe": "Man findet etwas schön oder gut und mag es.",
+      "synonyms": [
+        {
+          "de": "jemandem zusagen",
+          "note": "Більш формальне: подобатися комусь."
+        }
+      ],
+      "antonyms": [
+        {
+          "de": "missfallen",
+          "note": "Більш формальне."
+        },
+        {
+          "de": "nicht gefallen",
+          "note": "Заперечення."
+        }
+      ]
     },
     {
       "id": "haengen",
@@ -347,7 +699,20 @@
       "example": {
         "de": "Das Bild hängt an der Wand.",
         "uk": "Картина висить на стіні."
-      }
+      },
+      "definitionDe": "Etwas ist oben fest und reicht nach unten, zum Beispiel eine Lampe an der Decke. Man kann es auch so befestigen.",
+      "synonyms": [
+        {
+          "de": "befestigen",
+          "note": "Лише близьке до дії «вішати», не до стану «висіти»."
+        }
+      ],
+      "antonyms": [
+        {
+          "de": "abhängen",
+          "note": "Для дії: зняти те, що висить."
+        }
+      ]
     },
     {
       "id": "kuendigen",
@@ -358,7 +723,20 @@
       "example": {
         "de": "Ich kündige den Mietvertrag.",
         "uk": "Я розриваю договір оренди."
-      }
+      },
+      "definitionDe": "Man sagt oder schreibt: Der Vertrag soll zu einem bestimmten Zeitpunkt enden.",
+      "synonyms": [
+        {
+          "de": "einen Vertrag beenden",
+          "note": "Описовий відповідник."
+        }
+      ],
+      "antonyms": [
+        {
+          "de": "einen Vertrag verlängern",
+          "note": "Контраст: продовжити договір."
+        }
+      ]
     },
     {
       "id": "legen",
@@ -370,7 +748,19 @@
       "example": {
         "de": "Ich lege das Buch auf den Tisch.",
         "uk": "Я кладу книжку на стіл."
-      }
+      },
+      "definitionDe": "Man bringt etwas an einen Platz. Danach ist es dort flach, zum Beispiel ein Buch auf dem Tisch.",
+      "synonyms": [
+        {
+          "de": "hinlegen"
+        }
+      ],
+      "antonyms": [
+        {
+          "de": "aufheben",
+          "note": "Контекст: підняти річ з місця, куди її поклали."
+        }
+      ]
     },
     {
       "id": "liegen",
@@ -381,7 +771,15 @@
       "example": {
         "de": "Das Buch liegt auf dem Tisch.",
         "uk": "Книжка лежить на столі."
-      }
+      },
+      "definitionDe": "Etwas oder jemand ist flach auf einer Fläche, zum Beispiel ein Buch auf dem Tisch.",
+      "synonyms": [],
+      "antonyms": [
+        {
+          "de": "stehen",
+          "note": "Контраст положення: лежати / стояти."
+        }
+      ]
     },
     {
       "id": "mieten",
@@ -392,7 +790,20 @@
       "example": {
         "de": "Wir mieten eine Wohnung.",
         "uk": "Ми орендуємо квартиру."
-      }
+      },
+      "definitionDe": "Man bezahlt Geld, damit man eine Wohnung oder ein Auto für eine bestimmte Zeit benutzen darf.",
+      "synonyms": [
+        {
+          "de": "anmieten",
+          "note": "Більш формальне."
+        }
+      ],
+      "antonyms": [
+        {
+          "de": "vermieten",
+          "note": "Протилежна роль в оренді, не заперечення дії."
+        }
+      ]
     },
     {
       "id": "stehen",
@@ -403,7 +814,15 @@
       "example": {
         "de": "Der Schrank steht im Flur.",
         "uk": "Шафа стоїть у коридорі."
-      }
+      },
+      "definitionDe": "Etwas oder jemand ist aufrecht an einem Platz, zum Beispiel ein Schrank im Flur.",
+      "synonyms": [],
+      "antonyms": [
+        {
+          "de": "liegen",
+          "note": "Контраст положення: стояти / лежати."
+        }
+      ]
     },
     {
       "id": "stellen",
@@ -415,7 +834,19 @@
       "example": {
         "de": "Ich stelle die Lampe auf den Tisch.",
         "uk": "Я ставлю лампу на стіл."
-      }
+      },
+      "definitionDe": "Man bringt etwas aufrecht an einen Platz, zum Beispiel eine Flasche auf den Tisch.",
+      "synonyms": [
+        {
+          "de": "hinstellen"
+        }
+      ],
+      "antonyms": [
+        {
+          "de": "wegnehmen",
+          "note": "Контекст: забрати річ з місця, куди її поставили."
+        }
+      ]
     },
     {
       "id": "umziehen",
@@ -427,7 +858,20 @@
       "example": {
         "de": "Wir ziehen nach Berlin um.",
         "uk": "Ми переїжджаємо до Берліна."
-      }
+      },
+      "definitionDe": "Man wechselt sein Zuhause und bringt seine Sachen an die neue Adresse.",
+      "synonyms": [
+        {
+          "de": "den Wohnort wechseln",
+          "note": "Описовий відповідник."
+        }
+      ],
+      "antonyms": [
+        {
+          "de": "bleiben",
+          "note": "Контекст: залишитися жити на тому самому місці."
+        }
+      ]
     },
     {
       "id": "vermieten",
@@ -438,7 +882,15 @@
       "example": {
         "de": "Sie vermietet ihre Wohnung.",
         "uk": "Вона здає свою квартиру в оренду."
-      }
+      },
+      "definitionDe": "Man lässt jemanden seine Wohnung oder sein Auto benutzen und bekommt dafür Geld.",
+      "synonyms": [],
+      "antonyms": [
+        {
+          "de": "mieten",
+          "note": "Протилежна роль в оренді, не заперечення дії."
+        }
+      ]
     }
   ]
 }

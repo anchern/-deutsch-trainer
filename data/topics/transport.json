@@ -35,7 +35,19 @@
       "de": "Abfahrt",
       "uk": "відправлення / від'їзд",
       "note": "die, бо основа Fahrt — жіночого роду: die Fahrt.",
-      "legacyKey": "bahnhof|Abfahrt"
+      "legacyKey": "bahnhof|Abfahrt",
+      "definitionDe": "Ein Bus oder ein Zug fährt an einem Ort los.",
+      "synonyms": [
+        {
+          "de": "die Abreise",
+          "note": "Близьке: від’їзд людини в подорож."
+        }
+      ],
+      "antonyms": [
+        {
+          "de": "die Ankunft"
+        }
+      ]
     },
     {
       "id": "ankunft",
@@ -44,7 +56,22 @@
       "de": "Ankunft",
       "uk": "прибуття",
       "note": "die: для слів на -kunft надійного загального правила немає — die Ankunft краще запам’ятати разом з артиклем.",
-      "legacyKey": "bahnhof|Ankunft"
+      "legacyKey": "bahnhof|Ankunft",
+      "definitionDe": "Ein Bus, ein Zug oder eine Person ist jetzt am Ziel.",
+      "synonyms": [
+        {
+          "de": "das Eintreffen",
+          "note": "Більш формальне слово."
+        }
+      ],
+      "antonyms": [
+        {
+          "de": "die Abfahrt"
+        },
+        {
+          "de": "die Abreise"
+        }
+      ]
     },
     {
       "id": "bahnhof",
@@ -53,7 +80,10 @@
       "de": "Bahnhof",
       "uk": "вокзал",
       "note": "Складне слово: der Hof визначає рід → der Bahnhof.",
-      "legacyKey": "bahnhof|Bahnhof"
+      "legacyKey": "bahnhof|Bahnhof",
+      "definitionDe": "Hier halten Züge. Menschen steigen ein und aus. Oft kann man hier Tickets kaufen.",
+      "synonyms": [],
+      "antonyms": []
     },
     {
       "id": "bahnsteig",
@@ -62,7 +92,15 @@
       "de": "Bahnsteig",
       "uk": "платформа / перон",
       "note": "Складне слово: остання частина der Steig визначає рід → der Bahnsteig.",
-      "legacyKey": "bahnhof|Bahnsteig"
+      "legacyKey": "bahnhof|Bahnsteig",
+      "definitionDe": "Hier warten Menschen direkt neben dem Zug. Von hier steigen sie ein.",
+      "synonyms": [
+        {
+          "de": "der Perron",
+          "note": "Переважно у Швейцарії."
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "durchsage",
@@ -71,7 +109,15 @@
       "de": "Durchsage",
       "uk": "оголошення",
       "note": "Слова на -sage тут жіночого роду: die Ansage, die Aussage, die Durchsage.",
-      "legacyKey": "bahnhof|Durchsage"
+      "legacyKey": "bahnhof|Durchsage",
+      "definitionDe": "Man hört eine Information über einen Lautsprecher, zum Beispiel im Zug.",
+      "synonyms": [
+        {
+          "de": "die Ansage",
+          "note": "У контексті усного оголошення."
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "fahrkarte",
@@ -80,7 +126,17 @@
       "de": "Fahrkarte",
       "uk": "квиток",
       "note": "Складне слово: die Karte визначає рід → die Fahrkarte.",
-      "legacyKey": "bahnhof|Fahrkarte"
+      "legacyKey": "bahnhof|Fahrkarte",
+      "definitionDe": "Man kauft dieses Papier oder zeigt es auf dem Handy. Damit darf man Bus oder Zug fahren.",
+      "synonyms": [
+        {
+          "de": "das Ticket"
+        },
+        {
+          "de": "der Fahrschein"
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "fahrkartenautomat",
@@ -89,7 +145,10 @@
       "de": "Fahrkartenautomat",
       "uk": "квитковий автомат",
       "note": "Складне слово: der Automat визначає рід → der Fahrkartenautomat.",
-      "legacyKey": "bahnhof|Fahrkartenautomat"
+      "legacyKey": "bahnhof|Fahrkartenautomat",
+      "definitionDe": "An diesem Gerät bezahlt man und bekommt ein Ticket für Bus oder Zug.",
+      "synonyms": [],
+      "antonyms": []
     },
     {
       "id": "fahrplan",
@@ -98,7 +157,10 @@
       "de": "Fahrplan",
       "uk": "розклад руху",
       "note": "Складне слово: der Plan визначає рід → der Fahrplan.",
-      "legacyKey": "bahnhof|Fahrplan"
+      "legacyKey": "bahnhof|Fahrplan",
+      "definitionDe": "Hier sieht man, wann Busse und Züge fahren und wo sie halten.",
+      "synonyms": [],
+      "antonyms": []
     },
     {
       "id": "fahrt",
@@ -107,7 +169,15 @@
       "de": "Fahrt",
       "uk": "поїздка",
       "note": "Fahrt — жіночого роду; тут немає простого продуктивного закінчення, тож вчи як die Fahrt.",
-      "legacyKey": "bahnhof|Fahrt"
+      "legacyKey": "bahnhof|Fahrt",
+      "definitionDe": "Man ist mit einem Auto, Bus oder Zug unterwegs.",
+      "synonyms": [
+        {
+          "de": "die Reise",
+          "note": "Близьке: часто довша подорож."
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "gleis",
@@ -116,7 +186,10 @@
       "de": "Gleis",
       "uk": "колія / платформа",
       "note": "Для Gleis немає надійного правила за формою — вчи разом: das Gleis.",
-      "legacyKey": "bahnhof|Gleis"
+      "legacyKey": "bahnhof|Gleis",
+      "definitionDe": "Ein Zug fährt auf zwei langen Stücken aus Metall. Diese liegen nebeneinander auf dem Boden.",
+      "synonyms": [],
+      "antonyms": []
     },
     {
       "id": "hin-und-rueckfahrt",
@@ -125,7 +198,20 @@
       "de": "Hin- und Rückfahrt",
       "uk": "поїздка туди й назад",
       "note": "Головне слово — die Fahrt, тому die Hin- und Rückfahrt.",
-      "legacyKey": "bahnhof|Hin- und Rückfahrt"
+      "legacyKey": "bahnhof|Hin- und Rückfahrt",
+      "definitionDe": "Man fährt an einen anderen Ort und später wieder zum ersten Ort zurück.",
+      "synonyms": [
+        {
+          "de": "die Hin- und Rückreise",
+          "note": "Близьке: подорож туди й назад."
+        }
+      ],
+      "antonyms": [
+        {
+          "de": "die einfache Fahrt",
+          "note": "Контраст за типом квитка: лише в один бік."
+        }
+      ]
     },
     {
       "id": "mitarbeiter-mitarbeiterin",
@@ -133,7 +219,15 @@
       "article": "der/die",
       "de": "Mitarbeiter / Mitarbeiterin",
       "uk": "працівник / працівниця",
-      "legacyKey": "bahnhof|Mitarbeiter / Mitarbeiterin"
+      "legacyKey": "bahnhof|Mitarbeiter / Mitarbeiterin",
+      "definitionDe": "Diese Person arbeitet in einer Firma oder in einem Team.",
+      "synonyms": [
+        {
+          "de": "der Angestellte / die Angestellte",
+          "note": "Для найманого працівника."
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "schaffner-schaffnerin",
@@ -141,7 +235,15 @@
       "article": "der/die",
       "de": "Schaffner / Schaffnerin",
       "uk": "кондуктор / кондукторка",
-      "legacyKey": "bahnhof|Schaffner / Schaffnerin"
+      "legacyKey": "bahnhof|Schaffner / Schaffnerin",
+      "definitionDe": "Diese Person arbeitet im Zug und kontrolliert die Tickets der Fahrgäste.",
+      "synonyms": [
+        {
+          "de": "der Zugbegleiter / die Zugbegleiterin",
+          "note": "Сучасна назва працівника поїзда."
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "schalter",
@@ -150,7 +252,15 @@
       "de": "Schalter",
       "uk": "каса / віконце обслуговування",
       "note": "Для цього значення немає простого правила за закінченням — вчи як der Schalter.",
-      "legacyKey": "bahnhof|Schalter"
+      "legacyKey": "bahnhof|Schalter",
+      "definitionDe": "Hier spricht man mit einer Person und kauft zum Beispiel ein Ticket.",
+      "synonyms": [
+        {
+          "de": "der Ticketschalter",
+          "note": "У темі транспорту: уточнена назва каси."
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "stoerung",
@@ -159,7 +269,24 @@
       "de": "Störung",
       "uk": "несправність / збій",
       "note": "Закінчення -ung майже завжди → die: die Störung.",
-      "legacyKey": "bahnhof|Störung"
+      "legacyKey": "bahnhof|Störung",
+      "definitionDe": "Etwas funktioniert nicht richtig. Deshalb kann zum Beispiel ein Zug nicht weiterfahren.",
+      "synonyms": [
+        {
+          "de": "das Problem",
+          "note": "Загальніше слово."
+        },
+        {
+          "de": "die Panne",
+          "note": "Коли йдеться про технічну несправність."
+        }
+      ],
+      "antonyms": [
+        {
+          "de": "der normale Betrieb",
+          "note": "Контекстна протилежність: нормальна робота."
+        }
+      ]
     },
     {
       "id": "strecke",
@@ -168,7 +295,19 @@
       "de": "Strecke",
       "uk": "маршрут / ділянка шляху",
       "note": "Для Strecke немає надійного правила за формою — вчи як die Strecke.",
-      "legacyKey": "bahnhof|Strecke"
+      "legacyKey": "bahnhof|Strecke",
+      "definitionDe": "Das ist der Weg zwischen zwei Orten. Ein Zug oder Bus fährt diesen Weg.",
+      "synonyms": [
+        {
+          "de": "die Route",
+          "note": "Для маршруту."
+        },
+        {
+          "de": "der Weg",
+          "note": "Загальніше слово."
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "zug",
@@ -177,7 +316,15 @@
       "de": "Zug",
       "uk": "поїзд",
       "note": "Для Zug немає простого правила за закінченням — вчи разом: der Zug.",
-      "legacyKey": "bahnhof|Zug"
+      "legacyKey": "bahnhof|Zug",
+      "definitionDe": "Dieses lange Fahrzeug hat mehrere Wagen und fährt auf Schienen.",
+      "synonyms": [
+        {
+          "de": "die Bahn",
+          "note": "У розмові про поїздку залізницею."
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "puenktlich",
@@ -185,7 +332,22 @@
       "article": null,
       "de": "pünktlich",
       "uk": "вчасно / пунктуально",
-      "legacyKey": "bahnhof|pünktlich"
+      "legacyKey": "bahnhof|pünktlich",
+      "definitionDe": "Man kommt genau zur richtigen Zeit, nicht zu früh und nicht zu spät.",
+      "synonyms": [
+        {
+          "de": "rechtzeitig",
+          "note": "Близьке: вчасно, до потрібного моменту."
+        }
+      ],
+      "antonyms": [
+        {
+          "de": "verspätet"
+        },
+        {
+          "de": "unpünktlich"
+        }
+      ]
     },
     {
       "id": "verspaetet",
@@ -193,7 +355,18 @@
       "article": null,
       "de": "verspätet",
       "uk": "із запізненням",
-      "legacyKey": "bahnhof|verspätet"
+      "legacyKey": "bahnhof|verspätet",
+      "definitionDe": "Man kommt später als geplant. Der Bus sollte um acht kommen, aber er kommt um halb neun.",
+      "synonyms": [
+        {
+          "de": "zu spät"
+        }
+      ],
+      "antonyms": [
+        {
+          "de": "pünktlich"
+        }
+      ]
     },
     {
       "id": "flughafen",
@@ -202,7 +375,10 @@
       "de": "Flughafen",
       "uk": "аеропорт",
       "note": "Складне слово: der Hafen визначає рід → der Flughafen.",
-      "legacyKey": "unterwegs|Flughafen"
+      "legacyKey": "unterwegs|Flughafen",
+      "definitionDe": "Hier starten und landen Flugzeuge. Menschen warten dort vor ihrer Reise.",
+      "synonyms": [],
+      "antonyms": []
     },
     {
       "id": "flugzeug",
@@ -211,7 +387,15 @@
       "de": "Flugzeug",
       "uk": "літак",
       "note": "Складне слово: das Zeug визначає рід → das Flugzeug.",
-      "legacyKey": "unterwegs|Flugzeug"
+      "legacyKey": "unterwegs|Flugzeug",
+      "definitionDe": "Dieses Fahrzeug hat Flügel. Es bringt Menschen durch die Luft an andere Orte.",
+      "synonyms": [
+        {
+          "de": "der Flieger",
+          "note": "Розмовне."
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "haltestelle",
@@ -220,7 +404,15 @@
       "de": "Haltestelle",
       "uk": "зупинка",
       "note": "Складне слово: die Stelle визначає рід → die Haltestelle.",
-      "legacyKey": "unterwegs|Haltestelle"
+      "legacyKey": "unterwegs|Haltestelle",
+      "definitionDe": "Hier wartet man auf den Bus oder die Straßenbahn. Man kann hier einsteigen und aussteigen.",
+      "synonyms": [
+        {
+          "de": "der Haltepunkt",
+          "note": "Близьке, переважно в залізничному контексті."
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "linie",
@@ -229,7 +421,15 @@
       "de": "Linie",
       "uk": "лінія / маршрут",
       "note": "Багато іменників на -ie жіночого роду → die Linie.",
-      "legacyKey": "unterwegs|Linie"
+      "legacyKey": "unterwegs|Linie",
+      "definitionDe": "Ein Bus oder eine Bahn fährt regelmäßig auf diesem Weg. Oft hat er eine Nummer.",
+      "synonyms": [
+        {
+          "de": "die Verbindung",
+          "note": "Близьке: транспортне сполучення, не завжди конкретний маршрут."
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "monatskarte",
@@ -238,7 +438,14 @@
       "de": "Monatskarte",
       "uk": "місячний проїзний",
       "note": "Складне слово: die Karte визначає рід → die Monatskarte.",
-      "legacyKey": "unterwegs|Monatskarte"
+      "legacyKey": "unterwegs|Monatskarte",
+      "definitionDe": "Mit diesem Ticket kann man einen Monat lang fahren.",
+      "synonyms": [
+        {
+          "de": "das Monatsticket"
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "richtung",
@@ -247,7 +454,10 @@
       "de": "Richtung",
       "uk": "напрямок",
       "note": "Закінчення -ung майже завжди → die: die Richtung.",
-      "legacyKey": "unterwegs|Richtung"
+      "legacyKey": "unterwegs|Richtung",
+      "definitionDe": "Hierhin fährt oder geht man. Ein Pfeil kann zeigen, wohin es geht.",
+      "synonyms": [],
+      "antonyms": []
     },
     {
       "id": "s-bahn",
@@ -256,7 +466,10 @@
       "de": "S-Bahn",
       "uk": "міська електричка",
       "note": "Головне слово — die Bahn, тому die S-Bahn.",
-      "legacyKey": "unterwegs|S-Bahn"
+      "legacyKey": "unterwegs|S-Bahn",
+      "definitionDe": "Diese Züge fahren durch die Stadt und zu Orten in der Nähe. Sie halten oft.",
+      "synonyms": [],
+      "antonyms": []
     },
     {
       "id": "schiff",
@@ -265,7 +478,10 @@
       "de": "Schiff",
       "uk": "корабель / судно",
       "note": "Для Schiff немає надійного правила за формою — вчи разом: das Schiff.",
-      "legacyKey": "unterwegs|Schiff"
+      "legacyKey": "unterwegs|Schiff",
+      "definitionDe": "Dieses große Fahrzeug fährt auf dem Wasser. Es transportiert Menschen oder Dinge.",
+      "synonyms": [],
+      "antonyms": []
     },
     {
       "id": "schild",
@@ -274,7 +490,15 @@
       "de": "Schild",
       "uk": "знак / табличка",
       "note": "У значенні «знак/табличка» — das Schild. Увага: der Schild означає «щит».",
-      "legacyKey": "unterwegs|Schild"
+      "legacyKey": "unterwegs|Schild",
+      "definitionDe": "Auf dieser Tafel stehen Wörter oder Bilder. Sie gibt Informationen, zum Beispiel im Straßenverkehr.",
+      "synonyms": [
+        {
+          "de": "die Tafel",
+          "note": "Близьке: табличка з інформацією."
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "stadtzentrum",
@@ -283,7 +507,22 @@
       "de": "Stadtzentrum",
       "uk": "центр міста",
       "note": "Складне слово: das Zentrum визначає рід → das Stadtzentrum.",
-      "legacyKey": "unterwegs|Stadtzentrum"
+      "legacyKey": "unterwegs|Stadtzentrum",
+      "definitionDe": "Das ist die Mitte einer Stadt. Hier gibt es oft viele Geschäfte und Cafés.",
+      "synonyms": [
+        {
+          "de": "die Innenstadt"
+        },
+        {
+          "de": "die Stadtmitte"
+        }
+      ],
+      "antonyms": [
+        {
+          "de": "der Stadtrand",
+          "note": "Просторовий контраст."
+        }
+      ]
     },
     {
       "id": "station",
@@ -292,7 +531,15 @@
       "de": "Station",
       "uk": "станція",
       "note": "Іменники на -ion майже завжди жіночого роду → die Station.",
-      "legacyKey": "unterwegs|Station"
+      "legacyKey": "unterwegs|Station",
+      "definitionDe": "Hier hält ein Zug oder eine Bahn. Menschen können einsteigen und aussteigen.",
+      "synonyms": [
+        {
+          "de": "die Haltestelle",
+          "note": "У транспортному контексті."
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "u-bahn",
@@ -301,7 +548,15 @@
       "de": "U-Bahn",
       "uk": "метро",
       "note": "Головне слово — die Bahn, тому die U-Bahn.",
-      "legacyKey": "unterwegs|U-Bahn"
+      "legacyKey": "unterwegs|U-Bahn",
+      "definitionDe": "Diese Bahn fährt in der Stadt, oft unter der Erde.",
+      "synonyms": [
+        {
+          "de": "die Metro",
+          "note": "Назва в багатьох містах світу."
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "u-bahn-station",
@@ -310,7 +565,14 @@
       "de": "U-Bahn-Station",
       "uk": "станція метро",
       "note": "Остання частина — die Station; вона визначає рід → die U-Bahn-Station.",
-      "legacyKey": "unterwegs|U-Bahn-Station"
+      "legacyKey": "unterwegs|U-Bahn-Station",
+      "definitionDe": "Hier wartet man auf eine Bahn, die in der Stadt oft unter der Erde fährt.",
+      "synonyms": [
+        {
+          "de": "der U-Bahnhof"
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "als",
@@ -318,7 +580,10 @@
       "article": null,
       "de": "als",
       "uk": "ніж (у порівняннях)",
-      "legacyKey": "andere|als"
+      "legacyKey": "andere|als",
+      "definitionDe": "Mit diesem Wort vergleicht man zwei Dinge, die nicht gleich sind: Ein Haus ist größer, das andere kleiner.",
+      "synonyms": [],
+      "antonyms": []
     },
     {
       "id": "genauso-wie",
@@ -326,7 +591,14 @@
       "article": null,
       "de": "genauso … wie …",
       "uk": "так само … як …",
-      "legacyKey": "andere|genauso … wie …"
+      "legacyKey": "andere|genauso … wie …",
+      "definitionDe": "Mit diesen Wörtern sagt man: Zwei Personen oder Dinge sind in einem Punkt gleich.",
+      "synonyms": [
+        {
+          "de": "ebenso … wie …"
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "deshalb",
@@ -334,7 +606,20 @@
       "article": null,
       "de": "deshalb",
       "uk": "тому / через це",
-      "legacyKey": "andere|deshalb"
+      "legacyKey": "andere|deshalb",
+      "definitionDe": "Vorher nennt man einen Grund. Mit diesem Wort sagt man dann, was aus diesem Grund passiert.",
+      "synonyms": [
+        {
+          "de": "deswegen"
+        },
+        {
+          "de": "darum"
+        },
+        {
+          "de": "daher"
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "abfahren",
@@ -342,7 +627,18 @@
       "article": null,
       "de": "abfahren",
       "uk": "відправлятися / від'їжджати",
-      "legacyKey": "verben|abfahren"
+      "legacyKey": "verben|abfahren",
+      "definitionDe": "Ein Bus oder ein Zug beginnt seine Fahrt und verlässt den Ort.",
+      "synonyms": [
+        {
+          "de": "losfahren"
+        }
+      ],
+      "antonyms": [
+        {
+          "de": "ankommen"
+        }
+      ]
     },
     {
       "id": "ankommen",
@@ -350,7 +646,22 @@
       "article": null,
       "de": "ankommen",
       "uk": "прибувати",
-      "legacyKey": "verben|ankommen"
+      "legacyKey": "verben|ankommen",
+      "definitionDe": "Man ist nach einer Reise am Ziel. Jetzt ist die Fahrt zu Ende.",
+      "synonyms": [
+        {
+          "de": "eintreffen",
+          "note": "Більш формальне слово."
+        }
+      ],
+      "antonyms": [
+        {
+          "de": "abfahren"
+        },
+        {
+          "de": "abreisen"
+        }
+      ]
     },
     {
       "id": "ausfallen",
@@ -358,7 +669,15 @@
       "article": null,
       "de": "ausfallen",
       "uk": "скасовуватися / не відбутися",
-      "legacyKey": "verben|ausfallen"
+      "legacyKey": "verben|ausfallen",
+      "definitionDe": "Etwas findet nicht statt. Zum Beispiel fährt ein geplanter Zug heute nicht.",
+      "synonyms": [],
+      "antonyms": [
+        {
+          "de": "stattfinden",
+          "note": "Коли йдеться про заплановану подію чи поїздку."
+        }
+      ]
     },
     {
       "id": "dauern",
@@ -366,7 +685,10 @@
       "article": null,
       "de": "dauern",
       "uk": "тривати",
-      "legacyKey": "verben|dauern"
+      "legacyKey": "verben|dauern",
+      "definitionDe": "Etwas braucht eine bestimmte Zeit, zum Beispiel zehn Minuten oder zwei Stunden.",
+      "synonyms": [],
+      "antonyms": []
     },
     {
       "id": "einsteigen",
@@ -374,7 +696,19 @@
       "article": null,
       "de": "einsteigen",
       "uk": "сідати в транспорт",
-      "legacyKey": "verben|einsteigen"
+      "legacyKey": "verben|einsteigen",
+      "definitionDe": "Man geht in einen Bus oder Zug. Danach ist man drinnen.",
+      "synonyms": [
+        {
+          "de": "hineingehen",
+          "note": "Описовий відповідник для входу всередину."
+        }
+      ],
+      "antonyms": [
+        {
+          "de": "aussteigen"
+        }
+      ]
     },
     {
       "id": "umsteigen",
@@ -382,7 +716,15 @@
       "article": null,
       "de": "umsteigen",
       "uk": "робити пересадку",
-      "legacyKey": "verben|umsteigen"
+      "legacyKey": "verben|umsteigen",
+      "definitionDe": "Man verlässt einen Bus oder Zug und fährt mit einem anderen weiter.",
+      "synonyms": [
+        {
+          "de": "das Verkehrsmittel wechseln",
+          "note": "Описовий відповідник."
+        }
+      ],
+      "antonyms": []
     },
     {
       "id": "aussteigen",
@@ -390,7 +732,19 @@
       "article": null,
       "de": "aussteigen",
       "uk": "виходити з транспорту",
-      "legacyKey": "verben|aussteigen"
+      "legacyKey": "verben|aussteigen",
+      "definitionDe": "Man verlässt einen Bus oder Zug. Danach ist man draußen.",
+      "synonyms": [
+        {
+          "de": "herausgehen",
+          "note": "Описовий відповідник для виходу назовні."
+        }
+      ],
+      "antonyms": [
+        {
+          "de": "einsteigen"
+        }
+      ]
     },
     {
       "id": "reservieren",
@@ -398,7 +752,24 @@
       "article": null,
       "de": "reservieren",
       "uk": "резервувати / бронювати",
-      "legacyKey": "verben|reservieren"
+      "legacyKey": "verben|reservieren",
+      "definitionDe": "Man bestellt etwas vorher, damit es später für einen frei bleibt, zum Beispiel einen Tisch.",
+      "synonyms": [
+        {
+          "de": "vorbestellen",
+          "note": "Залежить від об’єкта замовлення."
+        },
+        {
+          "de": "buchen",
+          "note": "Для квитків, номерів або місць."
+        }
+      ],
+      "antonyms": [
+        {
+          "de": "stornieren",
+          "note": "Скасувати зроблене бронювання."
+        }
+      ]
     },
     {
       "id": "verpassen",
@@ -406,7 +777,20 @@
       "article": null,
       "de": "verpassen",
       "uk": "пропустити / не встигнути",
-      "legacyKey": "verben|verpassen"
+      "legacyKey": "verben|verpassen",
+      "definitionDe": "Man kommt zu spät. Der Bus ist schon weg und man kann nicht mehr mitfahren.",
+      "synonyms": [
+        {
+          "de": "versäumen",
+          "note": "Близьке: пропустити подію або можливість."
+        }
+      ],
+      "antonyms": [
+        {
+          "de": "erreichen",
+          "note": "У контексті: den Zug erreichen — встигнути на поїзд."
+        }
+      ]
     },
     {
       "id": "warten",
@@ -414,7 +798,10 @@
       "article": null,
       "de": "warten",
       "uk": "чекати",
-      "legacyKey": "verben|warten"
+      "legacyKey": "verben|warten",
+      "definitionDe": "Man bleibt an einem Ort, bis jemand kommt oder etwas passiert.",
+      "synonyms": [],
+      "antonyms": []
     }
   ]
 }

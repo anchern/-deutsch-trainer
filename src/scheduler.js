@@ -54,3 +54,28 @@ export function buildQueue(words, state, mode, now = Date.now(), limit = 20) {
   const fresh = pool.filter(w => !state.cards[cardKey(w.id, mode)]).slice(0, newAllowance(state, mode, now));
   return [...due, ...fresh].slice(0, limit).map(w => w.id);
 }
+
+export function modeCounts(words, state, now = Date.now()) {
+  return Object.fromEntries(MODES.map(mode => {
+    const count = counts(words, state, mode, now);
+    return [mode, { ...count, newToday: Math.min(count.new, newAllowance(state, mode, now)) }];
+  }));
+}
+export function overviewCounts(words, state, now = Date.now()) {
+  const byMode = modeCounts(words, state, now);
+  const dueWords = new Set(), knownWords = new Set();
+  for (const mode of MODES) {
+    for (const w of eligible(words, state, mode)) {
+      const card = state.cards[cardKey(w.id, mode)];
+      if (card?.due <= now) dueWords.add(w.id);
+      if (card?.interval >= 21) knownWords.add(w.id);
+    }
+  }
+  const upcoming = Object.values(byMode).map(c => c.nextDue).filter(t => t !== null);
+  const due = Object.values(byMode).reduce((sum, c) => sum + c.due, 0);
+  // Open a format that actually has work, rather than always the default cards.
+  const recommendedMode = [...MODES].sort((a, b) => byMode[b].due - byMode[a].due)[0];
+  return { byMode, due, dueWords: dueWords.size, known: knownWords.size,
+    nextDue: upcoming.length ? Math.min(...upcoming) : null,
+    recommendedMode: due ? recommendedMode : MODES.find(m => byMode[m].newToday > 0) || MODES[0] };
+}
