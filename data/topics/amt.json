@@ -1,0 +1,750 @@
+{
+  "id": "amt",
+  "title": "Auf dem Amt",
+  "uk": "В установі",
+  "description": "Документи, заповнення форм і родина",
+  "icon": "book",
+  "page": 92,
+  "sections": [
+    {
+      "id": "amt",
+      "title": "Auf dem Amt",
+      "uk": "В установі"
+    },
+    {
+      "id": "formulare",
+      "title": "Formulare",
+      "uk": "Форми й анкети"
+    },
+    {
+      "id": "verben",
+      "title": "Verben",
+      "uk": "Дієслова"
+    },
+    {
+      "id": "familie",
+      "title": "Familie",
+      "uk": "Родина"
+    },
+    {
+      "id": "andere",
+      "title": "Andere Wörter",
+      "uk": "Інші слова"
+    }
+  ],
+  "words": [
+    {
+      "id": "amt",
+      "section": "amt",
+      "article": "das",
+      "de": "Amt",
+      "uk": "державна установа",
+      "definitionDe": "Hier arbeiten Menschen für die Stadt oder den Staat. Man bekommt hier wichtige Dokumente.",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "id": "aufenthaltserlaubnis",
+      "section": "amt",
+      "article": "die",
+      "de": "Aufenthaltserlaubnis",
+      "uk": "дозвіл на проживання",
+      "definitionDe": "Mit diesem Dokument darf eine Person aus einem anderen Land hier für eine bestimmte Zeit leben.",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "id": "ausweis",
+      "section": "amt",
+      "article": "der",
+      "de": "Ausweis",
+      "uk": "посвідчення особи",
+      "definitionDe": "Dieses Dokument zeigt, wer eine Person ist. Es enthält ihren Namen und ein Foto.",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "id": "behoerde",
+      "section": "amt",
+      "article": "die",
+      "de": "Behörde",
+      "uk": "орган влади / державна установа",
+      "definitionDe": "Diese Stelle arbeitet für den Staat und entscheidet über offizielle Fragen.",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "id": "reisepass",
+      "section": "amt",
+      "article": "der",
+      "de": "Reisepass",
+      "uk": "закордонний паспорт",
+      "definitionDe": "Dieses Dokument mit Foto braucht man für Reisen in viele andere Länder.",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "id": "unterlagen",
+      "section": "amt",
+      "article": "die",
+      "de": "Unterlagen",
+      "uk": "документи",
+      "definitionDe": "Diese Papiere braucht man zum Beispiel für einen Antrag.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Множина: die Unterlagen.",
+      "plural": true
+    },
+    {
+      "id": "zustaendig",
+      "section": "amt",
+      "article": null,
+      "de": "zuständig",
+      "uk": "відповідальний / уповноважений",
+      "definitionDe": "Diese Person oder Stelle kümmert sich um eine bestimmte Aufgabe.",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "id": "adresse",
+      "section": "formulare",
+      "article": "die",
+      "de": "Adresse",
+      "uk": "адреса",
+      "definitionDe": "Diese Angaben zeigen, wo jemand wohnt: Straße, Hausnummer, Postleitzahl und Ort.",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "id": "strasse",
+      "section": "formulare",
+      "article": "die",
+      "de": "Straße",
+      "uk": "вулиця",
+      "definitionDe": "An diesem Weg stehen Häuser. Hier fahren Autos und gehen Menschen.",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "id": "hausnummer",
+      "section": "formulare",
+      "article": "die",
+      "de": "Hausnummer",
+      "uk": "номер будинку",
+      "definitionDe": "Diese Zahl steht an einem Gebäude und gehört zur Adresse.",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "id": "postleitzahl",
+      "section": "formulare",
+      "article": "die",
+      "de": "Postleitzahl",
+      "uk": "поштовий індекс",
+      "definitionDe": "Diese Zahlen gehören zur Adresse und helfen der Post, den richtigen Ort zu finden.",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "id": "wohnort",
+      "section": "formulare",
+      "article": "der",
+      "de": "Wohnort",
+      "uk": "місце проживання",
+      "definitionDe": "Das ist die Stadt oder das Dorf, wo jemand lebt.",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "id": "e-mail-adresse",
+      "section": "formulare",
+      "article": "die",
+      "de": "E-Mail-Adresse",
+      "uk": "адреса електронної пошти",
+      "definitionDe": "An diese Angabe mit einem @ schickt man Nachrichten im Internet.",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "id": "familienname",
+      "section": "formulare",
+      "article": "der",
+      "de": "Familienname",
+      "uk": "прізвище",
+      "definitionDe": "Diesen Namen haben oft Eltern und Kinder gemeinsam.",
+      "synonyms": [
+        {
+          "de": "der Nachname"
+        }
+      ],
+      "antonyms": []
+    },
+    {
+      "id": "familienstand",
+      "section": "formulare",
+      "article": "der",
+      "de": "Familienstand",
+      "uk": "сімейний стан",
+      "definitionDe": "Diese Angabe zeigt zum Beispiel, ob eine Person einen Mann oder eine Frau geheiratet hat.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Варіанти з фото: geschieden, ledig, verheiratet, verwitwet."
+    },
+    {
+      "id": "geschieden",
+      "section": "formulare",
+      "article": null,
+      "de": "geschieden",
+      "uk": "розлучений / розлучена",
+      "definitionDe": "Die Ehe dieser Person ist offiziell zu Ende.",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "id": "ledig",
+      "section": "formulare",
+      "article": null,
+      "de": "ledig",
+      "uk": "неодружений / незаміжня",
+      "definitionDe": "Diese Person hat noch nie geheiratet.",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "id": "verheiratet",
+      "section": "formulare",
+      "article": null,
+      "de": "verheiratet",
+      "uk": "одружений / заміжня",
+      "definitionDe": "Diese Person lebt in einer Ehe.",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "id": "verwitwet",
+      "section": "formulare",
+      "article": null,
+      "de": "verwitwet",
+      "uk": "овдовілий / овдовіла",
+      "definitionDe": "Der Ehemann oder die Ehefrau dieser Person ist gestorben.",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "id": "formular",
+      "section": "formulare",
+      "article": "das",
+      "de": "Formular",
+      "uk": "бланк / форма для заповнення",
+      "definitionDe": "Auf diesem Papier oder dieser Seite im Internet trägt man Angaben ein.",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "id": "geburtsdatum",
+      "section": "formulare",
+      "article": "das",
+      "de": "Geburtsdatum",
+      "uk": "дата народження",
+      "definitionDe": "Das sind der Tag, der Monat und das Jahr, an denen jemand auf die Welt gekommen ist.",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "id": "geburtsland",
+      "section": "formulare",
+      "article": "das",
+      "de": "Geburtsland",
+      "uk": "країна народження",
+      "definitionDe": "In diesem Staat ist eine Person auf die Welt gekommen.",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "id": "geburtsname",
+      "section": "formulare",
+      "article": "der",
+      "de": "Geburtsname",
+      "uk": "прізвище при народженні",
+      "definitionDe": "Diesen Familiennamen hatte eine Person, als sie auf die Welt kam.",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "id": "geburtsort",
+      "section": "formulare",
+      "article": "der",
+      "de": "Geburtsort",
+      "uk": "місце народження",
+      "definitionDe": "In dieser Stadt oder diesem Dorf ist eine Person auf die Welt gekommen.",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "id": "geschlecht",
+      "section": "formulare",
+      "article": "das",
+      "de": "Geschlecht",
+      "uk": "стать",
+      "definitionDe": "Im Formular stehen dafür zum Beispiel die Angaben männlich, weiblich oder divers.",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "id": "maennlich",
+      "section": "formulare",
+      "article": null,
+      "de": "männlich",
+      "uk": "чоловічий (про стать)",
+      "definitionDe": "Diese Angabe im Formular steht für einen Mann oder Jungen.",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "id": "weiblich",
+      "section": "formulare",
+      "article": null,
+      "de": "weiblich",
+      "uk": "жіночий (про стать)",
+      "definitionDe": "Diese Angabe im Formular steht für eine Frau oder ein Mädchen.",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "id": "divers",
+      "section": "formulare",
+      "article": null,
+      "de": "divers",
+      "uk": "інша стать (варіант у формулярі)",
+      "definitionDe": "Diese Angabe zum Geschlecht steht im Formular neben männlich und weiblich.",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "id": "staatsangehoerigkeit",
+      "section": "formulare",
+      "article": "die",
+      "de": "Staatsangehörigkeit",
+      "uk": "громадянство",
+      "definitionDe": "Diese Angabe zeigt, zu welchem Staat eine Person offiziell gehört.",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "id": "telefonnummer",
+      "section": "formulare",
+      "article": "die",
+      "de": "Telefonnummer",
+      "uk": "номер телефону",
+      "definitionDe": "Diese Zahlen wählt man, um jemanden anzurufen.",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "id": "unterschrift",
+      "section": "formulare",
+      "article": "die",
+      "de": "Unterschrift",
+      "uk": "підпис",
+      "definitionDe": "Man schreibt seinen Namen mit der Hand unter ein Dokument.",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "id": "vorname",
+      "section": "formulare",
+      "article": "der",
+      "de": "Vorname",
+      "uk": "ім’я",
+      "definitionDe": "Diesen persönlichen Namen geben Eltern ihrem Kind, zum Beispiel Anna oder Paul.",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "id": "abgeben",
+      "section": "verben",
+      "article": null,
+      "de": "abgeben",
+      "uk": "подавати / здавати (документи)",
+      "definitionDe": "Man gibt etwas einer Person oder einer Stelle, zum Beispiel ein Formular.",
+      "synonyms": [],
+      "antonyms": [],
+      "example": {
+        "de": "Ich möchte einen Antrag abgeben.",
+        "uk": "Я хочу подати заяву."
+      }
+    },
+    {
+      "id": "abholen",
+      "section": "verben",
+      "article": null,
+      "de": "abholen",
+      "uk": "забирати / отримувати",
+      "definitionDe": "Man geht zu einem Ort und nimmt dort eine Person oder eine Sache mit.",
+      "synonyms": [],
+      "antonyms": [],
+      "example": {
+        "de": "Ich hole meinen Reisepass ab.",
+        "uk": "Я забираю свій закордонний паспорт."
+      }
+    },
+    {
+      "id": "ablehnen",
+      "section": "verben",
+      "article": null,
+      "de": "ablehnen",
+      "uk": "відхиляти / відмовляти",
+      "definitionDe": "Man sagt Nein zu einer Bitte oder einem Antrag.",
+      "synonyms": [],
+      "antonyms": [
+        {
+          "de": "genehmigen"
+        }
+      ],
+      "example": {
+        "de": "Die Behörde lehnt den Antrag ab.",
+        "uk": "Установа відхиляє заяву."
+      }
+    },
+    {
+      "id": "einen-antrag-stellen",
+      "section": "verben",
+      "article": null,
+      "de": "einen Antrag stellen",
+      "uk": "подавати заяву",
+      "definitionDe": "Man bittet eine offizielle Stelle um etwas, meist schriftlich.",
+      "synonyms": [],
+      "antonyms": [],
+      "example": {
+        "de": "Ich stelle einen Antrag auf eine Aufenthaltserlaubnis.",
+        "uk": "Я подаю заяву на дозвіл на проживання."
+      }
+    },
+    {
+      "id": "ausfuellen",
+      "section": "verben",
+      "article": null,
+      "de": "ausfüllen",
+      "uk": "заповнювати",
+      "definitionDe": "Man schreibt die nötigen Angaben in die leeren Felder eines Formulars.",
+      "synonyms": [],
+      "antonyms": [],
+      "example": {
+        "de": "Bitte füllen Sie das Formular aus.",
+        "uk": "Будь ласка, заповніть бланк."
+      }
+    },
+    {
+      "id": "etwas-beantragen",
+      "section": "verben",
+      "article": null,
+      "de": "etwas beantragen",
+      "uk": "подавати заяву на щось",
+      "definitionDe": "Man bittet eine offizielle Stelle zum Beispiel um ein Dokument oder um Hilfe.",
+      "synonyms": [],
+      "antonyms": [],
+      "example": {
+        "de": "Ich beantrage einen neuen Reisepass.",
+        "uk": "Я подаю заяву на новий закордонний паспорт."
+      }
+    },
+    {
+      "id": "genehmigen",
+      "section": "verben",
+      "article": null,
+      "de": "genehmigen",
+      "uk": "схвалювати / дозволяти",
+      "definitionDe": "Eine offizielle Stelle sagt Ja: Man darf etwas tun oder bekommt, worum man gebeten hat.",
+      "synonyms": [],
+      "antonyms": [
+        {
+          "de": "ablehnen"
+        }
+      ],
+      "example": {
+        "de": "Die Behörde genehmigt den Antrag.",
+        "uk": "Установа схвалює заяву."
+      }
+    },
+    {
+      "id": "mitbringen",
+      "section": "verben",
+      "article": null,
+      "de": "mitbringen",
+      "uk": "приносити із собою",
+      "definitionDe": "Man kommt zu einem Ort und hat eine Sache für dort dabei.",
+      "synonyms": [],
+      "antonyms": [],
+      "example": {
+        "de": "Bitte bringen Sie Ihren Ausweis mit.",
+        "uk": "Будь ласка, принесіть із собою посвідчення особи."
+      }
+    },
+    {
+      "id": "eine-nummer-ziehen",
+      "section": "verben",
+      "article": null,
+      "de": "eine Nummer ziehen",
+      "uk": "брати талон з номером",
+      "definitionDe": "Man nimmt einen Zettel aus einem Automaten. Er zeigt, wann man an der Reihe ist.",
+      "synonyms": [],
+      "antonyms": [],
+      "example": {
+        "de": "Ziehen Sie bitte eine Nummer.",
+        "uk": "Будь ласка, візьміть талон з номером."
+      }
+    },
+    {
+      "id": "unterschreiben",
+      "section": "verben",
+      "article": null,
+      "de": "unterschreiben",
+      "uk": "підписувати",
+      "definitionDe": "Man schreibt seinen Namen unter ein Dokument und zeigt damit, dass man einverstanden ist.",
+      "synonyms": [],
+      "antonyms": [],
+      "example": {
+        "de": "Bitte unterschreiben Sie hier.",
+        "uk": "Будь ласка, підпишіть тут."
+      }
+    },
+    {
+      "id": "warten",
+      "section": "verben",
+      "article": null,
+      "de": "warten",
+      "uk": "чекати",
+      "definitionDe": "Man bleibt an einem Ort, bis jemand kommt oder etwas passiert.",
+      "synonyms": [],
+      "antonyms": [],
+      "example": {
+        "de": "Ich warte auf meinen Termin.",
+        "uk": "Я чекаю на свій прийом."
+      }
+    },
+    {
+      "id": "erklaeren",
+      "section": "verben",
+      "article": null,
+      "de": "erklären",
+      "uk": "пояснювати",
+      "definitionDe": "Man sagt jemandem, wie etwas geht oder warum es so ist.",
+      "synonyms": [],
+      "antonyms": [],
+      "example": {
+        "de": "Können Sie mir das erklären?",
+        "uk": "Можете мені це пояснити?"
+      }
+    },
+    {
+      "id": "wiederholen",
+      "section": "verben",
+      "article": null,
+      "de": "wiederholen",
+      "uk": "повторювати",
+      "definitionDe": "Man sagt oder macht etwas noch einmal.",
+      "synonyms": [
+        {
+          "de": "noch einmal sagen",
+          "note": "Описовий відповідник для мовлення."
+        },
+        {
+          "de": "noch einmal machen",
+          "note": "Описовий відповідник для дії."
+        }
+      ],
+      "antonyms": [],
+      "example": {
+        "de": "Können Sie das bitte wiederholen?",
+        "uk": "Можете, будь ласка, це повторити?"
+      }
+    },
+    {
+      "id": "grosseltern",
+      "section": "familie",
+      "article": "die",
+      "de": "Großeltern",
+      "uk": "дідусь і бабуся",
+      "definitionDe": "Das sind die Eltern von der Mutter oder vom Vater.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Множина: die Großeltern.",
+      "plural": true
+    },
+    {
+      "id": "grossvater-grossmutter",
+      "section": "familie",
+      "article": "der/die",
+      "de": "Großvater / Großmutter",
+      "uk": "дідусь / бабуся",
+      "definitionDe": "Das ist der Vater oder die Mutter von einem Elternteil.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Множина: die Großväter / die Großmütter."
+    },
+    {
+      "id": "schwager-schwaegerin",
+      "section": "familie",
+      "article": "der/die",
+      "de": "Schwager / Schwägerin",
+      "uk": "шваґер / невістка (родичі через шлюб)",
+      "definitionDe": "Das ist der Bruder oder die Schwester des Ehepartners, oder der Mann der Schwester oder die Frau des Bruders.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Брат чи сестра чоловіка/дружини або чоловік сестри чи дружина брата. Множина: die Schwäger / die Schwägerinnen."
+    },
+    {
+      "id": "onkel-tante",
+      "section": "familie",
+      "article": "der/die",
+      "de": "Onkel / Tante",
+      "uk": "дядько / тітка",
+      "definitionDe": "Das ist der Bruder oder die Schwester von einem Elternteil, oder deren Ehepartner.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Множина: die Onkel / die Tanten."
+    },
+    {
+      "id": "neffe-nichte",
+      "section": "familie",
+      "article": "der/die",
+      "de": "Neffe / Nichte",
+      "uk": "племінник / племінниця",
+      "definitionDe": "Das ist der Sohn oder die Tochter von einem Bruder oder einer Schwester.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Множина: die Neffen / die Nichten."
+    },
+    {
+      "id": "cousin-cousine",
+      "section": "familie",
+      "article": "der/die",
+      "de": "Cousin / Cousine",
+      "uk": "двоюрідний брат / двоюрідна сестра",
+      "definitionDe": "Das ist der Sohn oder die Tochter von einem Onkel oder einer Tante.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Множина: die Cousins / die Cousinen."
+    },
+    {
+      "id": "schwiegereltern",
+      "section": "familie",
+      "article": "die",
+      "de": "Schwiegereltern",
+      "uk": "батьки чоловіка або дружини",
+      "definitionDe": "Das sind die Eltern des Ehemanns oder der Ehefrau.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Множина: die Schwiegereltern.",
+      "plural": true
+    },
+    {
+      "id": "schwiegervater",
+      "section": "familie",
+      "article": "der",
+      "de": "Schwiegervater",
+      "uk": "тесть / свекор",
+      "definitionDe": "Das ist der Vater des Ehemanns oder der Ehefrau.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Множина: die Schwiegerväter."
+    },
+    {
+      "id": "schwiegermutter",
+      "section": "familie",
+      "article": "die",
+      "de": "Schwiegermutter",
+      "uk": "теща / свекруха",
+      "definitionDe": "Das ist die Mutter des Ehemanns oder der Ehefrau.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Множина: die Schwiegermütter."
+    },
+    {
+      "id": "geschwister",
+      "section": "familie",
+      "article": "die",
+      "de": "Geschwister",
+      "uk": "брати й сестри",
+      "definitionDe": "Diese Kinder haben mindestens einen gemeinsamen Elternteil.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Множина: die Geschwister.",
+      "plural": true
+    },
+    {
+      "id": "bruder-schwester",
+      "section": "familie",
+      "article": "der/die",
+      "de": "Bruder / Schwester",
+      "uk": "брат / сестра",
+      "definitionDe": "Das ist ein anderes Kind derselben Mutter oder desselben Vaters.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Множина: die Brüder / die Schwestern."
+    },
+    {
+      "id": "enkel-enkelin",
+      "section": "familie",
+      "article": "der/die",
+      "de": "Enkel / Enkelin",
+      "uk": "онук / онука",
+      "definitionDe": "Das ist der Sohn oder die Tochter des eigenen Kindes.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Множина: die Enkel / die Enkelinnen."
+    },
+    {
+      "id": "alles",
+      "section": "andere",
+      "article": null,
+      "de": "alles",
+      "uk": "усе",
+      "definitionDe": "Es fehlt nichts. Jede Sache ist dabei.",
+      "synonyms": [],
+      "antonyms": [
+        {
+          "de": "nichts"
+        }
+      ]
+    },
+    {
+      "id": "etwas",
+      "section": "andere",
+      "article": null,
+      "de": "etwas",
+      "uk": "щось / трохи",
+      "definitionDe": "Man meint eine Sache, nennt sie aber nicht genau, oder man meint eine kleine Menge.",
+      "synonyms": [],
+      "antonyms": [
+        {
+          "de": "nichts"
+        }
+      ]
+    },
+    {
+      "id": "nichts",
+      "section": "andere",
+      "article": null,
+      "de": "nichts",
+      "uk": "нічого",
+      "definitionDe": "Es ist keine einzige Sache da.",
+      "synonyms": [],
+      "antonyms": [
+        {
+          "de": "alles"
+        }
+      ]
+    },
+    {
+      "id": "wenn",
+      "section": "andere",
+      "article": null,
+      "de": "wenn",
+      "uk": "якщо / коли",
+      "definitionDe": "Dieses Wort beginnt einen Satzteil mit einer Bedingung oder einer Situation, die öfter passiert.",
+      "synonyms": [],
+      "antonyms": []
+    }
+  ]
+}

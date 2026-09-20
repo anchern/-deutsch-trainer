@@ -6,8 +6,20 @@ const manifest=JSON.parse(await readFile(new URL('../data/topics.json',import.me
 const topics=await Promise.all(manifest.topics.map(p=>readFile(new URL(`../data/${p}`,import.meta.url),'utf8').then(JSON.parse)));
 test('45 existing words and all 49 photographed entries; one canonical Stadtzentrum',()=>{
   validateTopics(topics);assert.equal(topics[0].words.length,45);assert.equal(topics[1].words.length,49);
-  assert.equal(wordsIn(topics).length,93);assert.equal(wordsIn(topics).filter(w=>w.de==='Stadtzentrum').length,1);
+  assert.equal(wordsIn(topics).length,153);assert.equal(wordsIn(topics).filter(w=>w.de==='Stadtzentrum').length,1);
   assert.equal(wordsIn(topics,'wohnung','verbs').length,12);assert.equal(wordsIn(topics,'wohnung','home').length,15);assert.equal(wordsIn(topics,'wohnung','search').length,22);
+});
+test('Auf dem Amt covers page 92, parenthetical vocabulary and shared progress',()=>{
+  const amt=topics.find(t=>t.id==='amt');assert.equal(amt.page,92);assert.equal(amt.words.length,61);
+  for(const [section,count] of Object.entries({amt:7,formulare:25,verben:13,familie:12,andere:4}))assert.equal(wordsIn(topics,'amt',section).length,count);
+  const find=id=>amt.words.find(w=>w.id===id);
+  for(const id of ['strasse','hausnummer','postleitzahl','wohnort','geschieden','ledig','verheiratet','verwitwet','maennlich','weiblich','divers'])assert.ok(find(id));
+  for(const id of ['unterlagen','grosseltern','schwiegereltern','geschwister'])assert.equal(find(id).plural,true);
+  const grandmother=find('grossvater-grossmutter');assert.equal(fullDe(grandmother),'der Großvater / die Großmutter');assert.ok(checkSpelling(grandmother,'die Großmutter'));
+  for(const w of wordsIn(topics,'amt','verben')){assert.ok(w.example?.de);assert.ok(w.example?.uk);}
+  assert.equal(wordsIn(topics).filter(w=>w.de==='warten').length,1);
+  assert.equal(find('warten').id,topics.find(t=>t.id==='transport').words.find(w=>w.de==='warten').id);
+  assert.ok(amt.words.every(w=>!w.legacyKey));
 });
 test('conflicting shared identifiers are rejected',()=>{
   const data=structuredClone(topics);data[1].words.find(w=>w.id==='stadtzentrum').uk='different';assert.throws(()=>validateTopics(data),/Конфлікт/);

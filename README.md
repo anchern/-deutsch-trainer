@@ -8,7 +8,8 @@ Project documentation, pull request titles/descriptions, and commit messages are
 
 - **Mit Bus und Bahn:** all 45 original entries from page 76, including article explanations.
 - **Unsere neue Wohnung:** all 49 entries from page 84, with Ukrainian translations and examples for all 12 verbs.
-- **93 unique words** across 94 topic entries. Shared words such as Stadtzentrum keep the same identifier and progress.
+- **Auf dem Amt:** all 50 main entries from page 92, plus 11 parenthetical terms for addresses, marital status, and gender. Family pairs follow the existing paired-word format; all 13 verbs include examples.
+- **153 unique words** across 155 topic entries. Shared words such as Stadtzentrum and warten keep the same identifier and progress.
 - Study a topic, a section, or all topics together. Choose from six visible formats: flashcards in both directions, multiple choice in both directions, articles, and spelling.
 - Blue count badges show new cards available **today** under the daily limit. Amber badges show cards **due now**. Tooltips also show the total number of unseen cards. Each direction of flashcards has its own badges.
 - Topic and home review totals include **every exercise format**. They count scheduled reviews, so the same word can contribute more than once when due in different formats. The banner also reports the number of unique due words and opens a format with work available.
