@@ -1,19 +1,22 @@
 import { MODES, RATINGS, DAY, cardKey } from './scheduler.js';
 export const STORAGE_KEY = 'deutsch-trainer:v2';
 export const LEGACY_KEY = 'busbahn-progress';
-export const emptyState = () => ({ version: 2, cards: {}, suspended: {}, settings: { newPerDay: 20 }, history: {}, legacyStats: null });
+export const emptyState = () => ({ version: 3, run: null, practice: {}, cards: {}, suspended: {}, settings: { newPerDay: 20 }, history: {}, legacyStats: null });
 const object = v => v !== null && typeof v === 'object' && !Array.isArray(v);
 const safeKey = key => !['__proto__', 'prototype', 'constructor'].includes(key);
 const number = (v, max = 8.64e15) => Number.isFinite(v) && v >= 0 && v <= max;
 export function validateState(raw) {
-  if (!object(raw) || raw.version !== 2 || !object(raw.cards) || !object(raw.suspended) || !object(raw.settings) || !object(raw.history)) throw new Error('Цей файл не є резервною копією Deutsch Trainer версії 2.');
+  if (!object(raw) || ![2, 3].includes(raw.version) || !object(raw.cards) || !object(raw.suspended) || !object(raw.settings) || !object(raw.history)) throw new Error('Цей файл не є резервною копією Deutsch Trainer версії 2 або 3.');
   if (![5, 10, 20, 50].includes(raw.settings.newPerDay)) throw new Error('Некоректний ліміт нових слів.');
   const state = emptyState();
   state.settings.newPerDay = raw.settings.newPerDay;
+  if (raw.settings.recallExplained === true) state.settings.recallExplained = true;
+  for (const field of ['lastTopic', 'lastSection']) if (typeof raw.settings[field] === 'string' && /^[a-z0-9-]+$/.test(raw.settings[field])) state.settings[field] = raw.settings[field];
   for (const [key, c] of Object.entries(raw.cards)) {
     const [id, mode, extra] = key.split('::');
     if (!safeKey(key) || !/^[a-z0-9-]+$/.test(id) || !MODES.includes(mode) || extra !== undefined || !object(c) || !number(c.interval, 365) || !number(c.ease, 3.5) || c.ease < 1.3 || !number(c.due) || !number(c.introducedAt) || !number(c.updatedAt) || !Number.isInteger(c.reviews) || !number(c.reviews, 1e9) || !Number.isInteger(c.lapses) || !number(c.lapses, c.reviews) || !RATINGS.includes(c.lastRating)) throw new Error('У файлі є некоректний розклад повторень.');
     state.cards[key] = { interval: c.interval, ease: c.ease, due: c.due, introducedAt: c.introducedAt, updatedAt: c.updatedAt, reviews: c.reviews, lapses: c.lapses, lastRating: c.lastRating };
+    if (c.earlyReviews !== undefined) { if (!Number.isInteger(c.earlyReviews) || !number(c.earlyReviews,c.reviews)) throw new Error('Некоректна історія дострокових спроб.'); state.cards[key].earlyReviews = c.earlyReviews; }
   }
   for (const [id, value] of Object.entries(raw.suspended)) {
     if (!safeKey(id) || !/^[a-z0-9-]+$/.test(id) || typeof value !== 'boolean') throw new Error('Некоректний список призупинених слів.');
@@ -26,6 +29,22 @@ export function validateState(raw) {
   if (raw.legacyStats !== null && raw.legacyStats !== undefined) {
     if (!object(raw.legacyStats) || !number(raw.legacyStats.right, 1e9) || !number(raw.legacyStats.wrong, 1e9)) throw new Error('Некоректна попередня статистика.');
     state.legacyStats = { right: raw.legacyStats.right, wrong: raw.legacyStats.wrong };
+  }
+  if (raw.practice !== undefined) {
+    if (!object(raw.practice)) throw new Error('Некоректна історія практики.');
+    for (const [day, modes] of Object.entries(raw.practice)) {
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(day) || !object(modes)) throw new Error('Некоректна дата практики.');
+      state.practice[day] = {};
+      for (const [mode, h] of Object.entries(modes)) {
+        if (!MODES.includes(mode) || !object(h) || !['reviews','again','early'].every(k => Number.isInteger(h[k]) && number(h[k], k === 'reviews' ? 1e9 : h.reviews))) throw new Error('Некоректні результати практики.');
+        state.practice[day][mode] = { reviews: h.reviews, again: h.again, early: h.early };
+      }
+    }
+  }
+  if (raw.run !== undefined && raw.run !== null) {
+    const r = raw.run, id = v => typeof v === 'string' && /^[a-z0-9-]+$/.test(v);
+    if (!object(r) || !id(r.id) || !id(r.topic) || !id(r.section) || !['full','recommended'].includes(r.kind) || !Array.isArray(r.ids) || !r.ids.every(id) || new Set(r.ids).size !== r.ids.length || !Number.isInteger(r.cursor) || !number(r.cursor,r.ids.length) || !Array.isArray(r.difficult) || !r.difficult.every(v => r.ids.includes(v)) || !number(r.updatedAt)) throw new Error('Некоректне збережене проходження.');
+    state.run = { id:r.id, topic:r.topic, section:r.section, kind:r.kind, ids:[...r.ids], cursor:r.cursor, difficult:[...new Set(r.difficult)], updatedAt:r.updatedAt };
   }
   return state;
 }
@@ -46,7 +65,16 @@ export function loadState(storage, words, now = Date.now()) {
   let raw;
   try {
     raw = storage.getItem(STORAGE_KEY);
-    if (raw !== null) return { state: validateState(JSON.parse(raw)) };
+    if (raw !== null) {
+      const parsed = JSON.parse(raw), state = validateState(parsed);
+      // Keep the exact original before the first write in the additive v3 schema.
+      if (parsed.version === 2) {
+        try { storage.setItem(`${STORAGE_KEY}:before-v3`, raw); }
+        catch { return { state, readOnly:true, warning:'Прогрес прочитано. Не вдалося зберегти вихідні дані перед оновленням; завантажте копію.' }; }
+        if (!saveState(storage, state)) return { state, readOnly:true, warning:'Прогрес прочитано. Не вдалося зберегти оновлення; завантажте резервну копію.' };
+      }
+      return { state };
+    }
     raw = storage.getItem(LEGACY_KEY);
     if (raw !== null) {
       const state = migrateLegacy(JSON.parse(raw), words, now);
@@ -70,6 +98,14 @@ export function mergeStates(current, incoming) {
     const prior = next.history[day];
     if (!prior || h.reviews > prior.reviews) next.history[day] = h;
   }
+  for (const [day, modes] of Object.entries(imported.practice)) {
+    next.practice[day] ||= {};
+    for (const [mode,h] of Object.entries(modes)) if (!next.practice[day][mode] || h.reviews > next.practice[day][mode].reviews) next.practice[day][mode] = h;
+  }
+  // A backup cursor is safe only if it was saved against the merged schedules.
+  // Never replace a current run with an older imported position.
+  const run = imported.run;
+  if (run && (!next.run || run.updatedAt > next.run.updatedAt) && Object.entries(next.cards).every(([key,c]) => !key.endsWith('::cards-ua-de') || c.updatedAt <= run.updatedAt)) next.run = run;
   next.legacyStats ||= imported.legacyStats;
   return next;
 }

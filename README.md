@@ -10,14 +10,16 @@ Project documentation, pull request titles/descriptions, and commit messages are
 - **Unsere neue Wohnung:** all 49 entries from page 84, with Ukrainian translations and examples for all 12 verbs.
 - **Auf dem Amt:** all 50 main entries from page 92, plus 11 parenthetical terms for addresses, marital status, and gender. Family pairs follow the existing paired-word format; all 13 verbs include examples.
 - **153 unique words** across 155 topic entries. Shared words such as Stadtzentrum and warten keep the same identifier and progress.
-- Study a topic, a section, or all topics together. Choose from six visible formats: flashcards in both directions, multiple choice in both directions, articles, and spelling.
-- Blue count badges show new cards available **today** under the daily limit. Amber badges show cards **due now**. Tooltips also show the total number of unseen cards. Each direction of flashcards has its own badges.
-- Topic and home review totals include **every exercise format**. They count scheduled reviews, so the same word can contribute more than once when due in different formats. The banner also reports the number of unique due words and opens a format with work available.
-- Counts refresh at ten-second intervals and when the page regains focus or visibility. Active cards are never interrupted. Section filters, article eligibility, pauses, and per-mode daily limits are respected.
-- All published words have short A1–A2-oriented German definitions that avoid the target word, plus synonym and antonym lists where applicable. Contextual, descriptive, regional, and approximate equivalents are explicitly labelled. Empty lists state that no natural direct equivalent/opposite is provided.
-- Word explanations are available after revealing/judging an answer and in the dictionary. They do not reveal answers before a learner responds.
-- Session completion offers **return to the current topic**, preserving its section and exercise format, as well as continue and all-topics actions.
-- Local progress, automatic legacy migration, JSON backup/import, word suspension, German speech using device voices, and offline support after the first successful load.
+- **One primary path:** Ukrainian cue → recall the German word aloud → reveal the full form and existing context → self-rate. No typing, recording, or speech recognition is required.
+- Home, topic, dictionary, and progress counters use unique active word IDs in `cards-ua-de`. Coverage includes unsuccessful attempts; it is not a claim of language proficiency.
+- DE → UA flashcards, both multiple-choice directions, articles, and spelling remain optional under a collapsed topic section, with separate schedules and results.
+- A soft daily goal of 5/10/20/50 new primary words never blocks learning. Sessions contain up to 20 distinct words and offer continuation.
+- Full-topic practice creates a stable, resumable list of all active words in the selected topic/section. Each ID gets one attempt before any optional difficult-word retry. Failures cannot starve unseen words.
+- Successful early practice records the attempt but preserves the interval, ease, and due date. Failed early recall returns to the existing one-minute relearning rule. This applies to every mode.
+- Compact dark topic rows, bilingual topic search, responsive layouts, keyboard shortcuts, and visible focus states.
+- Full German forms, existing notes/examples, definitions, contextual synonyms and antonyms appear after reveal. No vocabulary content or stable IDs have been replaced.
+- Optional source metadata explicitly distinguishes verified sources from unknown editions. Existing page numbers are not treated as current homework.
+- Local progress, legacy migration, JSON backup/import, suspension, device German voices, and offline support after the first successful load.
 
 ## Run and validate
 
@@ -33,7 +35,7 @@ Open `http://127.0.0.1:4173`. Use `npm run dev` to serve source files while edit
 
 Vocabulary is loaded using `fetch`, so opening `index.html` through `file://` is not supported. Use a static HTTP server. Service workers need HTTPS or localhost. If an offline copy is already active, build the update, reload once to let the browser discover it, close all tabs for the app, and reopen it. During development, the service worker can instead be unregistered through browser developer tools.
 
-Tests cover content integrity, shared IDs, simple definitions, safe lexical metadata rendering, review intervals, cross-mode totals, daily budgets, suspension, legacy migration, backup validation/merge, and offline cache isolation.
+Tests cover content integrity, stable shared IDs, safe lexical/source metadata, primary-only counters, soft goals, full 61-word passes, early practice, reveal/rating conditions, reload restoration, stale-tab protection, suspension, v2/legacy migration, backup merge, and offline cache isolation. See `docs/verification.md` for the acceptance evidence.
 
 ## Deployment and sharing
 
@@ -83,6 +85,8 @@ The topic picker, dictionary, counters, and offline cache follow the registry au
 }
 ```
 
+Optional topic `source` fields are `book`, `level`, `edition`, `lesson`, `printedPage`, `url` (HTTP/HTTPS), and `verification` (`unverified` or `verified`). Omit unknown values. A missing source defaults to an unconfirmed edition; legacy `page` remains a printed-page hint only. Do not infer a book edition or homework assignment from a page number.
+
 Topic fields `id`, `title`, `uk`, `sections`, and `words` are required. Also supply `description`, `page`, and `icon` (`home`, `train`, `book`, or `cards`) for complete presentation. Word fields `id`, `section`, `article`, `de`, and `uk` are required.
 
 - IDs use lowercase Latin letters, numbers, and hyphens. **Never change a published word ID** merely to fix its spelling or translation; the ID is its progress key.
@@ -111,20 +115,27 @@ The app follows spaced-repetition principles and the four ratings described in t
 
 Ease starts at 2.5 and stays between 1.3 and 3.5. Intervals are capped at 365 days. Rating buttons show the actual next interval. Incorrect quiz/spelling answers allow only Again. Correct answers can be rated by difficulty. **Progress is saved when a rating is selected**, not simply when the answer is revealed.
 
-Overdue cards come first, oldest due date first. Future reviews are excluded until due. New cards follow vocabulary order within a limit of 5, 10, 20, or 50 per local calendar day. This limit spans topics but is separate for each exercise mode. A session contains at most 20 cards. After a failed answer, the card is available in a later session once its minute has passed.
+Due cards come first, oldest due date first; new cards follow vocabulary order. The daily goal is a recommendation for **new unique primary words**, counted once on the local calendar day of their first rating. It does not cap the queue, create catch-up obligations, or limit optional practice. Counts can exceed the goal, e.g. 35/20.
 
-Card keys are `wordId::mode`. The six independent modes are `cards-de-ua`, `cards-ua-de`, `de-ua`, `ua-de`, `article`, and `spell`. Knowing an article does not hide a word in the spelling exercise. Word suspension applies across all formats and can be reversed in the dictionary.
+`PRIMARY_MODE` is `cards-ua-de`; existing `wordId::cards-ua-de` records are used directly. The other five mode keys remain independent: `cards-de-ua`, `de-ua`, `ua-de`, `article`, and `spell`. Their attempts never raise primary coverage, consume the primary goal, or create a home-page obligation. Word suspension applies across all modes without deleting history.
 
-Home/topic mastery counts unique words with an interval of at least 21 days in **at least one** format. Mode-specific counts measure that mode only. The progress page explicitly labels its separate default-flashcard mastery metric. The dictionary's due filter and due labels include all formats.
+Ordinary learning snapshots due and new IDs in a stable pass, divided into portions of at most 20 words. Full-topic practice includes future-due words, labels these as additional practice, and excludes suspended IDs. A new portion resumes the saved cursor instead of rebuilding the list. Difficult IDs remain available on the topic and in portion summaries; retrying them is optional and never blocks the remaining pass.
+
+The early/due condition is captured when a card opens and checked again after a pause. Successful early practice increments attempts but does not increase ease, interval, or due date. An early failure is recorded and follows Again. The unchanged interval formula applies to new and genuinely due cards. Merely revealing an answer changes no schedule. Space reveals; 1–4 self-rate only after reveal and outside controls/input fields.
 
 ## Progress and recovery
 
-- State is stored in `localStorage['deutsch-trainer:v2']`: schema version, cards, suspended words, settings, daily review counts, and legacy statistics.
-- Legacy `busbahn-progress` positive scores seed only `cards-de-ua`: scores 1–2 schedule a review in one day; scores 3–4 in seven days. Other formats start fresh because the old state mixed skills. Original data is retained.
-- Unreadable stored data is not automatically overwritten. The interface offers a recovery download. Blocked storage or quota errors produce a warning and keep usable state in memory where possible.
-- Import validates before writing, keeps the newest `updatedAt` per card, unions pauses, and keeps the larger daily history instead of adding duplicate counts. The current daily limit is preserved. This prevents repeated-import inflation but is not an exact merge of independent histories from multiple devices.
-- Changes in another tab terminate an open study session and load the new state. Browser storage is not transactional: study in one tab per device.
-- Private browsing, browser cleanup, storage eviction, and changing origins may remove or hide progress. Download periodic backups.
+- Shared general metrics: **processed** = active unique IDs with a primary rating; **new** = active IDs without one; **due** = active primary schedules due now; **long interval** = primary interval ≥21 days; **suspended** is separate. Due and long-interval counts can overlap. Coverage bars show processed/active, never a knowledge score.
+- Oral ratings are self-assessments of recall before reveal, not pronunciation, writing, spontaneous speaking, CEFR, or DTZ assessments. Recognizing the answer only after reveal should be rated Again.
+- Storage keeps the existing `deutsch-trainer:v2` key and uses additive **schema version 3**. `cards`, `suspended`, `settings.newPerDay`, `history`, and `legacyStats` remain. New fields are `run` (stable IDs, cursor, difficult IDs and scope), `practice` (per-day/per-mode attempts and early attempts), card `earlyReviews`, and optional last-primary-scope/onboarding settings.
+- Valid v2 records are validated before migration; the exact original JSON is retained under `deutsch-trainer:v2:before-v3` before the first v3 write. Migration is idempotent. A backup-write/quota failure keeps the usable old state in memory and does not overwrite the original.
+- Legacy `busbahn-progress` remains untouched and seeds only `cards-de-ua` conservatively. Positive scores 1–2 schedule one day, scores 3–4 seven days. Neither legacy mode results nor aggregate daily activity are reclassified as primary recall.
+- Old `history` is displayed as legacy aggregate activity; `practice` tracks the new per-mode daily statistics. Existing primary-card review counts remain usable as primary lifetime attempts.
+- Backups accept v2 and v3. Import validates before writing, keeps the newest per-card `updatedAt`, unions suspensions, keeps larger daily histories without summing repeated imports, and preserves the current goal. A backup run is restored only when newer than the current run and compatible with the merged primary schedules. It cannot rewind newer work.
+- Restoration validates topic/section membership and skips removed/suspended IDs while retaining the corresponding completed position. If a pass cannot be resumed, a fresh portion remains available without deleting ratings.
+- Changes in another tab terminate an active session. Rating also re-reads storage and checks both the card snapshot and run cursor before writing, rejecting stale work. Browser local storage is not transactional: use one study tab per device.
+- Unreadable data is not overwritten; a recovery download is available. Blocked storage or quota errors show a warning and preserve usable in-memory state where possible. Export backups before clearing browser data or changing origins.
+- There are no accounts, analytics, backend, automatic vault integration, or cross-device synchronization. TTS depends on device voices and may require internet. The text exercise remains usable without speech.
 
 ## Structure
 
@@ -132,8 +143,8 @@ Home/topic mastery counts unique words with an interval of at least 21 days in *
 data/topics.json       Topic registry
 data/topics/*.json     Vocabulary and lexical learning context
 src/content.js         Content loading/validation and answer handling
-src/scheduler.js       Review scheduling, queues and cross-mode counters
-src/storage.js         Versioned persistence, migration and backup merging
+src/scheduler.js       Review scheduling, primary counters and resumable passes
+src/storage.js         Versioned persistence, migration, run/history backup merging
 src/presentation.js    Accessible badges and escaped lexical-context markup
 src/app.js             Navigation, views and learning sessions
 src/styles.css         Responsive interface

@@ -35,3 +35,40 @@ test('migration preserves usable in-memory progress if saving exceeds quota',()=
   const storage={getItem:k=>k===LEGACY_KEY?JSON.stringify({scores:{'bahnhof|Zug':4}}):null,setItem(){throw new Error('quota');}};
   const result=loadState(storage,words,now);assert.ok(result.readOnly);assert.equal(result.state.cards['zug::cards-de-ua'].interval,7);
 });
+
+test('v2 profiles migrate additively with exact source backup and unchanged independent cards',()=>{
+ for(const modes of [['cards-ua-de'],['cards-de-ua'],['cards-ua-de','article','spell','de-ua','ua-de']]){
+  const old={version:2,cards:{},suspended:{zug:true},settings:{newPerDay:5},history:{'2026-09-09':{reviews:30,again:4}},legacyStats:null};
+  for(const mode of modes)old.cards[cardKey('zug',mode)]=schedule(null,'good',now);
+  const raw=JSON.stringify(old),storage=memory({[STORAGE_KEY]:raw}),loaded=loadState(storage,words,now);
+  assert.equal(loaded.state.version,3);assert.deepEqual(loaded.state.cards,old.cards);assert.deepEqual(loaded.state.history,old.history);assert.deepEqual(loaded.state.practice,{});assert.equal(loaded.state.settings.newPerDay,5);
+  assert.equal(storage.values[`${STORAGE_KEY}:before-v3`],raw);assert.deepEqual(loadState(storage,words).state,loaded.state);
+ }
+});
+test('v2 migration quota failure preserves usable state and never replaces original',()=>{
+ const old={...emptyState(),version:2};old.cards['zug::cards-ua-de']=schedule(null,'easy',now);const raw=JSON.stringify(old);
+ const storage={getItem:k=>k===STORAGE_KEY?raw:null,setItem(){throw Error('quota');}};
+ const result=loadState(storage,words);assert.equal(result.readOnly,true);assert.equal(result.state.cards['zug::cards-ua-de'].interval,4);assert.equal(storage.getItem(STORAGE_KEY),raw);
+});
+test('v3 backup retains early attempts, mode-specific history, cursor, preferences and difficult IDs',()=>{
+ const s=emptyState();s.settings={newPerDay:5,lastTopic:'wohnung',lastSection:'verbs',recallExplained:true};
+ s.cards['zug::cards-ua-de']={...schedule(null,'good',now),earlyReviews:0};
+ s.practice['2026-09-09']={'cards-ua-de':{reviews:12,again:3,early:2},article:{reviews:8,again:1,early:0}};
+ s.run={id:'run-1',topic:'wohnung',section:'verbs',kind:'full',ids:['zug','fahrt'],cursor:1,difficult:['zug'],updatedAt:now};
+ assert.deepEqual(validateState(JSON.parse(JSON.stringify(s))),s);
+ const imported=mergeStates(emptyState(),s);assert.deepEqual(mergeStates(imported,s),imported);assert.equal(imported.practice['2026-09-09']['cards-ua-de'].reviews,12);assert.equal(imported.run.cursor,1);
+});
+test('import keeps newer run and rejects cursor saved before newer primary work',()=>{
+ const s=emptyState(),old=emptyState();
+ const run={id:'run-1',topic:'wohnung',section:'all',kind:'full',ids:['zug','fahrt'],cursor:1,difficult:[],updatedAt:now};
+ s.run={...run,cursor:2,updatedAt:now+100};old.run=run;
+ assert.equal(mergeStates(s,old).run.cursor,2);
+ s.run=null;s.cards['zug::cards-ua-de']=schedule(null,'good',now+100);
+ assert.equal(mergeStates(s,old).run,null);
+});
+test('invalid run/history/early metadata is rejected before any overwrite',()=>{
+ const s=emptyState();s.run={id:'run-1',topic:'wohnung',section:'all',kind:'full',ids:['zug','zug'],cursor:0,difficult:[],updatedAt:now};assert.throws(()=>validateState(s));
+ s.run=null;s.practice={'bad-date':{}};assert.throws(()=>validateState(s));
+ s.practice={'2026-09-09':{'spell':{reviews:1,again:2,early:0}}};assert.throws(()=>validateState(s));
+ s.practice={};s.cards['zug::spell']={...schedule(null,'good',now),earlyReviews:2};assert.throws(()=>validateState(s));
+});

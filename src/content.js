@@ -3,6 +3,10 @@ export function validateTopics(topics) {
   if (!Array.isArray(topics) || !topics.length) throw new Error('Немає тем у словнику.');
   for (const topic of topics) {
     if (!/^[a-z0-9-]+$/.test(topic.id) || topicIds.has(topic.id) || !topic.title || !topic.uk || !Array.isArray(topic.sections) || !Array.isArray(topic.words) || !topic.words.length) throw new Error('Некоректна структура теми.');
+    if (topic.source !== undefined) {
+      const source = topic.source;
+      if (!source || typeof source !== 'object' || Array.isArray(source) || Object.entries(source).some(([k,v]) => !['book','level','edition','lesson','printedPage','url','verification'].includes(k) || typeof v !== 'string' && !(k === 'printedPage' && Number.isInteger(v) && v > 0)) || source.verification !== undefined && !['unverified','verified'].includes(source.verification) || source.url && !/^https?:\/\//.test(source.url)) throw new Error('Некоректне джерело теми.');
+    }
     topicIds.add(topic.id);
     const sections = new Set(topic.sections.map(s => s.id)), ids = new Set();
     if (sections.size !== topic.sections.length || topic.sections.some(s => !s.id || !s.title || !s.uk)) throw new Error('Некоректні розділи теми.');

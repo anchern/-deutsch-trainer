@@ -2,6 +2,7 @@
 export const DAY = 86_400_000;
 export const MINUTE = 60_000;
 export const MODES = ['cards-de-ua', 'cards-ua-de', 'de-ua', 'ua-de', 'article', 'spell'];
+export const PRIMARY_MODE = 'cards-ua-de';
 export const RATINGS = ['again', 'hard', 'good', 'easy'];
 export const cardKey = (id, mode) => `${id}::${mode}`;
 export const localDay = time => {
@@ -28,9 +29,10 @@ export function schedule(previous, rating, now = Date.now()) {
     updatedAt: now, lastRating: rating };
 }
 export function eligible(words, state, mode) {
-  return words.filter(w => !state.suspended[w.id] && (mode !== 'article' || (!w.plural && ['der', 'die', 'das'].includes(w.article))));
+  return [...new Map(words.map(w => [w.id, w])).values()].filter(w => !state.suspended[w.id] && (mode !== 'article' || (!w.plural && ['der', 'die', 'das'].includes(w.article))));
 }
 export function counts(words, state, mode, now = Date.now()) {
+  words = [...new Map(words.map(w => [w.id, w])).values()];
   const result = { total: words.length, new: 0, due: 0, learning: 0, known: 0, suspended: 0, nextDue: null };
   result.suspended = words.filter(w => state.suspended[w.id]).length;
   for (const w of eligible(words, state, mode)) {
@@ -51,7 +53,7 @@ export function buildQueue(words, state, mode, now = Date.now(), limit = 20) {
   const pool = eligible(words, state, mode);
   const due = pool.filter(w => state.cards[cardKey(w.id, mode)]?.due <= now)
     .sort((a, b) => state.cards[cardKey(a.id, mode)].due - state.cards[cardKey(b.id, mode)].due);
-  const fresh = pool.filter(w => !state.cards[cardKey(w.id, mode)]).slice(0, newAllowance(state, mode, now));
+  const fresh = pool.filter(w => !state.cards[cardKey(w.id, mode)]);
   return [...due, ...fresh].slice(0, limit).map(w => w.id);
 }
 
@@ -61,21 +63,30 @@ export function modeCounts(words, state, now = Date.now()) {
     return [mode, { ...count, newToday: Math.min(count.new, newAllowance(state, mode, now)) }];
   }));
 }
+// All general screens use the same primary-recall metric, deduplicated by ID.
 export function overviewCounts(words, state, now = Date.now()) {
-  const byMode = modeCounts(words, state, now);
-  const dueWords = new Set(), knownWords = new Set();
-  for (const mode of MODES) {
-    for (const w of eligible(words, state, mode)) {
-      const card = state.cards[cardKey(w.id, mode)];
-      if (card?.due <= now) dueWords.add(w.id);
-      if (card?.interval >= 21) knownWords.add(w.id);
-    }
-  }
-  const upcoming = Object.values(byMode).map(c => c.nextDue).filter(t => t !== null);
-  const due = Object.values(byMode).reduce((sum, c) => sum + c.due, 0);
-  // Open a format that actually has work, rather than always the default cards.
-  const recommendedMode = [...MODES].sort((a, b) => byMode[b].due - byMode[a].due)[0];
-  return { byMode, due, dueWords: dueWords.size, known: knownWords.size,
-    nextDue: upcoming.length ? Math.min(...upcoming) : null,
-    recommendedMode: due ? recommendedMode : MODES.find(m => byMode[m].newToday > 0) || MODES[0] };
+  const c = counts(words, state, PRIMARY_MODE, now);
+  return { ...c, active: c.total - c.suspended, processed: c.learning + c.known,
+    byMode: modeCounts(words, state, now), dueWords: c.due, recommendedMode: PRIMARY_MODE };
+}
+export function dailyNew(state, now = Date.now()) {
+  return Object.entries(state.cards).filter(([key, c]) => key.endsWith(`::${PRIMARY_MODE}`) && localDay(c.introducedAt) === localDay(now)).length;
+}
+// The condition is captured when a card opens, not when the answer is revealed.
+export function practiceSchedule(previous, rating, now = Date.now(), early = !!previous && previous.due > now) {
+  const next = schedule(previous, rating, now);
+  if (early && rating !== 'again') return { ...previous, reviews: next.reviews, updatedAt: now, lastRating: rating, earlyReviews: (previous.earlyReviews || 0) + 1 };
+  return { ...next, earlyReviews: (previous?.earlyReviews || 0) + (early ? 1 : 0) };
+}
+export function createRun(words, state, topic, section, kind = 'recommended', now = Date.now()) {
+  const ids = kind === 'full' ? eligible(words, state, PRIMARY_MODE).map(w => w.id) : buildQueue(words, state, PRIMARY_MODE, now, Infinity);
+  return { id: `${now}-${Math.random().toString(36).slice(2,10)}`, topic, section, kind, ids, cursor: 0, difficult: [], updatedAt: now };
+}
+export function reconcileRun(run, topics, state) {
+  if (!run) return null;
+  const topic = topics.find(t => t.id === run.topic);
+  if (run.topic !== 'all' && !topic || run.section !== 'all' && !topic?.sections.some(s => s.id === run.section)) return null;
+  const allowed = new Set(topics.filter(t => run.topic === 'all' || t.id === run.topic).flatMap(t => t.words.filter(w => run.section === 'all' || w.section === run.section).map(w => w.id)));
+  const keep = id => allowed.has(id) && !state.suspended[id];
+  return { ...run, ids: run.ids.filter(keep), cursor: run.ids.slice(0,run.cursor).filter(keep).length, difficult: run.difficult.filter(keep) };
 }
