@@ -6,7 +6,7 @@ const manifest=JSON.parse(await readFile(new URL('../data/topics.json',import.me
 const topics=await Promise.all(manifest.topics.map(p=>readFile(new URL(`../data/${p}`,import.meta.url),'utf8').then(JSON.parse)));
 test('45 existing words and all 49 photographed entries; one canonical Stadtzentrum',()=>{
   validateTopics(topics);assert.equal(topics[0].words.length,45);assert.equal(topics[1].words.length,49);
-  assert.equal(wordsIn(topics).length,153);assert.equal(wordsIn(topics).filter(w=>w.de==='Stadtzentrum').length,1);
+  assert.equal(wordsIn(topics.filter(t=>t.id!=='arbeit')).length,153);assert.equal(wordsIn(topics).length,197);assert.equal(wordsIn(topics).filter(w=>w.de==='Stadtzentrum').length,1);
   assert.equal(wordsIn(topics,'wohnung','verbs').length,12);assert.equal(wordsIn(topics,'wohnung','home').length,15);assert.equal(wordsIn(topics,'wohnung','search').length,22);
 });
 test('Auf dem Amt covers page 92, parenthetical vocabulary and shared progress',()=>{

@@ -9,7 +9,8 @@ Project documentation, pull request titles/descriptions, and commit messages are
 - **Mit Bus und Bahn:** all 45 original entries from page 76, including article explanations.
 - **Unsere neue Wohnung:** all 49 entries from page 84, with Ukrainian translations and examples for all 12 verbs.
 - **Auf dem Amt:** all 50 main entries from page 92, plus 11 parenthetical terms for addresses, marital status, and gender. Family pairs follow the existing paired-word format; all 13 verbs include examples.
-- **153 unique words** across 155 topic entries. Shared words such as Stadtzentrum and warten keep the same identifier and progress.
+- **Bei der Arbeit:** 44 entries covering the 40 printed vocabulary rows on lesson 8, page 76 of *Einfach gut! Deutsch für die Integration A2.2, Kurs- und Arbeitsbuch*: 14 paired occupations/roles, 8 safety terms, 15 office entries and 7 dative constructions. The pairs contain 28 occupation forms; the topic contains 58 German forms in total. All 16 verb entries include examples.
+- **197 unique words** across 199 topic entries. Shared words such as Stadtzentrum and warten keep the same identifier and progress.
 - **One primary path:** Ukrainian cue → recall the German word aloud → reveal the full form and existing context → self-rate. No typing, recording, or speech recognition is required.
 - Home, topic, dictionary, and progress counters use unique active word IDs in `cards-ua-de`. Coverage includes unsuccessful attempts; it is not a claim of language proficiency.
 - DE → UA flashcards, both multiple-choice directions, articles, and spelling remain optional under a collapsed topic section, with separate schedules and results.
@@ -35,7 +36,7 @@ Open `http://127.0.0.1:4173`. Use `npm run dev` to serve source files while edit
 
 Vocabulary is loaded using `fetch`, so opening `index.html` through `file://` is not supported. Use a static HTTP server. Service workers need HTTPS or localhost. If an offline copy is already active, build the update, reload once to let the browser discover it, close all tabs for the app, and reopen it. During development, the service worker can instead be unregistered through browser developer tools.
 
-Tests cover content integrity, stable shared IDs, safe lexical/source metadata, primary-only counters, soft goals, full 61-word passes, early practice, reveal/rating conditions, reload restoration, stale-tab protection, suspension, v2/legacy migration, backup merge, and offline cache isolation. See `docs/verification.md` for the acceptance evidence.
+Tests cover content integrity, stable shared IDs, safe lexical/source metadata, primary-only counters, soft goals, full 61-word passes, early practice, reveal/rating conditions, reload restoration, stale-tab protection, suspension, v2/legacy migration, backup merge, and offline cache isolation. See `docs/verification.md` for the recall-model evidence and `docs/arbeit-verification.md` for the new topic checks.
 
 ## Deployment and sharing
 
@@ -84,6 +85,12 @@ The topic picker, dictionary, counters, and offline cache follow the registry au
   ]
 }
 ```
+
+The Arbeit list was checked against a supplied photograph of the printed `Lernwortschatz` page (SHA-256 `1331e93a75baec5896553a26cf82810039a40991dffbfbdccff1957f73d0aaad`). Source verification refers to the vocabulary list visible in that photo. The book title comes from the supplied course context; the photograph does not show a title/copyright page, so edition/year/ISBN remain unknown. The photo and handwritten annotations are not shipped. The older Transport topic also has page 76 and is unchanged. Structured translations, explanations and examples are normalized learning material, not a transcription of the handwritten notes.
+
+Office pairs are split into separate stable IDs. Explicit `accepted` aliases support the intended spelling alternatives; synonyms do not implicitly become accepted answers. Paired occupations ask for both forms in primary oral recall, while optional spelling accepts one form as before. An optional word `quizGroup` excludes potentially equivalent choices in both quiz directions without merging words, schedules or spelling answers. The four work-meeting terms use this conservative exclusion group.
+
+Lexical distinctions were checked against [Duden: Kaufmann](https://www.duden.de/rechtschreibung/Kaufmann), [Duden: herunterfahren](https://www.duden.de/rechtschreibung/herunterfahren), and the [telc A2.2 Ukrainian vocabulary list, lesson 8](https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Einfach_gut/Wortschatzlisten/Einfach_gut_A2.2_Wortschatzliste_Ukrainisch.pdf). The broader telc list is not the source of additional cards. Definitions and examples are learner-oriented explanations, not copied dictionary definitions.
 
 Optional topic `source` fields are `book`, `level`, `edition`, `lesson`, `printedPage`, `url` (HTTP/HTTPS), and `verification` (`unverified` or `verified`). Omit unknown values. A missing source defaults to an unconfirmed edition; legacy `page` remains a printed-page hint only. Do not infer a book edition or homework assignment from a page number.
 

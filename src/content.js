@@ -16,11 +16,12 @@ export function validateTopics(topics) {
       const shared = canonical.get(w.id);
       if (shared && (shared.de !== w.de || shared.uk !== w.uk || shared.article !== w.article || !!shared.plural !== !!w.plural)) throw new Error(`Конфлікт спільного слова: ${w.id}`);
       if (w.accepted && (!Array.isArray(w.accepted) || w.accepted.some(a => typeof a !== 'string' || !a.trim()))) throw new Error(`Некоректні варіанти: ${w.id}`);
+      if (w.quizGroup !== undefined && (typeof w.quizGroup !== 'string' || !/^[a-z0-9-]+$/.test(w.quizGroup))) throw new Error(`Некоректна група варіантів: ${w.id}`);
       if (w.definitionDe !== undefined && (typeof w.definitionDe !== 'string' || !w.definitionDe.trim())) throw new Error(`Некоректне пояснення: ${w.id}`);
       for (const field of ['synonyms', 'antonyms']) {
         if (w[field] !== undefined && (!Array.isArray(w[field]) || w[field].some(v => !v || typeof v.de !== 'string' || !v.de.trim() || (v.note !== undefined && typeof v.note !== 'string')))) throw new Error(`Некоректні ${field}: ${w.id}`);
       }
-      if (shared && ['definitionDe', 'synonyms', 'antonyms'].some(field => JSON.stringify(shared[field]) !== JSON.stringify(w[field]))) throw new Error(`Конфлікт пояснень спільного слова: ${w.id}`);
+      if (shared && ['definitionDe', 'synonyms', 'antonyms', 'quizGroup'].some(field => JSON.stringify(shared[field]) !== JSON.stringify(w[field]))) throw new Error(`Конфлікт пояснень спільного слова: ${w.id}`);
       canonical.set(w.id, shared || w);
     }
   }
@@ -52,8 +53,9 @@ export function checkSpelling(word, input) {
 export function optionsFor(word, words, field, random = Math.random) {
   const value = w => field === 'uk' ? w.uk : fullDe(w);
   const correct = value(word);
-  // A synonym with the same translation would also be a correct reverse answer.
-  const pool = [...new Set(words.filter(w => w.id !== word.id && (field === 'uk' || w.uk !== word.uk)).map(value))].filter(v => v !== correct);
+  // Equal translations and explicitly ambiguous groups must never become false distractors.
+  // Groups are quiz-only metadata, not accepted spellings or shared progress IDs.
+  const pool = [...new Set(words.filter(w => w.id !== word.id && (!word.quizGroup || w.quizGroup !== word.quizGroup) && (field === 'uk' || w.uk !== word.uk)).map(value))].filter(v => v !== correct);
   const shuffle = values => { for (let i = values.length - 1; i > 0; i--) { const j = Math.floor(random() * (i + 1)); [values[i], values[j]] = [values[j], values[i]]; } return values; };
   return shuffle([correct, ...shuffle(pool).slice(0, 3)]);
 }

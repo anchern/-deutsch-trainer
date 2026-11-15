@@ -86,3 +86,13 @@ test('a backup made after difficult-word practice restores the unfinished main p
  a.startSession('recommended',scheduler.PRIMARY_MODE,true);a.reveal();a.rate('good');
  const backup=a.stored(),restored=persistence.mergeStates(persistence.emptyState(),backup);assert.equal(restored.run.cursor,1);assert.equal(restored.run.ids[1],id);
 });
+
+const arbeitTopic=JSON.parse(await readFile(new URL('../data/topics/arbeit.json',import.meta.url),'utf8'));
+test('Arbeit primary recall asks for both occupation forms without exposing the German pair',()=>{
+ const a=app(persistence.emptyState(),[arbeitTopic]);a.startSession('full');assert.ok(a.html().includes('Пригадай обидві форми'));assert.ok(!a.html().includes('Architekt'));a.reveal();assert.ok(a.html().includes('der Architekt / die Architektin'));assert.equal(a.stored().run.cursor,0);
+});
+test('all 44 Arbeit entries remain accessible with goal 5, failures and portions',()=>{
+ const s=persistence.emptyState();s.settings.newPerDay=5;const a=app(s,[arbeitTopic]);a.startSession('full');const seen=[];
+ for(let i=0;i<44;i++){seen.push(a.getSession().current.id);a.reveal();a.rate('again');if(!a.getSession().current && i<43)a.startSession();}
+ assert.equal(new Set(seen).size,44);assert.equal(a.stored().run.cursor,44);assert.equal(scheduler.dailyNew(a.stored()),44);assert.ok(a.html().includes('44/5'));assert.ok(a.html().includes('44/44'));
+});
