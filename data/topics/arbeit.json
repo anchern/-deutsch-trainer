@@ -1,0 +1,683 @@
+{
+  "id": "arbeit",
+  "title": "Bei der Arbeit",
+  "uk": "На роботі",
+  "description": "Професії, безпека, офіс і дієслова з Dativ",
+  "icon": "book",
+  "page": 76,
+  "source": {
+    "book": "Einfach gut! Deutsch für die Integration — Kurs- und Arbeitsbuch",
+    "level": "A2.2",
+    "lesson": "8 — Bei der Arbeit",
+    "printedPage": 76,
+    "verification": "verified"
+  },
+  "sections": [
+    {
+      "id": "berufe",
+      "title": "Berufe",
+      "uk": "Професії та ролі"
+    },
+    {
+      "id": "sicherheit",
+      "title": "Sicherheit",
+      "uk": "Безпека"
+    },
+    {
+      "id": "buero",
+      "title": "Im Büro",
+      "uk": "В офісі"
+    },
+    {
+      "id": "dativ",
+      "title": "Verben mit Dativ",
+      "uk": "Дієслова з Dativ"
+    }
+  ],
+  "words": [
+    {
+      "id": "architekt-architektin",
+      "section": "berufe",
+      "article": "der/die",
+      "de": "Architekt / Architektin",
+      "uk": "архітектор / архітекторка",
+      "definitionDe": "Diese Person plant Häuser und zeichnet, wie sie gebaut werden sollen.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Усно пригадай обидві форми з артиклями. У додатковому написанні приймається одна правильна форма."
+    },
+    {
+      "id": "arzt-aerztin",
+      "section": "berufe",
+      "article": "der/die",
+      "de": "Arzt / Ärztin",
+      "uk": "лікар / лікарка",
+      "definitionDe": "Diese Person untersucht kranke Menschen und behandelt ihre Krankheiten.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Усно пригадай обидві форми з артиклями. У додатковому написанні приймається одна правильна форма."
+    },
+    {
+      "id": "baecker-baeckerin",
+      "section": "berufe",
+      "article": "der/die",
+      "de": "Bäcker / Bäckerin",
+      "uk": "пекар / пекарка",
+      "definitionDe": "Diese Person macht beruflich Brot, Brötchen und andere Dinge aus Teig.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Усно пригадай обидві форми з артиклями. У додатковому написанні приймається одна правильна форма."
+    },
+    {
+      "id": "buchhalter-buchhalterin",
+      "section": "berufe",
+      "article": "der/die",
+      "de": "Buchhalter / Buchhalterin",
+      "uk": "бухгалтер / бухгалтерка",
+      "definitionDe": "Diese Person schreibt auf und prüft, wie viel Geld eine Firma bekommt und ausgibt.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Усно пригадай обидві форми з артиклями. У додатковому написанні приймається одна правильна форма."
+    },
+    {
+      "id": "buerokaufmann-buerokauffrau",
+      "section": "berufe",
+      "article": "der/die",
+      "de": "Bürokaufmann / Bürokauffrau",
+      "uk": "офісний працівник / офісна працівниця з комерційних питань",
+      "definitionDe": "Diese Person organisiert Aufgaben im Büro, bearbeitet Rechnungen und kümmert sich um Bestellungen.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Офісні організаційні й комерційні завдання: рахунки, замовлення, документи. Жіноча форма — Bürokauffrau. Усно пригадай обидві форми з артиклями. У додатковому написанні приймається одна правильна форма."
+    },
+    {
+      "id": "grafiker-grafikerin",
+      "section": "berufe",
+      "article": "der/die",
+      "de": "Grafiker / Grafikerin",
+      "uk": "графічний дизайнер / графічна дизайнерка",
+      "definitionDe": "Diese Person gestaltet beruflich Bilder, Zeichen und Texte, zum Beispiel für Werbung.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Усно пригадай обидві форми з артиклями. У додатковому написанні приймається одна правильна форма."
+    },
+    {
+      "id": "hausmann-hausfrau",
+      "section": "berufe",
+      "article": "der/die",
+      "de": "Hausmann / Hausfrau",
+      "uk": "домогосподар / домогосподарка",
+      "definitionDe": "Diese Person kümmert sich um den eigenen Haushalt, zum Beispiel um Kochen und Putzen.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Людина, яка веде домашнє господарство; не власник житла й не Hausmeister. Назва ролі, яка не обов’язково є оплачуваною професією. Усно пригадай обидві форми з артиклями. У додатковому написанні приймається одна правильна форма."
+    },
+    {
+      "id": "informatiker-informatikerin",
+      "section": "berufe",
+      "article": "der/die",
+      "de": "Informatiker / Informatikerin",
+      "uk": "фахівець / фахівчиня з інформатики",
+      "definitionDe": "Diese Person kennt sich beruflich mit Computern, Programmen und Daten aus.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Ширше за «програміст»: фахівець або фахівчиня з інформатики. Усно пригадай обидві форми з артиклями. У додатковому написанні приймається одна правильна форма."
+    },
+    {
+      "id": "kaufmann-kauffrau",
+      "section": "berufe",
+      "article": "der/die",
+      "de": "Kaufmann / Kauffrau",
+      "uk": "фахівець / фахівчиня з комерційної діяльності",
+      "definitionDe": "Diese Person arbeitet beruflich im Handel und kümmert sich um den Kauf und Verkauf von Waren.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Комерційна або торговельна діяльність; значення ширше за «продавець». Жіноча форма — Kauffrau. Усно пригадай обидві форми з артиклями. У додатковому написанні приймається одна правильна форма."
+    },
+    {
+      "id": "krankenpfleger-krankenschwester",
+      "section": "berufe",
+      "article": "der/die",
+      "de": "Krankenpfleger / Krankenschwester",
+      "uk": "медбрат / медсестра",
+      "definitionDe": "Diese Person pflegt kranke Menschen und hilft ihnen zum Beispiel im Krankenhaus.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "До надрукованого Krankenschwester тут подано чоловічу відповідність Krankenpfleger. Усно пригадай обидві форми з артиклями. У додатковому написанні приймається одна правильна форма."
+    },
+    {
+      "id": "koch-koechin",
+      "section": "berufe",
+      "article": "der/die",
+      "de": "Koch / Köchin",
+      "uk": "кухар / кухарка",
+      "definitionDe": "Diese Person bereitet beruflich Essen zu, zum Beispiel in einem Restaurant.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Усно пригадай обидві форми з артиклями. У додатковому написанні приймається одна правильна форма."
+    },
+    {
+      "id": "lehrer-lehrerin",
+      "section": "berufe",
+      "article": "der/die",
+      "de": "Lehrer / Lehrerin",
+      "uk": "учитель / учителька",
+      "definitionDe": "Diese Person unterrichtet Kinder oder Erwachsene, zum Beispiel in einer Schule.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Усно пригадай обидві форми з артиклями. У додатковому написанні приймається одна правильна форма."
+    },
+    {
+      "id": "sekretaer-sekretaerin",
+      "section": "berufe",
+      "article": "der/die",
+      "de": "Sekretär / Sekretärin",
+      "uk": "секретар / секретарка",
+      "definitionDe": "Diese Person organisiert Termine, schreibt Briefe und beantwortet Anrufe im Büro.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Усно пригадай обидві форми з артиклями. У додатковому написанні приймається одна правильна форма."
+    },
+    {
+      "id": "chef-chefin",
+      "section": "berufe",
+      "article": "der/die",
+      "de": "Chef / Chefin",
+      "uk": "керівник / керівниця",
+      "definitionDe": "Diese Person leitet andere Menschen bei der Arbeit und entscheidet über ihre Aufgaben.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Керівник або керівниця; не обов’язково директор чи власник установи. Усно пригадай обидві форми з артиклями. У додатковому написанні приймається одна правильна форма."
+    },
+    {
+      "id": "alarm",
+      "section": "sicherheit",
+      "article": "der",
+      "de": "Alarm",
+      "uk": "тривога; сигнал тривоги",
+      "definitionDe": "Ein lautes Signal warnt Menschen vor einer Gefahr.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Сигнал або стан тривоги; не завжди назва системи сигналізації."
+    },
+    {
+      "id": "aufzug",
+      "section": "sicherheit",
+      "article": "der",
+      "de": "Aufzug",
+      "uk": "ліфт",
+      "definitionDe": "Mit diesem Gerät fahren Menschen oder Sachen in einem Gebäude nach oben oder unten.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Тут пристрій для переміщення між поверхами."
+    },
+    {
+      "id": "brand",
+      "section": "sicherheit",
+      "article": "der",
+      "de": "Brand",
+      "uk": "пожежа",
+      "definitionDe": "Ein Feuer brennt an einem Ort, wo es nicht brennen soll, zum Beispiel in einem Haus.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Пожежа; для звичайного «вогонь» є das Feuer."
+    },
+    {
+      "id": "brandmelder",
+      "section": "sicherheit",
+      "article": "der",
+      "de": "Brandmelder",
+      "uk": "пожежний сповіщувач",
+      "definitionDe": "Dieses Gerät meldet ein Feuer im Gebäude.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Пристрій повідомлення про пожежу; не вся система пожежної сигналізації."
+    },
+    {
+      "id": "schutzhelm",
+      "section": "sicherheit",
+      "article": "der",
+      "de": "Schutzhelm",
+      "uk": "захисна каска",
+      "definitionDe": "Man trägt diesen festen Schutz auf dem Kopf, damit man sich bei der Arbeit nicht verletzt.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Захисний шолом для роботи."
+    },
+    {
+      "id": "steckdose",
+      "section": "sicherheit",
+      "article": "die",
+      "de": "Steckdose",
+      "uk": "електрична розетка",
+      "definitionDe": "Hier steckt man einen Stecker hinein, damit ein Gerät Strom bekommt.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Місце підключення електроприладу."
+    },
+    {
+      "id": "treppe",
+      "section": "sicherheit",
+      "article": "die",
+      "de": "Treppe",
+      "uk": "сходи",
+      "definitionDe": "Über diese Stufen geht man in einem Gebäude nach oben oder unten.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Німецьке слово в однині: die Treppe, попри український переклад у множині."
+    },
+    {
+      "id": "warnweste",
+      "section": "sicherheit",
+      "article": "die",
+      "de": "Warnweste",
+      "uk": "сигнальний жилет",
+      "definitionDe": "Man trägt dieses leuchtende Kleidungsstück über der Kleidung, damit andere einen gut sehen.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Помітний захисний жилет, часто зі світловідбивними елементами."
+    },
+    {
+      "id": "anmachen-geraet",
+      "section": "buero",
+      "article": null,
+      "de": "anmachen",
+      "uk": "вмикати прилад",
+      "definitionDe": "Man sorgt dafür, dass ein Gerät mit Strom arbeitet.",
+      "synonyms": [
+        {
+          "de": "einschalten",
+          "note": "Про вмикання приладу: anmachen — розмовне, einschalten — нейтральне."
+        }
+      ],
+      "antonyms": [
+        {
+          "de": "ausschalten",
+          "note": "Контекстна протилежність: вимкнути прилад."
+        }
+      ],
+      "note": "Відокремлюване: an·machen. Розмовне про прилади; нейтральне — einschalten. Значення знайомства чи залицяння тут не використовується.",
+      "example": {
+        "de": "Ich mache den Drucker an.",
+        "uk": "Я вмикаю принтер."
+      },
+      "accepted": [
+        "anmachen",
+        "einschalten"
+      ]
+    },
+    {
+      "id": "einschalten",
+      "section": "buero",
+      "article": null,
+      "de": "einschalten",
+      "uk": "вмикати прилад",
+      "definitionDe": "Man sorgt dafür, dass ein Gerät mit Strom arbeitet.",
+      "synonyms": [
+        {
+          "de": "anmachen",
+          "note": "Про вмикання приладу: anmachen — розмовне, einschalten — нейтральне."
+        }
+      ],
+      "antonyms": [
+        {
+          "de": "ausschalten",
+          "note": "Контекстна протилежність: вимкнути прилад."
+        }
+      ],
+      "note": "Відокремлюване: ein·schalten. Нейтральне про прилади; розмовне — anmachen.",
+      "example": {
+        "de": "Ich schalte den Drucker ein.",
+        "uk": "Я вмикаю принтер."
+      },
+      "accepted": [
+        "anmachen",
+        "einschalten"
+      ]
+    },
+    {
+      "id": "aufmachen",
+      "section": "buero",
+      "article": null,
+      "de": "aufmachen",
+      "uk": "відчиняти; відкривати",
+      "definitionDe": "Man bewegt zum Beispiel eine Tür so, dass man hindurchgehen kann.",
+      "synonyms": [
+        {
+          "de": "öffnen",
+          "note": "Для відчинення дверей: aufmachen — розмовне, öffnen — нейтральне."
+        }
+      ],
+      "antonyms": [],
+      "note": "Відокремлюване: auf·machen. Розмовний відповідник öffnen, наприклад щодо дверей.",
+      "example": {
+        "de": "Ich mache die Bürotür auf.",
+        "uk": "Я відчиняю двері офісу."
+      },
+      "accepted": [
+        "aufmachen",
+        "öffnen"
+      ]
+    },
+    {
+      "id": "oeffnen",
+      "section": "buero",
+      "article": null,
+      "de": "öffnen",
+      "uk": "відчиняти; відкривати",
+      "definitionDe": "Man bewegt zum Beispiel eine Tür so, dass man hindurchgehen kann.",
+      "synonyms": [
+        {
+          "de": "aufmachen",
+          "note": "Для відчинення дверей: aufmachen — розмовне, öffnen — нейтральне."
+        }
+      ],
+      "antonyms": [],
+      "note": "Не відокремлюється. Нейтральний відповідник aufmachen, наприклад щодо дверей.",
+      "example": {
+        "de": "Ich öffne die Bürotür.",
+        "uk": "Я відчиняю двері офісу."
+      },
+      "accepted": [
+        "aufmachen",
+        "öffnen"
+      ]
+    },
+    {
+      "id": "ausdrucken",
+      "section": "buero",
+      "article": null,
+      "de": "ausdrucken",
+      "uk": "роздруковувати",
+      "definitionDe": "Man bringt einen Text oder ein Bild vom Computer mit einem Drucker auf Papier.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Відокремлюване: aus·drucken. Не плутати з ausdrücken — «виражати».",
+      "example": {
+        "de": "Ich drucke das Protokoll aus.",
+        "uk": "Я роздруковую протокол."
+      }
+    },
+    {
+      "id": "ausschalten",
+      "section": "buero",
+      "article": null,
+      "de": "ausschalten",
+      "uk": "вимикати прилад",
+      "definitionDe": "Man sorgt dafür, dass ein Gerät nicht mehr mit Strom arbeitet.",
+      "synonyms": [
+        {
+          "de": "ausmachen",
+          "note": "Про вимикання приладу: ausmachen — розмовне, ausschalten — нейтральне."
+        }
+      ],
+      "antonyms": [
+        {
+          "de": "einschalten",
+          "note": "Контекстна протилежність: увімкнути прилад."
+        }
+      ],
+      "note": "Відокремлюване: aus·schalten. Нейтральне про прилади; розмовне — ausmachen.",
+      "example": {
+        "de": "Ich schalte den Drucker aus.",
+        "uk": "Я вимикаю принтер."
+      },
+      "accepted": [
+        "ausschalten",
+        "ausmachen"
+      ]
+    },
+    {
+      "id": "ausmachen-geraet",
+      "section": "buero",
+      "article": null,
+      "de": "ausmachen",
+      "uk": "вимикати прилад",
+      "definitionDe": "Man sorgt dafür, dass ein Gerät nicht mehr mit Strom arbeitet.",
+      "synonyms": [
+        {
+          "de": "ausschalten",
+          "note": "Про вимикання приладу: ausmachen — розмовне, ausschalten — нейтральне."
+        }
+      ],
+      "antonyms": [
+        {
+          "de": "einschalten",
+          "note": "Контекстна протилежність: увімкнути прилад."
+        }
+      ],
+      "note": "Відокремлюване: aus·machen. Розмовне про прилади; нейтральне — ausschalten. Значення домовленості тут не використовується.",
+      "example": {
+        "de": "Ich mache den Drucker aus.",
+        "uk": "Я вимикаю принтер."
+      },
+      "accepted": [
+        "ausschalten",
+        "ausmachen"
+      ]
+    },
+    {
+      "id": "herunterfahren-computer",
+      "section": "buero",
+      "article": null,
+      "de": "herunterfahren",
+      "uk": "завершувати роботу комп’ютера",
+      "definitionDe": "Man beendet die Arbeit des Computers über das System. Dabei werden die Programme geschlossen.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Відокремлюване: herunter·fahren; er fährt … herunter. Штатне завершення роботи системи, не просте вимкнення живлення. Не плутати з herunterladen або hochfahren.",
+      "example": {
+        "de": "Nach der Arbeit fährt er den Computer herunter.",
+        "uk": "Після роботи він завершує роботу комп’ютера."
+      }
+    },
+    {
+      "id": "notieren",
+      "section": "buero",
+      "article": null,
+      "de": "notieren",
+      "uk": "занотовувати; записувати",
+      "definitionDe": "Man schreibt etwas kurz auf, damit man es später noch weiß.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Не відокремлюється. Це дієслово «занотовувати», а не іменник «нотатка».",
+      "example": {
+        "de": "Ich notiere die Telefonnummer.",
+        "uk": "Я занотовую номер телефону."
+      }
+    },
+    {
+      "id": "anrufbeantworter",
+      "section": "buero",
+      "article": "der",
+      "de": "Anrufbeantworter",
+      "uk": "автовідповідач",
+      "definitionDe": "Dieses Gerät nimmt eine Nachricht am Telefon auf, wenn niemand den Anruf annimmt.",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "id": "besprechung",
+      "section": "buero",
+      "article": "die",
+      "de": "Besprechung",
+      "uk": "нарада; обговорення робочих питань",
+      "definitionDe": "Mehrere Menschen sprechen bei der Arbeit gemeinsam über bestimmte Fragen und Aufgaben.",
+      "synonyms": [],
+      "antonyms": [],
+      "quizGroup": "work-meetings"
+    },
+    {
+      "id": "protokoll",
+      "section": "buero",
+      "article": "das",
+      "de": "Protokoll",
+      "uk": "протокол наради",
+      "definitionDe": "In diesem Text steht, was bei einer Sitzung besprochen und entschieden wurde.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Тут письмовий запис перебігу або результатів наради."
+    },
+    {
+      "id": "treffen-nomen",
+      "section": "buero",
+      "article": "das",
+      "de": "Treffen",
+      "uk": "робоча зустріч",
+      "definitionDe": "Menschen kommen zusammen, um miteinander zu sprechen, hier über ihre Arbeit.",
+      "synonyms": [
+        {
+          "de": "Meeting",
+          "note": "Близькі відповідники саме для робочої зустрічі, не для всіх значень Treffen."
+        }
+      ],
+      "antonyms": [],
+      "quizGroup": "work-meetings",
+      "accepted": [
+        "Treffen",
+        "Meeting",
+        "das Treffen",
+        "das Meeting"
+      ]
+    },
+    {
+      "id": "meeting",
+      "section": "buero",
+      "article": "das",
+      "de": "Meeting",
+      "uk": "робоча зустріч",
+      "definitionDe": "Menschen kommen zusammen, um miteinander zu sprechen, hier über ihre Arbeit.",
+      "synonyms": [
+        {
+          "de": "Treffen",
+          "note": "Близькі відповідники саме для робочої зустрічі, не для всіх значень Treffen."
+        }
+      ],
+      "antonyms": [],
+      "quizGroup": "work-meetings",
+      "accepted": [
+        "Treffen",
+        "Meeting",
+        "das Treffen",
+        "das Meeting"
+      ]
+    },
+    {
+      "id": "termin",
+      "section": "buero",
+      "article": "der",
+      "de": "Termin",
+      "uk": "призначений час; домовлена зустріч",
+      "definitionDe": "Das ist eine vereinbarte Zeit für ein Gespräch, einen Besuch oder eine andere Aufgabe.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "Тут домовлений час або зустріч; не просто українське «термін».",
+      "quizGroup": "work-meetings"
+    },
+    {
+      "id": "antworten",
+      "section": "dativ",
+      "article": null,
+      "de": "antworten",
+      "uk": "відповідати комусь",
+      "definitionDe": "Man sagt oder schreibt etwas zu einer Frage oder Nachricht.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "jemandem antworten — адресат у Dativ. Окремо: auf etwas (Akk.) antworten. Не відокремлюється.",
+      "example": {
+        "de": "Ich antworte meiner Kollegin.",
+        "uk": "Я відповідаю своїй колезі."
+      }
+    },
+    {
+      "id": "gehoeren",
+      "section": "dativ",
+      "article": null,
+      "de": "gehören",
+      "uk": "належати комусь",
+      "definitionDe": "Eine Sache ist das Eigentum einer bestimmten Person.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "etwas gehört jemandem — власник у Dativ. Початкове ge- не відокремлюється.",
+      "example": {
+        "de": "Der Laptop gehört meinem Kollegen.",
+        "uk": "Ноутбук належить моєму колезі."
+      }
+    },
+    {
+      "id": "helfen",
+      "section": "dativ",
+      "article": null,
+      "de": "helfen",
+      "uk": "допомагати комусь",
+      "definitionDe": "Man unterstützt eine Person bei einer Aufgabe oder bei einem Problem.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "jemandem helfen — Dativ; du hilfst, er/sie hilft. Не відокремлюється.",
+      "example": {
+        "de": "Die Kollegin hilft mir.",
+        "uk": "Колега допомагає мені."
+      }
+    },
+    {
+      "id": "schreiben",
+      "section": "dativ",
+      "article": null,
+      "de": "schreiben",
+      "uk": "писати комусь",
+      "definitionDe": "Man teilt einer Person etwas mit Buchstaben mit, zum Beispiel in einer E-Mail.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "jemandem etwas schreiben: адресат — Dativ, написане — Akkusativ. Не відокремлюється.",
+      "example": {
+        "de": "Ich schreibe meinem Chef eine E-Mail.",
+        "uk": "Я пишу своєму керівникові електронного листа."
+      }
+    },
+    {
+      "id": "telefonieren-mit",
+      "section": "dativ",
+      "article": null,
+      "de": "telefonieren mit",
+      "uk": "розмовляти телефоном із кимось",
+      "definitionDe": "Man spricht am Telefon und hat eine andere Person in der Leitung.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "mit + Dativ: mit jemandem telefonieren. Не казати jemandem telefonieren. Дієслово не відокремлюється; у відповіді потрібне mit.",
+      "example": {
+        "de": "Ich telefoniere mit meiner Chefin.",
+        "uk": "Я розмовляю телефоном зі своєю керівницею."
+      }
+    },
+    {
+      "id": "zuhoeren",
+      "section": "dativ",
+      "article": null,
+      "de": "zuhören",
+      "uk": "уважно слухати когось",
+      "definitionDe": "Man ist aufmerksam und hört genau, was eine andere Person sagt.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "jemandem zuhören — Dativ. Відокремлюване: zu·hören. Відрізняй від jemanden hören (Akkusativ).",
+      "example": {
+        "de": "Ich höre meinem Kollegen zu.",
+        "uk": "Я уважно слухаю свого колегу."
+      }
+    },
+    {
+      "id": "zuschauen",
+      "section": "dativ",
+      "article": null,
+      "de": "zuschauen",
+      "uk": "спостерігати за кимось",
+      "definitionDe": "Man sieht aufmerksam, was eine andere Person gerade macht.",
+      "synonyms": [],
+      "antonyms": [],
+      "note": "jemandem zuschauen — Dativ; можливе bei + Dativ. Відокремлюване: zu·schauen.",
+      "example": {
+        "de": "Ich schaue der Kollegin bei der Arbeit zu.",
+        "uk": "Я спостерігаю за колегою під час роботи."
+      }
+    }
+  ]
+}

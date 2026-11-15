@@ -3,6 +3,7 @@
   "topics": [
     "topics/transport.json",
     "topics/wohnung.json",
-    "topics/amt.json"
+    "topics/amt.json",
+    "topics/arbeit.json"
   ]
 }
