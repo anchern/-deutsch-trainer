@@ -57,3 +57,10 @@ test('invalid lexical metadata and inconsistent shared-word details are rejected
   const shared=structuredClone(topics);shared[1].words.find(w=>w.id==='stadtzentrum').definitionDe='Andere Erklärung.';assert.throws(()=>validateTopics(shared),/Конфлікт/);
   const optional=structuredClone(topics);for(const t of optional)for(const w of t.words){delete w.definitionDe;delete w.synonyms;delete w.antonyms;}assert.doesNotThrow(()=>validateTopics(optional));
 });
+
+test('optional source metadata is backward compatible, escaped at presentation, and limits links to HTTP(S)',()=>{
+ const data=structuredClone(topics);assert.doesNotThrow(()=>validateTopics(data));
+ data[0].source={book:'Example book',level:'A2.2',edition:'2025',lesson:'8',printedPage:76,url:'https://example.test/book',verification:'unverified'};
+ assert.doesNotThrow(()=>validateTopics(data));data[0].source.url='javascript:alert(1)';assert.throws(()=>validateTopics(data));
+ data[0].source={verification:'invented'};assert.throws(()=>validateTopics(data));
+});
